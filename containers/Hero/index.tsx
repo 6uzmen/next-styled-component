@@ -84,9 +84,9 @@ export default function Hero() {
               </>
             ) : (
               <S.AwardImage
-                src="https://xylo-assets.s3.amazonaws.com/images/png/award-sm.png"
-                alt="Award Image"
-              />
+                  src="https://xylo-assets.s3.amazonaws.com/images/svg/award-2.svg"
+                  alt="Award Image"
+                />
             )}
           </S.AwardsContainer>
         </S.LandingContainer>
