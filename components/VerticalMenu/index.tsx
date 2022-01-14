@@ -7,14 +7,14 @@ interface IProps {
     link?: string;
     subItems?: { label: string; link: string }[];
   }[];
-  handleOpen?: () => void;
+  handleCloseMenu?: () => void;
 }
 
-export default function VerticalMenu({ items, handleOpen }: IProps) {
+export default function VerticalMenu({ items, handleCloseMenu }: IProps) {
   return (
     <S.MenuContainer>
       {items.map((item, index) => {
-        return <Item key={index} item={item} handleOpen={handleOpen} />;
+        return <Item key={index} item={item} handleCloseMenu={handleCloseMenu} />;
       })}
     </S.MenuContainer>
   );
@@ -26,15 +26,15 @@ interface IPropsItem {
     link?: string;
     subItems?: { label: string; link: string }[];
   };
-  handleOpen?: () => void;
+  handleCloseMenu?: () => void;
 }
 
-export const Item = ({ item, handleOpen }: IPropsItem) => {
+export const Item = ({ item, handleCloseMenu }: IPropsItem) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
       <S.ItemContainer hasChilds={item.subItems !== undefined}>
-        <S.ItemLabel href={item?.link} onClick={handleOpen}>
+        <S.ItemLabel href={item?.link} onClick={handleCloseMenu}>
           {item.label}
         </S.ItemLabel>
         {item?.subItems && (
@@ -51,7 +51,7 @@ export const Item = ({ item, handleOpen }: IPropsItem) => {
           {item.subItems.map((subItem, index) => {
             return (
               <S.SubItemContainer key={subItem.label + index} isOpen={isOpen}>
-                <S.SubItemLabel onClick={handleOpen}>
+                <S.SubItemLabel href={subItem.link} onClick={handleCloseMenu}>
                   {subItem.label}
                 </S.SubItemLabel>
               </S.SubItemContainer>

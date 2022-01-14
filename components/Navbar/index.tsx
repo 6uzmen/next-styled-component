@@ -141,7 +141,7 @@ export default function Navbar({ variant = false }: IProps) {
         className={`${openMenu && isLargeDevice ? "py-4" : "py-0"}`}
         isOpen={openMenu && isLargeDevice}
       >
-        <VerticalMenu items={items} handleOpen={() => setOpenMenu(false)} />
+        <VerticalMenu items={items} handleCloseMenu={() => setOpenMenu(false)} />
         <S.Separator />
         <div
           className="d-flex flex-column flex-wrap"
