@@ -1,7 +1,7 @@
 import React from "react";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles, lightTheme } from "../style/theme.config";
-import "../styles/globals.css";
+import "../style/globals.css";
 
 function MyApp({ Component, pageProps }) {
   return (
