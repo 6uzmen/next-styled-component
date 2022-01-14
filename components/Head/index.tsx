@@ -31,7 +31,7 @@ export default function Head() {
         />
         <meta
           property="og:image"
-          content="https://zircon.tech/wp-content/uploads/2020/05/App-home-image-6e.png"
+          content="https://media-exp1.licdn.com/dms/image/C510BAQED4tGId8dhog/company-logo_200_200/0/1519862852559?e=2159024400&v=beta&t=B4IwOMzOaY0rHUFW7u1iM7t0MxNCTCMPdIZyGmZmscY"
         />
         <meta property="og:image:width" content="204" />
         <meta property="og:image:height" content="360" />
