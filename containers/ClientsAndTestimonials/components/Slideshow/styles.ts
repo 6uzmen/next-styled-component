@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
-export const TestimonialContainer = styled.div`
-`;
+export const TestimonialContainer = styled.div``;
 
 export const TestimonialTitle = styled.h4`
   font-family: Rubik;
@@ -86,6 +85,10 @@ export const CompanyLogo = styled.img`
 
 export const DotContainer = styled.div`
   display: flex;
+  width: 100%;
+  @media screen and (max-width: 768px) {
+    justify-content: center;
+  }
 `;
 
 export const Dot = styled.div<{ active: boolean }>`

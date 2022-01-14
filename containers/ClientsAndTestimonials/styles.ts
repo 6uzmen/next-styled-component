@@ -12,10 +12,6 @@ export const TestimonialWrapper = styled.div`
   position: relative;
   flex-wrap: wrap;
   padding: 10vh 10% 10vh 10%;
-  background-image: url("https://xylo-assets.s3.amazonaws.com/images/svg/bg-testimonials.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-origin: content-box;
   @media screen and (max-width: 1200px) {
     padding: 10vh 10% 0 10%;
   }

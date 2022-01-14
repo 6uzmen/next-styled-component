@@ -18,7 +18,7 @@ const allServices: ServiceType[] = [
     icon: `${iconsRoute}blockchain.svg`,
     description:
       "We are a pioneer blockchain development company in pursuit of transforming industries around the world.",
-    link: "https://zircon.tech/blockchain-software-company",
+    link: "https://info.zircon.tech/en-us/zircontech-services-blockchain",
   },
   {
     name: "IOT",
