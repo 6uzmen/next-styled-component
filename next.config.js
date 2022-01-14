@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 
 module.exports = {
-  pageExtensions: ["tsx","js"],
+  sassOptions: {
+    includePaths: [path.join(__dirname, "styles")],
+  },
+  pageExtensions: ["tsx", "js"],
 };
