@@ -1,4 +1,3 @@
-import type { NextPage } from "next";
 import dynamic from "next/dynamic";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -20,7 +19,7 @@ import CaseStudy from "../containers/CaseStudy";
 // const AboutUs = dynamic(() => import("../containers/AboutUs"), { ssr: false, });
 // const Hero = dynamic(() => import("../containers/Hero"), { ssr: false, });
 
-const Home: NextPage = () => {
+const Home = () => {
   return (
     <div>
       <Head />
