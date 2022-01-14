@@ -59,7 +59,7 @@ export default function Navbar({ variant = false }: IProps) {
 
     const position = winScroll / height;
 
-    if (scrollPosition < position) {
+    if (scrollPosition < position && scrollPosition < 10) {
       setShowNavbar(false);
     } else if (scrollPosition > position) {
       setShowNavbar(true);
