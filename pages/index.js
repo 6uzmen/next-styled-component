@@ -1,8 +1,16 @@
-import Head from 'next/head'
+import Head from "next/head";
+import styled from "styled-components";
+
+const Test = styled.div`
+  height: 100px;
+  width: 100px;
+  background: red;
+`;
 
 export default function Home() {
   return (
     <div className="container">
+      <Test />
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
@@ -54,8 +62,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel" className="logo" />
+          Powered by <img src="/vercel.svg" alt="Vercel" className="logo" />
         </a>
       </footer>
 
@@ -205,5 +212,5 @@ export default function Home() {
         }
       `}</style>
     </div>
-  )
+  );
 }
