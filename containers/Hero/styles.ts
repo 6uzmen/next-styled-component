@@ -32,6 +32,13 @@ export const Title = styled.h1`
   color: white;
   text-align: center;
   text-transform: capitalize;
+  font-size: 34px;
+  @media screen and (max-width: 988px) {
+    font-size: 24px;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 20px;
+  }
 `;
 
 export const BackgroundVideoContainer = styled.div<{ scale: number }>`

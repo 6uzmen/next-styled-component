@@ -43,50 +43,40 @@ export default function Slideshow({ items }: IProps) {
   const paginate = (newDirection: number) => {
     setPage([page + newDirection, newDirection]);
   };
-
+  console.log(direction)
   return (
     <div
-      className="d-flex col-12 position-relative mt-4"
-      style={{ height: "360px", width: "100" }}
+      className="d-flex flex-column d-lg-none col-12 position-relative mt-4"
     >
-      <AnimatePresence initial={false} custom={direction}>
-        <motion.div
-          key={page}
-          custom={direction}
-          variants={variants}
-          initial="enter"
-          animate="center"
-          exit="exit"
-          drag="x"
-          dragConstraints={{ left: 0, right: 0 }}
-          dragElastic={1}
-          onDragEnd={(e, { offset, velocity }) => {
-            const swipe = swipePower(offset.x, velocity.x);
-            if (swipe < -swipeConfidenceThreshold) {
-              paginate(1);
-            } else if (swipe > swipeConfidenceThreshold) {
-              paginate(-1);
-            }
-          }}
-        >
-          <div
-            className="position-absolute mt-2"
-            style={{
-              minHeight: "360px",
-              minWidth: "80vw",
-            }}
-          >
-            <Service
-              key={items[itemIndex].name + itemIndex}
-              title={items[itemIndex].name}
-              subtitle={items[itemIndex].description}
-              icon={items[itemIndex].icon}
-              link={items[itemIndex].link}
-            />
-          </div>
-        </motion.div>
-      </AnimatePresence>
-      <S.DotContainer>
+      <motion.div
+        className="col-12"
+        style={{ cursor: 'grab' }}
+        key={page}
+        custom={direction}
+        variants={variants}
+        initial="enter"
+        animate="center"
+        exit="exit"
+        drag="x"
+        dragConstraints={{ left: 0, right: 0 }}
+        onDragEnd={(e, { offset, velocity }) => {
+          const swipe = swipePower(offset.x, velocity.x);
+          if (swipe < -swipeConfidenceThreshold) {
+            paginate(1);
+          } else if (swipe > swipeConfidenceThreshold) {
+            paginate(-1);
+          }
+        }}
+      >
+        <Service
+          key={items[itemIndex].name + itemIndex}
+          title={items[itemIndex].name}
+          subtitle={items[itemIndex].description}
+          icon={items[itemIndex].icon}
+          link={items[itemIndex].link}
+        />
+      </motion.div>
+      <S.DotContainer className="col-12 justify-content-center">
         {items.map((item, index) => (
           <S.Dot key={item.name} active={index === itemIndex} />
         ))}

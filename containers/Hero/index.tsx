@@ -5,8 +5,9 @@ import * as S from "./styles";
 
 export default function Hero() {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
-
+  const [mobile, setMobile] = useState<boolean>(false);
   const [scrollPosition, setScrollPosition] = useState(1);
+
 
   const listenToScroll = () => {
     const winScroll =
@@ -27,6 +28,10 @@ export default function Hero() {
       window.removeEventListener("scroll", listenToScroll);
     };
   }, []);
+
+  useEffect(() => {
+    if (isMobile) { setMobile(true) } else { setMobile(false) }
+  }, [isMobile]);
 
   const vidRef = useRef<HTMLVideoElement>(null);
 
@@ -54,7 +59,7 @@ export default function Hero() {
       <div className="position-relative">
         <S.LandingContainer>
           <S.TitleContainer>
-            <S.Title>
+            <S.Title className="px-2">
               Software Development partner
               <br />
               <span className="fw-light">
@@ -62,14 +67,14 @@ export default function Hero() {
               </span>
             </S.Title>
             <ButtonSecondary
-              className="mt-4"
-              onClick={() => (window.location.href = "#contact")}
+              className="mt-4 px-4"
+              onClick={() => window.scrollTo(0, document.body.scrollHeight)}
             >
               I Want To Know More
             </ButtonSecondary>
           </S.TitleContainer>
           <S.AwardsContainer>
-            {!isMobile ? (
+            {!mobile ? (
               <>
                 <S.AwardImage
                   src="https://xylo-assets.s3.amazonaws.com/images/svg/award-1.svg"
@@ -84,9 +89,9 @@ export default function Hero() {
               </>
             ) : (
               <S.AwardImage
-                  src="https://xylo-assets.s3.amazonaws.com/images/svg/award-2.svg"
-                  alt="Award Image"
-                />
+                src="https://xylo-assets.s3.amazonaws.com/images/svg/award-2.svg"
+                alt="Award Image"
+              />
             )}
           </S.AwardsContainer>
         </S.LandingContainer>

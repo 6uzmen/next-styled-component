@@ -14,7 +14,8 @@ interface IProps {
 
 export default function Navbar({ variant = false }: IProps) {
   const router = useRouter();
-  const isMediumDevice = useMediaQuery({ query: "(max-width: 988px)" });
+  const isSmallDevice = useMediaQuery({ query: "(max-width: 768px)" });
+  const isLargeDevice = useMediaQuery({ query: "(max-width: 1199px)" });
   const [openMenu, setOpenMenu] = useState<boolean>(false);
   const [currentLogo, setCurrentLogo] = useState<string>('https://xylo-assets.s3.amazonaws.com/images/svg/zircon-typo-dark.svg')
   const items = [
@@ -85,15 +86,15 @@ export default function Navbar({ variant = false }: IProps) {
   }, [openMenu]);
 
   useEffect(() => {
-    const logo = (isMediumDevice || scrollPosition > 0 || variant)
+    const logo = (isLargeDevice || scrollPosition > 0 || variant)
       ? "https://xylo-assets.s3.amazonaws.com/images/svg/zircon-typo-dark.svg"
       : "https://xylo-assets.s3.amazonaws.com/images/svg/zircon-typo.svg"
     setCurrentLogo(logo)
-  }, [isMediumDevice, scrollPosition, variant]);
+  }, [isLargeDevice, scrollPosition, variant]);
 
   return (
     <S.MainContainer showNavbar={showNavbar}>
-      <S.NavbarContainer variant={variant} isScrolled={scrollPosition > 0}>
+      <S.NavbarContainer variant={variant || isLargeDevice} isScrolled={scrollPosition > 0}>
         <img
           className="pointer"
           onClick={(e) => {
@@ -102,46 +103,43 @@ export default function Navbar({ variant = false }: IProps) {
             window.scrollTo(0, 0);
           }}
           height="22px"
-          width={isMediumDevice ? "120px" : "160px"}
+          width={isSmallDevice ? "120px" : "160px"}
           src={
             currentLogo
           }
           alt="Zircontech-Logo"
         />
         <S.MenuContainer>
-          {!isMediumDevice && (
-            <div className="d-flex px-4">
-              {items.map((item, index) => (
-                <S.MenuItem key={index}>
-                  <S.ItemLink
-                    variant={variant}
-                    isScrolled={scrollPosition > 0}
-                    href={item.link}
-                  >
-                    {item.label}
-                  </S.ItemLink>
-                </S.MenuItem>
-              ))}
-            </div>
-          )}
+          <div className="d-none d-xl-flex px-4 ">
+            {items.map((item, index) => (
+              <S.MenuItem key={index}>
+                <S.ItemLink
+                  variant={variant}
+                  isScrolled={scrollPosition > 0}
+                  href={item.link}
+                >
+                  {item.label}
+                </S.ItemLink>
+              </S.MenuItem>
+            ))}
+          </div>
           <ButtonPrimary
-            className="mx-2"
+            className="mx-2 px-3 px-sm-4 px-lg-4"
             onClick={() => window.scrollTo(0, document.body.scrollHeight)}
           >
             Contact Us
           </ButtonPrimary>
-          {isMediumDevice && (
-            <S.MenuIcon
-              src="https://xylo-assets.s3.amazonaws.com/images/svg/icons/menu.svg"
-              onClick={() => setOpenMenu(!openMenu)}
-              alt="Menu icon"
-            />
-          )}
+          <S.MenuIcon
+            className="d-block d-xl-none"
+            src="https://xylo-assets.s3.amazonaws.com/images/svg/icons/menu.svg"
+            onClick={() => setOpenMenu(!openMenu)}
+            alt="Menu icon"
+          />
         </S.MenuContainer>
       </S.NavbarContainer>
       <S.MenuContent
-        className={`${openMenu && isMediumDevice ? "py-4" : "py-0"}`}
-        isOpen={openMenu && isMediumDevice}
+        className={`${openMenu && isLargeDevice ? "py-4" : "py-0"}`}
+        isOpen={openMenu && isLargeDevice}
       >
         <VerticalMenu items={items} handleOpen={() => setOpenMenu(false)} />
         <S.Separator />

@@ -2,10 +2,6 @@ import styled from "styled-components";
 
 export const DotContainer = styled.div`
   display: flex;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
 `;
 
 export const Dot = styled.div<{ active: boolean }>`

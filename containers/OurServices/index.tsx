@@ -62,27 +62,24 @@ export default function OurServices() {
         </S.SectionSubtitle>
         <ButtonPrimary
           className="py-4 px-4"
-          onClick={() => window.scrollTo(0,document.body.scrollHeight)}
+          onClick={() => window.scrollTo(0, document.body.scrollHeight)}
         >
           Get a quote
         </ButtonPrimary>
       </S.SectionContainer>
-      {!isMediumDevice ? (
-        <S.ServicesWrapper className="mt-5">
-          {allServices.map((service, index) => (
-            <Service
-              key={service.name + index}
-              className="col-12 col-lg-6"
-              title={service.name}
-              subtitle={service.description}
-              icon={service.icon}
-              link={service.link}
-            />
-          ))}
-        </S.ServicesWrapper>
-      ) : (
-        <Slideshow items={allServices} />
-      )}
+      <S.ServicesWrapper className="mt-5 d-none d-lg-flex">
+        {allServices.map((service, index) => (
+          <Service
+            key={service.name + index}
+            className="col-6"
+            title={service.name}
+            subtitle={service.description}
+            icon={service.icon}
+            link={service.link}
+          />
+        ))}
+      </S.ServicesWrapper>
+      <Slideshow items={allServices} />
     </S.ServicesContainer>
   );
 }
