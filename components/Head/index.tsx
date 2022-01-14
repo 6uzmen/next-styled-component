@@ -60,7 +60,6 @@ export default function Head() {
           content="https://zircon.tech/wp-content/uploads/2019/10/Zirconfavicon2.png"
         />
         <meta name="description" content="A trusted partner for the technologies driving the future. We build solutions for your development projects as a nearshore software development company." />
-
         <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7707659.js"></script>
       </NextHead>
     </>
