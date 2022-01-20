@@ -58,16 +58,23 @@ export const Title = styled.h2`
   }
 `;
 
-export const SlideBox = styled.div`
+export const SlideBox = styled.div<{ direction: boolean }>`
   display: flex;
   align-items: center;
   justify-content: center;
   max-width: 60px;
   height: 100%;
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.05);
-  transition: 0.3s;
-  :hover {
-    background-color: rgba(0, 0, 0, 0.1);
-  }
+  background: ${(p) =>
+    p.direction
+      ? `linear-gradient(
+    90deg,
+    rgba(224, 224, 224, 0.5) 0%,
+    rgba(255, 255, 255, 1) 90%
+  )`
+      : `linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 10%,
+    rgba(224, 224, 224, 0.5) 100%
+  )`};
 `;

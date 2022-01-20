@@ -54,12 +54,20 @@ export default function ContactUs() {
       </div>
       <S.ContactFormContainer className="col-12 col-xl-6 p-0 p-md-4 p-lg-5 mt-5">
         <S.ContactTitle className="mb-5">Contact Us</S.ContactTitle>
-        <S.ContactForm onSubmit={(e) => {
-          e.preventDefault()
-          //@ts-ignore
-          const form = { email: e.target.email.value, firstname: e.target.firstname.value, lastname: e.target.lastname.value, message: e.target.message.value }
-          sendContactForm(form).then(() => toast.success('Sent!')).catch(() => toast.error('Something happend!'))
-        }} className="d-flex flex-wrap">
+        <S.ContactForm
+          onSubmit={(e) => {
+            e.preventDefault();
+            //@ts-ignore
+            const form = {
+              email: e.target.email.value,
+              firstname: e.target.firstname.value,
+              lastname: e.target.lastname.value,
+              message: e.target.message.value,
+            };
+            sendContactForm(form).then(() => toast.success("Sent!"));
+          }}
+          className="d-flex flex-wrap"
+        >
           <div className="mb-4 col-12 col-xl-6 px-2">
             <S.ContactLabel id="input-field-1" className="form-label">
               First Name *
@@ -68,7 +76,7 @@ export default function ContactUs() {
               aria-labelledby="input-field-1"
               type="text"
               className="form-control"
-              name='firstname'
+              name="firstname"
             />
           </div>
           <div className="mb-4 col-12 col-xl-6 px-2">
@@ -109,6 +117,6 @@ export default function ContactUs() {
           </div>
         </S.ContactForm>
       </S.ContactFormContainer>
-    </S.MainContainer >
+    </S.MainContainer>
   );
 }

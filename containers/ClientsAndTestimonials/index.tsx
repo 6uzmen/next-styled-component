@@ -69,17 +69,25 @@ export default function ClientsAndTestimonials() {
         </S.TitleContainer>
         <div className="d-flex col-12 col-xl-6">
           <S.SlideBox
+            direction={true}
             className="d-none d-lg-flex"
             onClick={() => childRef.current.doSwipe(-1)}
           >
-            <img src="/assets/images/svg/icons/CaretLeft.svg" />
+            <img
+              src="/assets/images/svg/icons/CaretLeft.svg"
+              alt="left arrow"
+            />
           </S.SlideBox>
           <Slideshow ref={childRef} items={allTestimonials} />
           <S.SlideBox
+            direction={false}
             className="d-none d-lg-flex"
             onClick={() => childRef.current.doSwipe(1)}
           >
-            <img src="/assets/images/svg/icons/CaretRight.svg" />
+            <img
+              src="/assets/images/svg/icons/CaretRight.svg"
+              alt="right arrow"
+            />
           </S.SlideBox>
         </div>
       </S.TestimonialWrapper>

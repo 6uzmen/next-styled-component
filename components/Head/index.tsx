@@ -74,7 +74,6 @@ export default function Head() {
           async
           src={`https://www.googletagmanager.com/gtag/js?id=UA-2664098-14`}
         />
-
         <script
           dangerouslySetInnerHTML={{
             __html: `
