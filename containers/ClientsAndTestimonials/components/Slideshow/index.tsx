@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React, { forwardRef, useImperativeHandle, useState } from "react";
 import * as S from "./styles";
 import { motion, AnimatePresence } from "framer-motion";
 import { wrap } from "popmotion";
 import { TypeTestimonial } from "../..";
 
-
 interface IProps {
-  items: TypeTestimonial[]
+  items: TypeTestimonial[];
+  ref: any;
 }
 
 const variants = {
@@ -35,53 +35,59 @@ const swipePower = (offset: number, velocity: number) => {
   return Math.abs(offset) * velocity;
 };
 
-export default function Slideshow({ items }: IProps) {
+export const Slideshow = forwardRef(({ items }: IProps, ref) => {
   const [[page, direction], setPage] = useState([0, 0]);
   const itemIndex = wrap(0, items.length, page);
 
   const paginate = (newDirection: number) => {
     setPage([page + newDirection, newDirection]);
   };
+
+  useImperativeHandle(ref, () => ({
+    doSwipe(x: number) {
+      paginate(x);
+    },
+  }));
   return (
-    <S.TestimonialContainer className="col-12 col-xl-6 d-flex flex-wrap overflow-hidden">
-        <motion.div
-          className="col-12"
-          style={{cursor:'grab'}}
-          key={page}
-          custom={direction}
-          variants={variants}
-          initial="enter"
-          animate="center"
-          exit="exit"
-          drag="x"
-          dragConstraints={{ left: 0, right: 0 }}
-          onDragEnd={(e, { offset, velocity }) => {
-            const swipe = swipePower(offset.x, velocity.x);
-            if (swipe < -swipeConfidenceThreshold) {
-              paginate(1);
-            } else if (swipe > swipeConfidenceThreshold) {
-              paginate(-1);
-            }
-          }}
-        >
-          <div>
-            <S.TestimonialTitle>{items[itemIndex].title}</S.TestimonialTitle>
-            <S.TestimonialParagraph>
-              {items[itemIndex].paragraph}
-            </S.TestimonialParagraph>
-            <S.ClientContainer>
-              <S.ClientAvatar src={items[itemIndex].picture} alt="Client Avatar" />
-              <S.ClientInformationContainer>
-                <S.ClientName>{items[itemIndex].name}</S.ClientName>
-                <S.ClientPosition>{items[itemIndex].position}</S.ClientPosition>
-              </S.ClientInformationContainer>
-              <S.CompanyLogo
-                src={items[itemIndex].logo}
-                alt="Company logo"
-              />
-            </S.ClientContainer>
-          </div>
-        </motion.div>
+    <S.TestimonialContainer className="d-flex flex-wrap overflow-hidden px-4">
+      <motion.div
+        className="col-12"
+        style={{ cursor: "grab" }}
+        key={page}
+        custom={direction}
+        variants={variants}
+        initial="enter"
+        animate="center"
+        exit="exit"
+        drag="x"
+        dragConstraints={{ left: 0, right: 0 }}
+        onDragEnd={(e, { offset, velocity }) => {
+          const swipe = swipePower(offset.x, velocity.x);
+          if (swipe < -swipeConfidenceThreshold) {
+            paginate(1);
+          } else if (swipe > swipeConfidenceThreshold) {
+            paginate(-1);
+          }
+        }}
+      >
+        <div>
+          <S.TestimonialTitle>{items[itemIndex].title}</S.TestimonialTitle>
+          <S.TestimonialParagraph>
+            {items[itemIndex].paragraph}
+          </S.TestimonialParagraph>
+          <S.ClientContainer>
+            <S.ClientAvatar
+              src={items[itemIndex].picture}
+              alt="Client Avatar"
+            />
+            <S.ClientInformationContainer>
+              <S.ClientName>{items[itemIndex].name}</S.ClientName>
+              <S.ClientPosition>{items[itemIndex].position}</S.ClientPosition>
+            </S.ClientInformationContainer>
+            <S.CompanyLogo src={items[itemIndex].logo} alt="Company logo" />
+          </S.ClientContainer>
+        </div>
+      </motion.div>
       <S.DotContainer>
         {items.map((item, index) => (
           <S.Dot key={item.name} active={index === itemIndex} />
@@ -89,4 +95,6 @@ export default function Slideshow({ items }: IProps) {
       </S.DotContainer>
     </S.TestimonialContainer>
   );
-}
+});
+
+export default Slideshow;
