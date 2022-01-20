@@ -59,9 +59,13 @@ export default function ContactUs() {
             e.preventDefault();
             //@ts-ignore
             const form = {
+              //@ts-ignore
               email: e.target.email.value,
+              //@ts-ignore
               firstname: e.target.firstname.value,
+              //@ts-ignore
               lastname: e.target.lastname.value,
+              //@ts-ignore
               message: e.target.message.value,
             };
             sendContactForm(form).then(() => toast.success("Sent!"));
