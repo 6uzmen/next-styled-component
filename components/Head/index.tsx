@@ -1,6 +1,6 @@
 import React from "react";
 import NextHead from "next/head";
-import Script from "next/script"
+import Script from "next/script";
 export default function Head() {
   return (
     <>
@@ -59,8 +59,32 @@ export default function Head() {
           name="msapplication-TileImage"
           content="https://media-exp1.licdn.com/dms/image/C510BAQED4tGId8dhog/company-logo_200_200/0/1519862852559?e=2159024400&v=beta&t=B4IwOMzOaY0rHUFW7u1iM7t0MxNCTCMPdIZyGmZmscY"
         />
-        <meta name="description" content="A trusted partner for the technologies driving the future. We build solutions for your development projects as a nearshore software development company." />
-        <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7707659.js"></script>
+        <meta
+          name="description"
+          content="A trusted partner for the technologies driving the future. We build solutions for your development projects as a nearshore software development company."
+        />
+        <script
+          type="text/javascript"
+          id="hs-script-loader"
+          async
+          defer
+          src="//js.hs-scripts.com/7707659.js"
+        ></script>
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=UA-2664098-14`}
+        />
+
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-2664098-14');
+          `,
+          }}
+        />
       </NextHead>
     </>
   );
