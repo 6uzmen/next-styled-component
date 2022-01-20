@@ -57,3 +57,17 @@ export const Title = styled.h2`
     font-size: 24px;
   }
 `;
+
+export const SlideBox = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 60px;
+  height: 100%;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
+  :hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+`;
