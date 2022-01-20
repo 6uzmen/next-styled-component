@@ -13,7 +13,13 @@ import OurServices from "../containers/OurServices";
 // const OurServices = dynamic(() => import("../containers/OurServices"));
 const AboutUs = dynamic(() => import("../containers/AboutUs"));
 const CaseStudy = dynamic(() => import("../containers/CaseStudy"));
-const ClientsAndTestimonials = dynamic(() => import("../containers/ClientsAndTestimonials"));
+const ClientsAndTestimonials = dynamic(() =>
+  import("../containers/ClientsAndTestimonials")
+);
+import Footer from "../components/Footer";
+const CookiesMessage = dynamic(() => import("../components/CookiesMessage"), {
+  ssr: false,
+});
 // const Blog = dynamic(() => import("../containers/Blog"), { ssr: false, });
 // const ContactUs = dynamic(() => import("../containers/ContactUs"), { ssr: false, });
 // const Navbar = dynamic(() => import("../components/Navbar"), { ssr: false, });
@@ -31,6 +37,8 @@ const Home = () => {
       <ClientsAndTestimonials />
       <Blog />
       <ContactUs />
+      <Footer />
+      <CookiesMessage />
       <ToastContainer />
     </div>
   );
