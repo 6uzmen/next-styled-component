@@ -42,22 +42,22 @@ export default function Head() {
         <link
           rel="apple-touch-icon"
           sizes="57x57"
-          href="https://zircon.tech/wp-content/themes/startit/apple-icon-57x57.png"
+          href="https://media-exp1.licdn.com/dms/image/C510BAQED4tGId8dhog/company-logo_200_200/0/1519862852559?e=2159024400&v=beta&t=B4IwOMzOaY0rHUFW7u1iM7t0MxNCTCMPdIZyGmZmscY"
         />
         <link
           rel="icon"
-          href="https://zircon.tech/wp-content/uploads/2019/10/Zirconfavicon2.png"
+          href="https://media-exp1.licdn.com/dms/image/C510BAQED4tGId8dhog/company-logo_200_200/0/1519862852559?e=2159024400&v=beta&t=B4IwOMzOaY0rHUFW7u1iM7t0MxNCTCMPdIZyGmZmscY"
           data-spai-egr="1"
           sizes="32x32"
         />
         <link
           rel="apple-touch-icon"
-          href="https://zircon.tech/wp-content/uploads/2019/10/Zirconfavicon2.png"
+          href="https://media-exp1.licdn.com/dms/image/C510BAQED4tGId8dhog/company-logo_200_200/0/1519862852559?e=2159024400&v=beta&t=B4IwOMzOaY0rHUFW7u1iM7t0MxNCTCMPdIZyGmZmscY"
           data-spai-egr="1"
         />
         <meta
           name="msapplication-TileImage"
-          content="https://zircon.tech/wp-content/uploads/2019/10/Zirconfavicon2.png"
+          content="https://media-exp1.licdn.com/dms/image/C510BAQED4tGId8dhog/company-logo_200_200/0/1519862852559?e=2159024400&v=beta&t=B4IwOMzOaY0rHUFW7u1iM7t0MxNCTCMPdIZyGmZmscY"
         />
         <meta name="description" content="A trusted partner for the technologies driving the future. We build solutions for your development projects as a nearshore software development company." />
         <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/7707659.js"></script>
