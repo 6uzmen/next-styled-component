@@ -1,5 +1,10 @@
 import styled from "styled-components";
 
+export const Container = styled.div`
+  background-color: black;
+  z-index: 0;
+`;
+
 export const BackgroundColor = styled.div`
   background-color: black;
   position: absolute;

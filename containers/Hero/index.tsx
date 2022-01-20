@@ -8,7 +8,6 @@ export default function Hero() {
   const [mobile, setMobile] = useState<boolean>(false);
   const [scrollPosition, setScrollPosition] = useState(1);
 
-
   const listenToScroll = () => {
     const winScroll =
       document.body.scrollTop || document.documentElement.scrollTop;
@@ -30,7 +29,11 @@ export default function Hero() {
   }, []);
 
   useEffect(() => {
-    if (isMobile) { setMobile(true) } else { setMobile(false) }
+    if (isMobile) {
+      setMobile(true);
+    } else {
+      setMobile(false);
+    }
   }, [isMobile]);
 
   const vidRef = useRef<HTMLVideoElement>(null);
@@ -43,7 +46,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="position-relative">
+    <S.Container className="position-relative">
       <S.BackgroundVideoContainer scale={scrollPosition}>
         <S.BackgroundVideo
           poster="/assets/images/png/Media.png"
@@ -97,6 +100,6 @@ export default function Hero() {
           </S.AwardsContainer>
         </S.LandingContainer>
       </div>
-    </div>
+    </S.Container>
   );
 }
