@@ -49,7 +49,7 @@ export const Slideshow = forwardRef(({ items }: IProps, ref) => {
     },
   }));
   return (
-    <S.TestimonialContainer className="d-flex flex-wrap overflow-hidden px-4">
+    <S.TestimonialContainer className="d-flex flex-wrap overflow-hidden px-0 px-lg-4">
       <motion.div
         className="col-12"
         style={{ cursor: "grab" }}
