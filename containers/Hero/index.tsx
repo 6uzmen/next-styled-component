@@ -49,7 +49,6 @@ export default function Hero() {
     <S.Container className="position-relative">
       <S.BackgroundVideoContainer scale={scrollPosition}>
         <S.BackgroundVideo
-          poster="/assets/images/png/Media.png"
           ref={vidRef}
           autoPlay={true}
           playsInline={true}
