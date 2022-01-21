@@ -57,7 +57,7 @@ export default function Hero() {
           loop={true}
           muted={true}
           controls={false}
-          src="assets/videos/zircon-hero.webm"
+          src="assets/videos/zircon-hero-compressed.mp4"
         />
       </S.BackgroundVideoContainer>
       <div className="position-relative">
