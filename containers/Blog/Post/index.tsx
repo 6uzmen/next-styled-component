@@ -17,6 +17,7 @@ export const Post = ({ publishDate, name, url }: IPost) => {
   };
   const date = new Date(publishDate ? publishDate : "").toLocaleDateString(
     "en-US",
+    //@ts-ignore
     dateOptions
   );
   return (
