@@ -1,4 +1,4 @@
 [[redirects]]
-  from = “https://zircon.tech/blog/*”
-  to = “https://blog.zircon.tech/blog/:splat”
+  from = https://zircon.tech/blog/*
+  to = https://blog.zircon.tech/blog/:splat
   status = 200
