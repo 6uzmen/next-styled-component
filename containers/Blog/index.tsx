@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import { getBlogPosts } from "../../api/HubSpot/posts";
 import { Post } from "./Post";
 import { Link, TextDate, Title as TitlePost } from "./Post/styles";
 import { Label, Title, Paragraph, BlogContainer, ImageWrapper } from "./styles";
@@ -11,7 +13,8 @@ const allPosts = [
   },
   {
     textDate: "July 14th, 2021",
-    title: "What is Blockchain Technology and Why Is It Important for Your Company",
+    title:
+      "What is Blockchain Technology and Why Is It Important for Your Company",
     link: "https://blog.zircon.tech/blog/what-is-blockchain-technology-and-why-is-it-important-for-your-company/",
   },
   {
@@ -27,6 +30,26 @@ const allPosts = [
 ];
 
 export default function Blog() {
+  const [blogs, setBlogs] = useState<any>([]);
+
+  useEffect(() => {
+    getBlogPosts().then((blogs: any) => {
+      return setBlogs(blogs?.data?.results?.reverse());
+    });
+  }, []);
+
+  const dateOptions = {
+    year: "numeric",
+    weekday: "short",
+    month: "long",
+    day: "numeric",
+  };
+
+  const formatDate = (date: string) => {
+    //@ts-ignore
+    return new Date(date).toLocaleDateString("en-US", dateOptions);
+  };
+
   return (
     <BlogContainer
       id="blog"
@@ -54,32 +77,35 @@ export default function Blog() {
               <ImageWrapper>
                 <img
                   alt="nearshoring-img"
-                  src='https://xylo-assets.s3.amazonaws.com/images/png/img-blog.png'
-                  width='100%'
-                  style={{ objectFit: 'cover' }}
+                  src="https://xylo-assets.s3.amazonaws.com/images/png/img-blog.png"
+                  width="100%"
+                  style={{ objectFit: "cover" }}
                 />
               </ImageWrapper>
             </div>
             <div className="d-flex col-lg-7 col-md-12 bg-primary">
-              <div className="d-flex flex-column my-auto px-5 py-sm-4 py-lg-0">
-                <TextDate className="text-white">
-                  {allPosts[0].textDate}
-                </TextDate>
-                <TitlePost>{allPosts[0].title}</TitlePost>
-                <Link className="text-white" href={allPosts[0].link}>
-                  <img
-                    alt="icon-link"
-                    src="assets/images/svg/icons/arrow-right-white.svg"
-                  />
-                  View Article
-                </Link>
-              </div>
+              {blogs && (
+                <div className="d-flex flex-column my-auto px-5 py-sm-4 py-lg-0">
+                  {/* <TextDate className="text-white">
+                    {formatDate(blogs[0]?.publishDate)}
+                  </TextDate> */}
+                  <TitlePost>{blogs[0]?.name}</TitlePost>
+                  <Link className="text-white" href={blogs[0]?.url}>
+                    <img
+                      alt="icon-link"
+                      src="assets/images/svg/icons/arrow-right-white.svg"
+                    />
+                    View Article
+                  </Link>
+                </div>
+              )}
             </div>
           </div>
           <div className="grid">
-            {allPosts.map((post, index) => (
-              index > 0 && <Post key={index} {...post} />
-            ))}
+            {blogs &&
+              blogs
+                ?.filter((x, i) => i > 0)
+                ?.map((post, index) => <Post key={index} {...post} />)}
           </div>
         </div>
       </div>

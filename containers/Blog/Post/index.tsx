@@ -2,24 +2,38 @@ import React from "react";
 import { Link, PostContainer, TextDate, Title } from "./styles";
 
 interface IPost {
-  textDate: string;
-  title: string;
-  link: string;
+  publishDate?: string;
+  name?: string;
+  url?: string;
   background?: string;
 }
 
-export const Post = ({ textDate, title, link }: IPost) => {
+export const Post = ({ publishDate, name, url }: IPost) => {
+  const dateOptions = {
+    year: "numeric",
+    weekday: "short",
+    month: "long",
+    day: "numeric",
+  };
+  const date = new Date(publishDate ? publishDate : "").toLocaleDateString(
+    "en-US",
+    dateOptions
+  );
   return (
-    <PostContainer className="g-col-lg-6 g-col-xl-4 g-col-12">
-      <TextDate>{textDate}</TextDate>
-      <Title>{title}</Title>
-      <Link href={link} isAbsolute>
-        <img
-          alt="icon-link"
-          src="assets/images/svg/icons/arrow-right-blue.svg"
-        />
-        View Article
-      </Link>
-    </PostContainer>
+    publishDate &&
+    name &&
+    url && (
+      <PostContainer className="g-col-lg-6 g-col-xl-4 g-col-12">
+        {/* <TextDate>{date && date}</TextDate> */}
+        <Title>{name && name}</Title>
+        <Link href={url && url} isAbsolute>
+          <img
+            alt="icon-url"
+            src="assets/images/svg/icons/arrow-right-blue.svg"
+          />
+          View Article
+        </Link>
+      </PostContainer>
+    )
   );
 };

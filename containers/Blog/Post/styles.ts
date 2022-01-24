@@ -22,11 +22,11 @@ export const TextDate = styled.span`
 `;
 
 export const Title = styled.h3`
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 400;
   color: #fff;
   font-family: Rubik;
-  margin-top: 24px;
+  margin-top: 12px;
   @media only screen and (max-width: 767px) {
     font-size: 22px;
   }
