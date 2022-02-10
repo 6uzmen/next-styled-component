@@ -1,5 +1,3 @@
-/blog/\* https://blog.zircon.tech/blog/:splat
-/blogs https://blog.zircon.tech/
 /blog/circular-economy-hazardous-waste-ecuadorian-association-lubricants-apel-implements-smart-contracts https://blog.zircon.tech/
 /blog/gartners-top-technology-trends-for-2021 https://blog.zircon.tech/
 /blog/zircontech-posicionado-como-empresa-de-consultoria-software-y-servicios-empresariales-en-el-primer-mapa-sobre-el-ecosistema-blockchain-en-latinoamerica https://blog.zircon.tech/
@@ -11,3 +9,5 @@
 /blog/infuy-as-a-speaker-in-developerweek-san-francisco-usa https://blog.zircon.tech/
 /blog/zircon-tech-acompano-el-lanzamiento-de-givetrack-en-labitconf-2018 https://blog.zircon.tech/blog/zircon-tech-accompanied-the-launch-of-givetrack-in-labitconf-2018
 /blog/zircontech-presenta-solucion-de-seguros-automotores-basados-en-uso-sobre-hyperledger https://blog.zircon.tech/blog/zircon-tech-to-demo-usage-based-insurance-on-hyperledger
+/blog/\* https://blog.zircon.tech/blog/:splat
+/blogs https://blog.zircon.tech/
