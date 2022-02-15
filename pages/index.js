@@ -14,6 +14,7 @@ const ClientsAndTestimonials = dynamic(() =>
   import("../containers/ClientsAndTestimonials")
 );
 import Footer from "../components/Footer";
+import Layout from "../components/Layout";
 const CookiesMessage = dynamic(() => import("../components/CookiesMessage"), {
   ssr: false,
 });
@@ -21,8 +22,6 @@ const CookiesMessage = dynamic(() => import("../components/CookiesMessage"), {
 const Home = () => {
   return (
     <div>
-      <Head />
-      <Navbar />
       <Hero />
       <OurServices />
       <AboutUs />
@@ -36,5 +35,13 @@ const Home = () => {
     </div>
   );
 };
+
+Home.getLayout = (page) => {
+  return (
+    <Layout navBarVariant={false}>
+      {page}
+    </Layout>
+  )
+}
 
 export default Home;

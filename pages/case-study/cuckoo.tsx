@@ -1,10 +1,9 @@
 import React from "react";
-import Head from "../../components/Head";
 import HorizontalMenu from "../../components/HorizontalMenu";
-import Navbar from "../../components/Navbar";
 import * as S from "./styles";
 import { MenuItems } from "./menuItems";
 import CaseStudyDetail, { CaseStudyDetailType } from "../../containers/CaseStudyDetail";
+import Layout from "../../components/Layout";
 
 export const caseStudy: CaseStudyDetailType = {
   title: `Cuckoo 🎵`,
@@ -18,8 +17,6 @@ export const caseStudy: CaseStudyDetailType = {
 export default function Cuckoo() {
   return (
     <div>
-      <Navbar variant={true} />
-      <Head />
       <S.Content className="d-flex flex-wrap gap-3">
         <div className="flex-grow-1 d-none d-xl-flex">
           <HorizontalMenu active="cuckoo" className="flex-grow-1 col-12" items={MenuItems} />
@@ -28,4 +25,12 @@ export default function Cuckoo() {
       </S.Content>
     </div>
   );
+}
+
+Cuckoo.getLayout = (page) => {
+  return (
+    <Layout navBarVariant={true}>
+      {page}
+    </Layout>
+  )
 }

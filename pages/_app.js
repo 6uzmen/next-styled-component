@@ -6,7 +6,10 @@ import "../style/custom.scss";
 import "bootstrap/dist/css/bootstrap.css";
 
 function MyApp({ Component, pageProps }) {
-  return (
+
+  const getLayout = Component.getLayout ?? (page => page)
+
+  return getLayout(
     <ThemeProvider theme={lightTheme}>
       <GlobalStyles />
       <Component {...pageProps} />
