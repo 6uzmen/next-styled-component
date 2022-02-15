@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React from "react";
 import dynamic from "next/dynamic";
 import Item from "./components/Item";
 const Slideshow = dynamic(() => import("./components/Slideshow"), {

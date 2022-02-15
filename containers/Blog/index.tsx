@@ -1,33 +1,8 @@
-import Image from "next/image";
 import { useEffect, useState } from "react";
 import { getBlogPosts } from "../../api/HubSpot/posts";
 import { Post } from "./Post";
-import { Link, TextDate, Title as TitlePost } from "./Post/styles";
+import { Link, Title as TitlePost } from "./Post/styles";
 import { Label, Title, Paragraph, BlogContainer, ImageWrapper } from "./styles";
-
-const allPosts = [
-  {
-    textDate: "November 17th, 2021",
-    title: "The Ultimate Offshore Software Development Guide for CEOs",
-    link: "https://blog.zircon.tech/blog/the-ultimate-offshore-software-development-guide-for-ceos/",
-  },
-  {
-    textDate: "July 14th, 2021",
-    title:
-      "What is Blockchain Technology and Why Is It Important for Your Company",
-    link: "https://blog.zircon.tech/blog/what-is-blockchain-technology-and-why-is-it-important-for-your-company/",
-  },
-  {
-    textDate: "August 18th, 2021",
-    title: "Everything You Need to Know About Nearshoring and Its Benefits",
-    link: "https://blog.zircon.tech/blog/everything-nearshoring-benefits/",
-  },
-  {
-    textDate: "August 04th, 2021",
-    title: "What is Decentralized Finance (DeFi)? Benefits and Advantages",
-    link: "https://blog.zircon.tech/blog/what-is-decentralized-finance-defi-benefits-and-advantages/",
-  },
-];
 
 export default function Blog() {
   const [blogs, setBlogs] = useState<any>([]);
@@ -37,18 +12,6 @@ export default function Blog() {
       return setBlogs(blogs?.data?.results?.reverse());
     });
   }, []);
-
-  const dateOptions = {
-    year: "numeric",
-    weekday: "short",
-    month: "long",
-    day: "numeric",
-  };
-
-  const formatDate = (date: string) => {
-    //@ts-ignore
-    return new Date(date).toLocaleDateString("en-US", dateOptions);
-  };
 
   return (
     <BlogContainer
@@ -86,9 +49,6 @@ export default function Blog() {
             <div className="d-flex col-lg-7 col-md-12 bg-primary">
               {blogs && (
                 <div className="d-flex flex-column my-auto px-5 py-sm-4 py-lg-0">
-                  {/* <TextDate className="text-white">
-                    {formatDate(blogs[0]?.publishDate)}
-                  </TextDate> */}
                   <TitlePost>{blogs[0]?.name}</TitlePost>
                   <Link className="text-white" href={blogs[0]?.url}>
                     <img
@@ -104,7 +64,7 @@ export default function Blog() {
           <div className="grid">
             {blogs &&
               blogs
-                ?.filter((x, i) => i > 0)
+                ?.filter((_, i) => i > 0)
                 ?.map((post, index) => <Post key={index} {...post} />)}
           </div>
         </div>

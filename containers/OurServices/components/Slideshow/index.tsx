@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { wrap } from "popmotion";
 import Service from "../../components/Service";
 import { ServiceType } from "../..";
