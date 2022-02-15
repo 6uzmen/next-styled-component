@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import Banner from "./components/Banner/Banner";
 import Slideshow from "./components/Slideshow";
 import * as S from "./styles";
+import Image from "next/image"
 
 export type TypeTestimonial = {
   title: string;
@@ -69,24 +70,26 @@ export default function ClientsAndTestimonials() {
         </S.TitleContainer>
         <div className="d-flex col-12 col-xl-6">
           <S.SlideBox
-            direction={true}
+            direction={1}
             className="d-none d-lg-flex"
             onClick={() => childRef.current.doSwipe(-1)}
           >
-            <img
-              src="/assets/images/svg/icons/CaretLeft.svg"
+            <Image
+              src="https://xylo-assets.s3.amazonaws.com/images/svg/CaretLeft.svg"
               alt="left arrow"
+              width={14} height={14}
             />
           </S.SlideBox>
           <Slideshow ref={childRef} items={allTestimonials} />
           <S.SlideBox
-            direction={false}
+            direction={0}
             className="d-none d-lg-flex"
             onClick={() => childRef.current.doSwipe(1)}
           >
-            <img
-              src="/assets/images/svg/icons/CaretRight.svg"
+            <Image
+              src="https://xylo-assets.s3.amazonaws.com/images/svg/RightLeft.svg"
               alt="right arrow"
+              width={14} height={14}
             />
           </S.SlideBox>
         </div>

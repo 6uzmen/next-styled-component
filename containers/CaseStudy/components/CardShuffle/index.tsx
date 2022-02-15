@@ -4,6 +4,7 @@ import { arrayMoveImmutable } from "array-move";
 import styled from "styled-components";
 import { CaseStudieType } from "../..";
 import { Link } from "../../styles";
+import Image from "next/image"
 
 const CARD_COLORS = ["#8acbfd", "#9ed5ff", " #b3deff", "#c4e4fc"];
 const CARD_OFFSET = -20;
@@ -74,8 +75,11 @@ export const CardShuffle = ({ items }: IProps) => {
             <CompanyLogo src={card.src} alt="company-logo" />
             {card.description}
             <Link className="mt-2">
-              <img src="assets/images/svg/icons/plus.svg" alt="Plus icon" />
-              See More
+              <Image src="https://xylo-assets.s3.amazonaws.com/images/svg/icons/plus.svg" alt="Plus icon" width={16}
+                height={16} />
+              <span>
+                See More
+              </span>
             </Link>
           </motion.li>
         );

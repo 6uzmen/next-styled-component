@@ -58,7 +58,7 @@ export const Title = styled.h2`
   }
 `;
 
-export const SlideBox = styled.div<{ direction: boolean }>`
+export const SlideBox = styled.div<{ direction: number }>`
   display: flex;
   align-items: center;
   justify-content: center;
