@@ -19,7 +19,6 @@
     "**/*.ts",
     "**/*.tsx",
     "pages/index.js",
-    "pages/index.js"
-  ],
+    "pages/index.js"  ],
   "exclude": ["node_modules"]
 }
