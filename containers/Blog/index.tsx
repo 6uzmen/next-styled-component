@@ -1,15 +1,23 @@
-import { useEffect, useState } from "react";
-import { getBlogPosts } from "../../api/HubSpot/posts";
 import { Post } from "./Post";
 import { Link, Title as TitlePost } from "./Post/styles";
 import { Label, Title, Paragraph, BlogContainer, ImageWrapper } from "./styles";
+import Image from "next/image"
+import { useEffect, useState } from "react";
+import { getBlogPosts } from "../../api/HubSpot/posts";
 
 export default function Blog() {
+
   const [blogs, setBlogs] = useState<any>([]);
 
   useEffect(() => {
     getBlogPosts().then((blogs: any) => {
-      return setBlogs(blogs?.data?.results?.reverse());
+      let _blogs: any[] = blogs?.data?.results?.reverse()
+
+      if (_blogs.length > 3) {
+        _blogs = _blogs.slice(0, 3)
+      }
+
+      return setBlogs(_blogs);
     });
   }, []);
 
@@ -27,22 +35,25 @@ export default function Blog() {
             Our insight about innovation, business and everything tech.
           </Paragraph>
           <Link href="https://blog.zircon.tech">
-            <img
+            <Image
               alt="icon-link"
-              src="assets/images/svg/icons/arrow-right-blue.svg"
+              src="https://xylo-assets.s3.amazonaws.com/images/svg/icons/arrow-right-blue.svg"
+              width={16}
+              height={16}
             />
-            View All Articles
+            <span className="ps-2">
+              View All Articles
+            </span>
           </Link>
         </div>
         <div className="col-12 col-xl-8 d-sm-flex flex-sm-wrap">
           <div className="d-none d-sm-block d-lg-flex mb-4 w-100">
             <div className="position-relative col-lg-5 col-md-12">
               <ImageWrapper>
-                <img
+                <Image
                   alt="nearshoring-img"
                   src="https://xylo-assets.s3.amazonaws.com/images/png/img-blog.png"
-                  width="100%"
-                  style={{ objectFit: "cover" }}
+                  layout="fill"
                 />
               </ImageWrapper>
             </div>
@@ -51,21 +62,26 @@ export default function Blog() {
                 <div className="d-flex flex-column my-auto px-5 py-sm-4 py-lg-0">
                   <TitlePost>{blogs[0]?.name}</TitlePost>
                   <Link className="text-white" href={blogs[0]?.url}>
-                    <img
+                    <Image
                       alt="icon-link"
-                      src="assets/images/svg/icons/arrow-right-white.svg"
+                      src="https://xylo-assets.s3.amazonaws.com/images/svg/icons/arrow-right-white.svg"
+                      width={16}
+                      height={16}
                     />
-                    View Article
+                    <span className="ps-2">
+                      View Article
+                    </span>
                   </Link>
                 </div>
               )}
             </div>
           </div>
-          <div className="grid">
-            {blogs &&
-              blogs
-                ?.filter((_, i) => i > 0)
-                ?.map((post, index) => <Post key={index} {...post} />)}
+          <div style={{ height: "200px" }}>
+            <div className="grid">
+              {blogs &&
+                blogs
+                  ?.map((post, index) => <Post key={index} {...post} />)}
+            </div>
           </div>
         </div>
       </div>

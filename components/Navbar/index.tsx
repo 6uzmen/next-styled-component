@@ -1,15 +1,45 @@
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
-import Image from "next/image";
 import { ButtonPrimary } from "../Button/styles";
 import * as S from "./styles";
 import { useMediaQuery } from "react-responsive";
 import VerticalMenu from "../VerticalMenu";
 import { useScrollBlock } from "../../utils/functions/scrollBlock";
 import { useRouter } from "next/router";
-
+import Image from "next/image"
+import Link from "next/link"
 interface IProps {
   variant?: boolean;
+}
+
+interface RenderLogoProps {
+  dark?: boolean
+  isSmallDevice: boolean
+}
+
+interface LogoProps {
+  isSmallDevice: boolean
+}
+
+const DarkLogo = ({ isSmallDevice }: LogoProps) => {
+  return (<Image
+    height="22px"
+    width={isSmallDevice ? "120px" : "160px"}
+    src='https://xylo-assets.s3.amazonaws.com/images/svg/zircon-typo-dark.svg'
+    alt="Zircontech-Logo"
+  />)
+}
+
+const DefaultLogo = ({ isSmallDevice }: LogoProps) => {
+  return (<Image
+    height="22px"
+    width={isSmallDevice ? "120px" : "160px"}
+    src='https://xylo-assets.s3.amazonaws.com/images/svg/zircon-typo.svg'
+    alt="Zircontech-Logo"
+  />)
+}
+
+const RenderLogo: React.FC<RenderLogoProps> = ({ dark, isSmallDevice }) => {
+  return (dark ? <DarkLogo isSmallDevice={isSmallDevice} /> : <DefaultLogo isSmallDevice={isSmallDevice} />)
 }
 
 export default function Navbar({ variant = false }: IProps) {
@@ -17,7 +47,6 @@ export default function Navbar({ variant = false }: IProps) {
   const isSmallDevice = useMediaQuery({ query: "(max-width: 768px)" });
   const isLargeDevice = useMediaQuery({ query: "(max-width: 1199px)" });
   const [openMenu, setOpenMenu] = useState<boolean>(false);
-  const [currentLogo, setCurrentLogo] = useState<string>('https://xylo-assets.s3.amazonaws.com/images/svg/zircon-typo-dark.svg')
   const items = [
     {
       label: "Our Services",
@@ -85,30 +114,14 @@ export default function Navbar({ variant = false }: IProps) {
     }
   }, [openMenu]);
 
-  useEffect(() => {
-    const logo = (isLargeDevice || scrollPosition > 0 || variant)
-      ? "https://xylo-assets.s3.amazonaws.com/images/svg/zircon-typo-dark.svg"
-      : "https://xylo-assets.s3.amazonaws.com/images/svg/zircon-typo.svg"
-    setCurrentLogo(logo)
-  }, [isLargeDevice, scrollPosition, variant]);
-
   return (
     <S.MainContainer showNavbar={showNavbar}>
       <S.NavbarContainer variant={variant || isLargeDevice} isScrolled={scrollPosition > 0}>
-        <img
-          className="pointer"
-          onClick={(e) => {
-            e.preventDefault();
-            router.push("/");
-            window.scrollTo(0, 0);
-          }}
-          height="22px"
-          width={isSmallDevice ? "120px" : "160px"}
-          src={
-            currentLogo
-          }
-          alt="Zircontech-Logo"
-        />
+        <Link href="/">
+          <a className="pointer p-1">
+            <RenderLogo isSmallDevice={isSmallDevice} dark={(isLargeDevice || scrollPosition > 0 || variant)} />
+          </a>
+        </Link>
         <S.MenuContainer>
           <div className="d-none d-xl-flex px-4 ">
             {items.map((item, index) => (
@@ -125,7 +138,13 @@ export default function Navbar({ variant = false }: IProps) {
           </div>
           <ButtonPrimary
             className="mx-2 px-3 px-sm-4 px-lg-4"
-            onClick={() => window.scrollTo(0, document.body.scrollHeight)}
+            onClick={() => {
+              if (router.pathname !== "/") {
+                router.replace("/#contact")
+              } else {
+                window.scrollTo(0, document.body.scrollHeight)
+              }
+            }}
           >
             Contact Us
           </ButtonPrimary>

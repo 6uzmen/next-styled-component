@@ -5,6 +5,7 @@ import Navbar from "../../components/Navbar";
 import * as S from "./styles";
 import { MenuItems } from "./menuItems";
 import CaseStudyDetail, { CaseStudyDetailType } from "../../containers/CaseStudyDetail";
+import Layout from "../../components/Layout";
 
 export const caseStudy: CaseStudyDetailType = {
   title: `Givetrack 🍃`,
@@ -18,8 +19,6 @@ export const caseStudy: CaseStudyDetailType = {
 export default function Givetrack() {
   return (
     <div>
-      <Navbar variant={true} />
-      <Head />
       <S.Content className="d-flex flex-wrap gap-3">
         <div className="flex-grow-1 d-none d-xl-flex">
           <HorizontalMenu active="givetrack" className="flex-grow-1 col-12" items={MenuItems} />
@@ -28,4 +27,12 @@ export default function Givetrack() {
       </S.Content>
     </div>
   );
+}
+
+Givetrack.getLayout = (page) => {
+  return (
+    <Layout navBarVariant={true}>
+      {page}
+    </Layout>
+  )
 }

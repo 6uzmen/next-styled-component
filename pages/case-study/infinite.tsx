@@ -5,6 +5,7 @@ import Navbar from "../../components/Navbar";
 import * as S from "./styles";
 import { MenuItems } from "./menuItems";
 import CaseStudyDetail, { CaseStudyDetailType } from "../../containers/CaseStudyDetail";
+import Layout from "../../components/Layout";
 
 export const caseStudy: CaseStudyDetailType = {
   title: `✨Infinite✨`,
@@ -28,4 +29,12 @@ export default function Infinite() {
       </S.Content>
     </div>
   );
+}
+
+Infinite.getLayout = (page) => {
+  return (
+    <Layout navBarVariant={true}>
+      {page}
+    </Layout>
+  )
 }

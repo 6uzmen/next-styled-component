@@ -1,5 +1,14 @@
 # ZirconTech Web
 
+## Flujo sugerido
+
+1. `netlify link`
+
+2. `netlify dev`
+
+3. `netlify build`
+
+4. `netlify deploy`
 ## Setup
 
 ### Instalar yarn
@@ -38,20 +47,11 @@ Seleccionar las opciones:
 
 ### En desarrollo
 
-
 Con netlify (recomendado, así comprobamos que todo vaya a funcionar con un deploy más tarde): `netlify dev`
 
 Con next: `yarn dev`
 
-### En producción
-
-Este comando se puede correr sin miedo estando en la branch `dev`, teniendo configurada correctamente la CLI de Netlify para usar `dev-zircon-web`. Se puede corroborar esto corriendo el comando `netlify status`, si dice que current site es `dev-zircon-web`, el deploy se puede correr sin mayores preocupaciones.
-
-Se puede hacer un deploy manual usando el siguiente comando:
-
-`netlify deploy`
-
-Pero lo recomendable es hacer un commit (git commit), y un push (git push), esto hará el deploy automático además de agregar los cambios al repositorio de GitHub. 
+Estando en la branch dev, también se puede usar el comando `netlify deploy`, el mismo hará deploy en modo preview a una URL dedicada específicamente a los cambios que se hayan realizado (verificar que efectivamente estamos en la branch `dev` y que que el site al que hacemos deploy es a `dev-zircon-web`)
 
 ## Notas
 

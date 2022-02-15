@@ -10,12 +10,12 @@ import { caseStudy as cuckooCase } from './cuckoo'
 import { caseStudy as givetrackCase } from './givetrack'
 import { caseStudy as monaxCase } from './monax'
 import { CaseStudyDetailType } from "../../containers/CaseStudyDetail";
+import Layout from "../../components/Layout";
+
 export default function CaseStudy() {
     const casesArray: CaseStudyDetailType[] = [infiniteCase, cuckooCase, givetrackCase, monaxCase];
     return (
         <div>
-            <Navbar variant={true} />
-            <Head />
             <S.Content className="d-flex flex-wrap gap-3">
                 <S.Title className='col-12'>Case Studies</S.Title>
                 <div className="flex-grow-1 d-none d-xl-flex">
@@ -47,4 +47,12 @@ export default function CaseStudy() {
             </S.Content>
         </div>
     );
+}
+
+CaseStudy.getLayout = (page) => {
+    return (
+        <Layout navBarVariant={true}>
+            {page}
+        </Layout>
+    )
 }
