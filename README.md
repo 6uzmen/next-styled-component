@@ -2,13 +2,9 @@
 
 ## Setup
 
-### Instalar yarn
-
-`npm i -g yarn`
-
 ### Instalar dependencias
 
-`yarn install`
+`npm install`
 
 ### Netlify
 
@@ -41,7 +37,7 @@ Seleccionar las opciones:
 
 Con netlify (recomendado, así comprobamos que todo vaya a funcionar con un deploy más tarde): `netlify dev`
 
-Con next: `yarn dev`
+Con next: `npm dev`
 
 ### En producción
 
