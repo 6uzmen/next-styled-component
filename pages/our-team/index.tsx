@@ -1,3 +1,4 @@
+import router from "next/router";
 import React from "react";
 import { ButtonPrimary } from "../../components/Button/styles";
 import Layout from "../../components/Layout";
@@ -25,7 +26,7 @@ export default function Team() {
               carry out the most complex projects, designing and developing
               the technological solution from start to finish.
             </S.TeamMemberDescription>
-            <ButtonPrimary className="mt-4">Contact Us</ButtonPrimary>
+            <ButtonPrimary className="mt-4" onClick={() => router.replace("/#contact")}>Contact Us</ButtonPrimary>
           </div>
           <S.TeamImage className='col-6 d-none d-xl-flex' src="https://xylo-assets.s3.amazonaws.com/images/png/our-team.png" />
         </S.AboutTeamContainer>
