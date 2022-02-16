@@ -1,31 +1,15 @@
 ## -- PROD
 [[redirects]] # cuando hacemos click en ver todos los articulos, ir al index del Blog
-  from = 'https://zircon.tech/blogs' 
+  from = '/blogs' 
   to = 'https://blog.zircon.tech/'
-  status = 200
-  force = true
-
-## -- DEV
-
-[[redirects]] # cuando hacemos click en ver todos los articulos, ir al index del Blog
-  from = 'https://dev-zircon-web.netlify.app/blogs' 
-  to = 'https://blog.dev-zircon-web.netlify.app/'
   status = 200
   force = true
 
 ## -- PROD
 
 [[redirects]] # cuando hacemos click en leer más de un artículo específico, redireccionar a /blog/:splat, que se mapea a blog.zircon.tech/:splat
-  from = 'https://zircon.tech/blog/:splat' 
-  to = 'https://blog.zircon.tech/:splat'
-  status = 200
-  force = true
-
-## -- DEV
-
-[[redirects]] # cuando hacemos click en leer más de un artículo específico, redireccionar a /blog/:splat, que se mapea a blog.zircon.tech/:splat
-  from = 'https://dev-zircon-web.netlify.app/blog/:splat' 
-  to = 'https://blog.dev-zircon-web.netlify.app/:splat'
+  from = '/blog/*' 
+  to = 'https://blog.zircon.tech/blog/:splat'
   status = 200
   force = true
 
@@ -39,19 +23,10 @@
 ## -- PROD
 
 [[redirects]] # cuando hacemos click en leer más de un servicio específico, redireccionar a /info/:splat, que se mapea a info.zircon.tech/:splat
-  from = 'https://zircon.tech/info/:splat' 
+  from = '/info/*' 
   to = 'https://info.zircon.tech/en-us/:splat'
   status = 200
   force = true
-
-## -- DEV
-
-[[redirects]] # cuando hacemos click en leer más de un servicio específico, redireccionar a /info/:splat, que se mapea a info.zircon.tech/:splat
-  from = 'https://dev-zircon-web.netlify.app/info/:splat' 
-  to = 'https://info.dev-zircon-web.netlify.app/en-us/:splat'
-  status = 200
-  force = true
-
 
 [build]
   command = "yarn build"
