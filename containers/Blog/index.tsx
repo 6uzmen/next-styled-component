@@ -12,10 +12,10 @@ export default function Blog() {
 
   useEffect(() => {
     getBlogPosts().then((blogs: any) => {
-      let _blogs: any[] = blogs?.data?.results?.reverse()
+      let _blogs: any[] = blogs?.data?.results?.sort((a,b) => (a.publishDate >= b.publishDate) ? 1 : ((b.publishDate >= a.publishDate) ? -1 : 0))
 
       if (_blogs.length > 3) {
-        _blogs = _blogs.slice(0, 3)
+        _blogs = _blogs.slice(0, 5)
       }
 
       return setBlogs(_blogs);
@@ -81,7 +81,7 @@ export default function Blog() {
             <div className="grid">
               {blogs &&
                 blogs
-                  ?.map((post, index) => <Post key={index} {...post} />)}
+                  ?.slice(1,4).map((post, index) => <Post key={index} {...post} />)}
             </div>
           </div>
         </div>

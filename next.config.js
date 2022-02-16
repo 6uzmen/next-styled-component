@@ -11,4 +11,13 @@ module.exports = {
     path: "",
     domains: ['xylo-assets.s3.amazonaws.com', '/']
   },
+  module: {
+    rules: [
+      {
+        test: /\.svg$/i,
+        issuer: /\.[jt]sx?$/,
+        use: ['@svgr/webpack'],
+      },
+    ],
+  },
 };

@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import Banner from "./components/Banner/Banner";
 import Slideshow from "./components/Slideshow";
 import * as S from "./styles";
-import Image from "next/image"
+import { CaretLeft, CaretRight } from "./components/CaretIcon"
 
 export type TypeTestimonial = {
   title: string;
@@ -74,11 +74,7 @@ export default function ClientsAndTestimonials() {
             className="d-none d-lg-flex"
             onClick={() => childRef.current.doSwipe(-1)}
           >
-            <Image
-              src="https://xylo-assets.s3.amazonaws.com/images/svg/CaretLeft.svg"
-              alt="left arrow"
-              width={14} height={14}
-            />
+            <CaretLeft />
           </S.SlideBox>
           <Slideshow ref={childRef} items={allTestimonials} />
           <S.SlideBox
@@ -86,11 +82,7 @@ export default function ClientsAndTestimonials() {
             className="d-none d-lg-flex"
             onClick={() => childRef.current.doSwipe(1)}
           >
-            <Image
-              src="https://xylo-assets.s3.amazonaws.com/images/svg/RightLeft.svg"
-              alt="right arrow"
-              width={14} height={14}
-            />
+            <CaretRight />
           </S.SlideBox>
         </div>
       </S.TestimonialWrapper>
