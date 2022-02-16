@@ -53,9 +53,9 @@ export default function Navbar({ variant = false }: IProps) {
       link: "/#services",
       subItems: [
         { label: "Blockchain", link: "https://zircon.tech/blockchain-software-company" },
-        { label: "IOT", link: "https://info.zircon.tech/en-us/zircontech-services-iot" },
-        { label: "Artificial Intelligence", link: "https://info.zircon.tech/en-us/zircontech-services-ai" },
-        { label: "Cloud", link: "https://info.zircon.tech/en-us/zircontech-services-cloud-consultancy" },
+        { label: "IOT", link: "https://zircon.tech/info/zircontech-services-iot" },
+        { label: "Artificial Intelligence", link: "https://zircon.tech/info/zircontech-services-ai" },
+        { label: "Cloud", link: "https://zircon.tech/info/zircontech-services-cloud-consultancy" },
       ],
     },
     { label: "About Us", link: "/#about-us" },
