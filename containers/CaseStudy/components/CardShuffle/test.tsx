@@ -1,5 +1,5 @@
 import React from "react";
-import { animated, interpolate, useSprings } from "react-spring";
+import { animated, to, useSprings } from "react-spring";
 import { useDrag } from "react-use-gesture";
 import { CardWrap, CardTitle, CardParagraph } from "./styles";
 import { arrayMoveImmutable } from "array-move";
@@ -82,7 +82,7 @@ export const CardTest = ({ items, setCurrentCase }: IProps) => {
           <animated.div
             {...bind(index)}
             style={{
-              backgroundColor: interpolate(
+              backgroundColor: to(
                 [zIndex],
                 (zIndex) => cards[(zIndex - 2)]
               ),
@@ -95,7 +95,7 @@ export const CardTest = ({ items, setCurrentCase }: IProps) => {
               position: "absolute",
               touchAction: "none",
               right: 0,
-              transform: interpolate(
+              transform: to(
                 [y, scale],
                 (y, scale) => `translateY(${y}px) scale(${scale})`
               ),
