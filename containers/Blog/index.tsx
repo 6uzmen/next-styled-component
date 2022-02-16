@@ -4,9 +4,10 @@ import { Label, Title, Paragraph, BlogContainer, ImageWrapper } from "./styles";
 import Image from "next/image"
 import { useEffect, useState } from "react";
 import { getBlogPosts } from "../../api/HubSpot/posts";
+import { useMediaQuery } from "react-responsive";
 
 export default function Blog() {
-
+  const isSmallDevice = useMediaQuery({ query: "(max-width: 768px)" });
   const [blogs, setBlogs] = useState<any>([]);
 
   useEffect(() => {
@@ -76,7 +77,7 @@ export default function Blog() {
               )}
             </div>
           </div>
-          <div style={{ height: "200px" }}>
+          <div style={{ height: isSmallDevice ? "100%" : "200px" }}>
             <div className="grid">
               {blogs &&
                 blogs
