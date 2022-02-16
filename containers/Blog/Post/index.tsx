@@ -4,16 +4,16 @@ import Image from "next/image"
 
 interface IPost {
   name?: string;
-  url?: string;
+  slug?: string;
   background?: string;
 }
 
-export const Post = ({ name, url }: IPost) => {
+export const Post = ({ name, slug }: IPost) => {
 
   return (
     <PostContainer className="g-col-lg-6 g-col-xl-4 g-col-12">
       <Title>{name || ''}</Title>
-      <Link href={url || '#'} isAbsolute>
+      <Link href={`/blog/${slug}`} isAbsolute>
         <Image
           alt="icon-url"
           src="https://xylo-assets.s3.amazonaws.com/images/svg/icons/arrow-right-blue.svg"

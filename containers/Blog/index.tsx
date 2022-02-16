@@ -34,7 +34,7 @@ export default function Blog() {
           <Paragraph>
             Our insight about innovation, business and everything tech.
           </Paragraph>
-          <Link href="https://blog.zircon.tech">
+          <Link href="https://zircon.tech/blog">
             <Image
               alt="icon-link"
               src="https://xylo-assets.s3.amazonaws.com/images/svg/icons/arrow-right-blue.svg"
@@ -61,7 +61,7 @@ export default function Blog() {
               {blogs && (
                 <div className="d-flex flex-column my-auto px-5 py-sm-4 py-lg-0">
                   <TitlePost>{blogs[0]?.name}</TitlePost>
-                  <Link className="text-white" href={blogs[0]?.url}>
+                  <Link className="text-white" href={`/blog/${blogs[0]?.slug}`}>
                     <Image
                       alt="icon-link"
                       src="https://xylo-assets.s3.amazonaws.com/images/svg/icons/arrow-right-white.svg"
