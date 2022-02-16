@@ -61,7 +61,7 @@ export default function Blog() {
               {blogs && (
                 <div className="d-flex flex-column my-auto px-5 py-sm-4 py-lg-0">
                   <TitlePost>{blogs[0]?.name}</TitlePost>
-                  <Link className="text-white" href={`/blog/${blogs[0]?.slug}`}>
+                  <Link className="text-white" href={`/${blogs[0]?.slug}`}>
                     <Image
                       alt="icon-link"
                       src="https://xylo-assets.s3.amazonaws.com/images/svg/icons/arrow-right-white.svg"
