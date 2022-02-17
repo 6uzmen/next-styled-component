@@ -23,10 +23,10 @@ export default function Navbar({ variant = false }: IProps) {
       label: "Our Services",
       link: "/#services",
       subItems: [
-        { label: "Blockchain", link: "https://zircon.tech/blockchain-software-company" },
-        { label: "IOT", link: "https://info.zircon.tech/en-us/zircontech-services-iot" },
-        { label: "Artificial Intelligence", link: "https://info.zircon.tech/en-us/zircontech-services-ai" },
-        { label: "Cloud", link: "https://info.zircon.tech/en-us/zircontech-services-cloud-consultancy" },
+        { label: "Blockchain", link: "/info/zircontech-services-blockchain" },
+        { label: "IOT", link: "/info/zircontech-services-iot" },
+        { label: "Artificial Intelligence", link: "/info/zircontech-services-ai" },
+        { label: "Cloud", link: "/info/zircontech-services-cloud-consultancy" },
       ],
     },
     { label: "About Us", link: "/#about-us" },
@@ -44,7 +44,7 @@ export default function Navbar({ variant = false }: IProps) {
         { label: "Monax", link: "/case-study/monax" },
       ],
     },
-    { label: "Blog", link: "https://blog.zircon.tech/" },
+    { label: "Blog", link: "/" },
   ];
   const [scrollPosition, setScrollPosition] = useState(0);
   const [showNavbar, setShowNavbar] = useState(true);

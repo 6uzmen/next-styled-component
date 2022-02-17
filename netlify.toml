@@ -1,0 +1,35 @@
+[[redirects]] # cuando hacemos click en ver todos los articulos, ir al index del Blog
+  from = '/blogs' 
+  to = 'https://blog.zircon.tech/'
+  status = 200
+  force = true
+
+[[redirects]] # cuando hacemos click en leer más de un artículo específico, redireccionar a /blog/:splat, que se mapea a blog.zircon.tech/:splat
+  from = '/blog/*' 
+  to = 'https://blog.zircon.tech/blog/:splat'
+  status = 200
+  force = true
+
+# Ejemplo: 
+#                           /:splat                            
+# https://zircon.tech/blog/zircontech-notarizer 
+#    ▼                          
+#                               /:splat
+# https://blog.zircon.tech/blog/zircontech-notarizer
+
+[[redirects]] # cuando hacemos click en leer más de un servicio específico, redireccionar a /info/:splat, que se mapea a info.zircon.tech/:splat
+  from = '/info/*' 
+  to = 'https://info.zircon.tech/en-us/:splat'
+  status = 200
+  force = true
+
+# Ejemplo: 
+#                           /:splat                            
+# https://zircon.tech/info/zircontech-services-iot 
+#    ▼                          
+#                               /:splat
+# https://info.zircon.tech/en-us/zircontech-services-iot
+
+[build]
+  command = "yarn build"
+  publish = ".next"

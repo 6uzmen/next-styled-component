@@ -18,28 +18,28 @@ const allServices: ServiceType[] = [
     icon: `${iconsRoute}blockchain.svg`,
     description:
       "We are a pioneer blockchain development company in pursuit of transforming industries around the world.",
-    link: "https://info.zircon.tech/en-us/zircontech-services-blockchain",
+    link: "/info/zircontech-services-blockchain",
   },
   {
     name: "IOT",
     icon: `${iconsRoute}iot.svg`,
     description:
       "Our experience in development and open source tools, positions us to handle all kinds of new digitally connected devices.",
-    link: "https://info.zircon.tech/en-us/zircontech-services-iot",
+    link: "/info/zircontech-services-iot",
   },
   {
     name: "Cloud",
     icon: `${iconsRoute}cloud.svg`,
     description:
       "We deliver consultancy services for cloud adoption strategy, application transformation, and support.",
-    link: "https://info.zircon.tech/en-us/zircontech-services-cloud-consultancy",
+    link: "/info/zircontech-services-cloud-consultancy",
   },
   {
     name: "Artificial Intelligence",
     icon: `${iconsRoute}ia.svg`,
     description:
       "We have certified experts that can help you explore the best AI opportunities to capture new markets, grow revenue, enhance profitability.",
-    link: "https://info.zircon.tech/en-us/zircontech-services-ai",
+    link: "/info/zircontech-services-ai",
   },
 ];
 
