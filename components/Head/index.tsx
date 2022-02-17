@@ -99,6 +99,7 @@ fbq('track', 'PageView');`,
           }}
         />
         <noscript>
+          {/* eslint-disable-next-line */}
           <img
             height="1"
             width="1"

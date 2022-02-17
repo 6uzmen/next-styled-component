@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { ButtonPrimary } from "../Button/styles";
 import * as S from "./styles";
 import { useMediaQuery } from "react-responsive";
