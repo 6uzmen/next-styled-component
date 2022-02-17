@@ -7,7 +7,10 @@ import { getBlogPosts } from "../../api/HubSpot/posts";
 import { useMediaQuery } from "react-responsive";
 
 export default function Blog() {
+
   const isSmallDevice = useMediaQuery({ query: "(max-width: 768px)" });
+  const isMediumDevice = useMediaQuery({ query: "(max-width: 988px)" });
+
   const [blogs, setBlogs] = useState<any>([]);
 
   useEffect(() => {
@@ -54,7 +57,9 @@ export default function Blog() {
                 <Image
                   alt="nearshoring-img"
                   src="https://xylo-assets.s3.amazonaws.com/images/png/img-blog.png"
-                  layout="fill"
+                  layout="responsive"
+                  width="100%"
+                  height="100%"
                 />
               </ImageWrapper>
             </div>
@@ -77,7 +82,7 @@ export default function Blog() {
               )}
             </div>
           </div>
-          <div style={{ height: isSmallDevice ? "100%" : "200px" }}>
+          <div style={{ height: isSmallDevice ? "100%" : (isMediumDevice ? "900px" : "200px") }}>
             <div className="grid">
               {blogs &&
                 blogs
