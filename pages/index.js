@@ -1,21 +1,22 @@
+import dynamic from "next/dynamic";
 import "react-toastify/dist/ReactToastify.css";
-import Layout from "../components/Layout";
-import React from "react";
 import { ToastContainer } from "react-toastify";
-import Blog from "../containers/Blog";
-import ContactUs from "../containers/ContactUs";
+
+import Layout from "../components/Layout";
+
 import Hero from "../containers/Hero";
 import OurServices from "../containers/OurServices";
-
 import AboutUs from "../containers/AboutUs"
-import CaseStudy from "../containers/CaseStudy"
+const CaseStudy = dynamic(() => import("../containers/CaseStudy"));
 import ClientsAndTestimonials from "../containers/ClientsAndTestimonials"
+import Blog from "../containers/Blog";
+import ContactUs from "../containers/ContactUs";
 
-import CookiesMessage from "../components/CookiesMessage"
+const CookiesMessage = dynamic(() => import("../components/CookiesMessage"), {
+  ssr: false,
+});
 
-import { getBlogPosts } from "../api/HubSpot/posts";
-
-const Home = ({ blogs }) => {
+const Home = () => {
 
   return (
     <div>
