@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import Head from "../../components/Head";
 import HorizontalMenu from "../../components/HorizontalMenu";
 import Navbar from "../../components/Navbar";
@@ -29,7 +29,7 @@ export default function Givetrack() {
   );
 }
 
-Givetrack.getLayout = (page) => {
+Givetrack.getLayout = (page: ReactElement) => {
   return (
     <Layout navBarVariant={true}>
       {page}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import HorizontalMenu from "../../components/HorizontalMenu";
 import * as S from "./styles";
 import { MenuItems } from "./menuItems";
@@ -27,7 +27,7 @@ export default function Cuckoo() {
   );
 }
 
-Cuckoo.getLayout = (page) => {
+Cuckoo.getLayout = (page: ReactElement) => {
   return (
     <Layout navBarVariant={true}>
       {page}

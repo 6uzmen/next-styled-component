@@ -1,5 +1,5 @@
 import router from "next/router";
-import React from "react";
+import React, { ReactElement } from "react";
 import { ButtonPrimary } from "../../components/Button/styles";
 import Layout from "../../components/Layout";
 import * as S from "./styles";
@@ -127,7 +127,7 @@ export default function Team() {
   );
 }
 
-Team.getLayout = (page) => {
+Team.getLayout = (page: ReactElement) => {
   return (
     <Layout navBarVariant={true}>
       {page}
