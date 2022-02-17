@@ -4,11 +4,11 @@ import { Link, PostContainer, TextDate, Title } from "./styles";
 interface IPost {
   publishDate?: string;
   name?: string;
-  url?: string;
+  slug?: string;
   background?: string;
 }
 
-export const Post = ({ publishDate, name, url }: IPost) => {
+export const Post = ({ publishDate, name, slug }: IPost) => {
   const dateOptions = {
     year: "numeric",
     weekday: "short",
@@ -23,11 +23,11 @@ export const Post = ({ publishDate, name, url }: IPost) => {
   return (
     publishDate &&
     name &&
-    url && (
+    slug && (
       <PostContainer className="g-col-lg-6 g-col-xl-4 g-col-12">
         {/* <TextDate>{date && date}</TextDate> */}
         <Title>{name && name}</Title>
-        <Link href={url && url} isAbsolute>
+        <Link href={`/${slug}`} isAbsolute>
           <img
             alt="icon-url"
             src="assets/images/svg/icons/arrow-right-blue.svg"

@@ -9,23 +9,23 @@ const allPosts = [
   {
     textDate: "November 17th, 2021",
     title: "The Ultimate Offshore Software Development Guide for CEOs",
-    link: "https://blog.zircon.tech/blog/the-ultimate-offshore-software-development-guide-for-ceos/",
+    link: "/blog/the-ultimate-offshore-software-development-guide-for-ceos/",
   },
   {
     textDate: "July 14th, 2021",
     title:
       "What is Blockchain Technology and Why Is It Important for Your Company",
-    link: "https://blog.zircon.tech/blog/what-is-blockchain-technology-and-why-is-it-important-for-your-company/",
+    link: "/blog/what-is-blockchain-technology-and-why-is-it-important-for-your-company/",
   },
   {
     textDate: "August 18th, 2021",
     title: "Everything You Need to Know About Nearshoring and Its Benefits",
-    link: "https://blog.zircon.tech/blog/everything-nearshoring-benefits/",
+    link: "/blog/everything-nearshoring-benefits/",
   },
   {
     textDate: "August 04th, 2021",
     title: "What is Decentralized Finance (DeFi)? Benefits and Advantages",
-    link: "https://blog.zircon.tech/blog/what-is-decentralized-finance-defi-benefits-and-advantages/",
+    link: "/blog/what-is-decentralized-finance-defi-benefits-and-advantages/",
   },
 ];
 
@@ -63,7 +63,7 @@ export default function Blog() {
           <Paragraph>
             Our insight about innovation, business and everything tech.
           </Paragraph>
-          <Link href="https://blog.zircon.tech">
+          <Link href="/blogs">
             <img
               alt="icon-link"
               src="assets/images/svg/icons/arrow-right-blue.svg"
@@ -90,7 +90,7 @@ export default function Blog() {
                     {formatDate(blogs[0]?.publishDate)}
                   </TextDate> */}
                   <TitlePost>{blogs[0]?.name}</TitlePost>
-                  <Link className="text-white" href={blogs[0]?.url}>
+                  <Link className="text-white" href={`/${blogs[0]?.slug}`}>
                     <img
                       alt="icon-link"
                       src="assets/images/svg/icons/arrow-right-white.svg"
