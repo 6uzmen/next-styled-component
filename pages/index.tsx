@@ -1,3 +1,4 @@
+import { NextPage } from "next";
 import dynamic from "next/dynamic";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
@@ -19,7 +20,7 @@ const CookiesMessage = dynamic(() => import("../components/CookiesMessage"), {
 const Home = () => {
 
   return (
-    <div>
+    <>
       <Hero />
       <OurServices />
       <AboutUs />
@@ -29,11 +30,11 @@ const Home = () => {
       <ContactUs />
       <CookiesMessage />
       <ToastContainer />
-    </div>
+    </>
   );
 };
 
-Home.getLayout = (page) => {
+Home.getLayout = (page: NextPage) => {
   return (
     <Layout navBarVariant={false}>
       {page}

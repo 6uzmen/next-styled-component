@@ -1,11 +1,21 @@
-import React from "react";
+import React, { ReactElement, ReactNode } from "react";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles, lightTheme } from "../style/theme.config";
 import "../style/globals.css";
 import "../style/custom.scss";
 import "bootstrap/dist/css/bootstrap.css";
+import { NextPage } from "next";
+import { AppProps } from "next/app"
 
-function MyApp({ Component, pageProps }) {
+type NextPageWithLayout = NextPage & {
+  getLayout?: (page: ReactElement) => ReactNode
+}
+
+type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout
+}
+
+export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
 
   const getLayout = Component.getLayout ?? (page => page)
 
@@ -16,5 +26,3 @@ function MyApp({ Component, pageProps }) {
     </ThemeProvider>
   );
 }
-
-export default MyApp;
