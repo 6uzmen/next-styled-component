@@ -39,7 +39,6 @@
     "@types/imagemin-svgo": "^10.0.0",
     "@types/react": "^17.0.38",
     "imagemin": "^8.0.1",
-    "imagemin-jpegtran": "^7.0.0",
     "imagemin-pngquant": "^9.0.2",
     "imagemin-svgo": "^10.0.1",
     "ts-node": "^10.5.0",
