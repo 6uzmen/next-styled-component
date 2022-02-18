@@ -8,7 +8,7 @@ import { useMediaQuery } from "react-responsive";
 
 export default function Blog() {
   const isSmallDevice = useMediaQuery({ query: "(max-width: 988px)" });
-  // const isMediumDevice = useMediaQuery({ query: "(max-width: 988px)" });
+  const isLargeDevice = useMediaQuery({ query: "(max-width: 1920px)" });
 
   const [blogs, setBlogs] = useState<any>([]);
 
@@ -86,8 +86,10 @@ export default function Blog() {
           <div
             style={{
               height: isSmallDevice
-                ? "100%"
-                : "200px",
+                ? "900px"
+                : isLargeDevice
+                ? "250px"
+                : "100%",
             }}
           >
             <div className="grid">
