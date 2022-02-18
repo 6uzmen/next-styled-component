@@ -32,3 +32,9 @@
 [build]
   command = "yarn build"
   publish = ".next"
+
+[[redirects]]
+  from = '/*' 
+  to = '/'
+  status = 200
+  force = true
