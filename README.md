@@ -1,35 +1,62 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# ZirconTech Web
 
-## Getting Started
+## Flujo sugerido
 
-First, run the development server:
+1. `netlify link`
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+2. `netlify dev`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. `netlify build`
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+4. `netlify deploy`
+## Setup
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### Instalar yarn
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+`npm i -g yarn`
 
-## Learn More
+### Instalar dependencias
 
-To learn more about Next.js, take a look at the following resources:
+`yarn install`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Netlify
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+#### Instalar CLI de Netlify
 
-## Deploy on Vercel
+`npm i -g netlify-cli`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+#### Configurar CLI de Netlify
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# zircon-web
+Logearse con el siguiente comando, el mismo abrirá la página de Netlify y hay que autorizar su uso: 
+
+`netlify login`
+
+Luego de haberse logeado, correr el comando:
+
+`netlify link`
+
+Seleccionar las opciones:
+
+1. `Choose from a list of recently updated sites`
+
+2. `dev-zircon-web` o `zircon-tech` dependiendo de en donde se quiera trabajar, si se quiere trabajar para la web en desarrollo, seleccionar `dev-zircon-web`, si se quiere trabajar sobre la que está en producción, seleccionar `zircon-tech`
+
+3. Es probable que el comando anterior pida autorizar el uso desde la CLI (se abrirá el navegador y hay que darle permisos)
+
+## Correr web
+
+### En desarrollo
+
+Con netlify (recomendado, así comprobamos que todo vaya a funcionar con un deploy más tarde): `netlify dev`
+
+Con next: `yarn dev`
+
+Estando en la branch dev, también se puede usar el comando `netlify deploy`, el mismo hará deploy en modo preview a una URL dedicada específicamente a los cambios que se hayan realizado (verificar que efectivamente estamos en la branch `dev` y que que el site al que hacemos deploy es a `dev-zircon-web`)
+
+## Notas
+
+Es una buena práctica que siempre chequeemos de antemano haciendo una build local, para no hacer un deploy que va a terminar fallando. Para eso correr el comando `netlify build`, si este no tiene errores, hacer el deploy o push tranquilamente.
+
+## Recursos
+
+Documentación de la [CLI de Netlify](https://docs.netlify.com/cli/get-started/)
