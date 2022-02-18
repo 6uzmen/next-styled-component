@@ -70,3 +70,5 @@ export const PreviewDescription = styled.p`
     font-size: 16px;
   }
 `;
+
+export default {};

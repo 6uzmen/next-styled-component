@@ -17,7 +17,7 @@ export const MenuItem = styled.a<{ active: boolean }>`
   height: 50px;
   width: 100%;
   min-width: 120px;
-  background: ${p => p.active ? '#b8e3fc' : 'white'};
+  background: ${(p) => p.active ? '#b8e3fc' : 'white'};
   border-radius: 6px;
   margin-bottom: 10px;
   display: flex;

@@ -3,8 +3,6 @@ import * as S from "./styles";
 import { sendContactForm } from "../../api/HubSpot/form";
 import { toast } from "react-toastify";
 
-// TODO: Fix weird issue using <Image> from next to render svg files coming from S3 bucket.
-
 export default function ContactUs() {
   return (
     <S.MainContainer id="contact">
@@ -23,7 +21,6 @@ export default function ContactUs() {
             <S.LocationText>
               8 de Octubre 2956 <br />
               +(598) 98312859 <br />
-
             </S.LocationText>
             <img
               onClick={() => window.scrollTo(0, 0)}

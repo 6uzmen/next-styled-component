@@ -1,6 +1,6 @@
 import React, { forwardRef, useImperativeHandle, useState } from "react";
 import * as S from "./styles";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { wrap } from "popmotion";
 import { TypeTestimonial } from "../..";
 
@@ -61,7 +61,7 @@ export const Slideshow = forwardRef(({ items }: IProps, ref) => {
         exit="exit"
         drag="x"
         dragConstraints={{ left: 0, right: 0 }}
-        onDragEnd={(e, { offset, velocity }) => {
+        onDragEnd={(_: any, { offset, velocity }: any) => {
           const swipe = swipePower(offset.x, velocity.x);
           if (swipe < -swipeConfidenceThreshold) {
             paginate(1);

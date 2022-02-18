@@ -8,27 +8,40 @@ export default function Team() {
   return (
     <div>
       <S.ContentWrapper className="d-flex flex-wrap col-12">
-        <S.AboutTeamContainer className='col-12 align-items-center'>
-          <div className='px-5 col-12 col-xl-6'>
+        <S.AboutTeamContainer className="col-12 align-items-center">
+          <div className="px-5 col-12 col-xl-6">
             <S.TeamMemberLabel>Our Team</S.TeamMemberLabel>
-            <S.TeamMemberName className='fw-normal'>ZirconTech Management Team</S.TeamMemberName>
-            <S.TeamImage className='col-12 d-md-none' src="https://xylo-assets.s3.amazonaws.com/images/png/our-team.png" />
+            <S.TeamMemberName className="fw-normal">
+              ZirconTech Management Team
+            </S.TeamMemberName>
+            <S.TeamImage
+              className="col-12 d-md-none"
+              src="https://xylo-assets.s3.amazonaws.com/images/png/our-team.png"
+            />
             <S.TeamMemberDescription>
               We are a group of passionate about technology. For more than
-              twenty years we have participated in challenging projects
-              forming multicultural groups distributed in different countries,
-              always working with state-of-the-art technology. In recent years
-              we decided to join efforts to accompany multiple companies in
-              the way of digital transformation. <br />
+              twenty years we have participated in challenging projects forming
+              multicultural groups distributed in different countries, always
+              working with state-of-the-art technology. In recent years we
+              decided to join efforts to accompany multiple companies in the way
+              of digital transformation. <br />
               <br />
               We have put our focus on Blockchain and IoT, but our experienced
               team of engineers is able to develop any type of application and
-              carry out the most complex projects, designing and developing
-              the technological solution from start to finish.
+              carry out the most complex projects, designing and developing the
+              technological solution from start to finish.
             </S.TeamMemberDescription>
-            <ButtonPrimary className="mt-4" onClick={() => router.replace("/#contact")}>Contact Us</ButtonPrimary>
+            <ButtonPrimary
+              className="mt-4"
+              onClick={() => router.replace("/#contact")}
+            >
+              Contact Us
+            </ButtonPrimary>
           </div>
-          <S.TeamImage className='col-6 d-none d-xl-flex' src="https://xylo-assets.s3.amazonaws.com/images/png/our-team.png" />
+          <S.TeamImage
+            className="col-6 d-none d-xl-flex"
+            src="https://xylo-assets.s3.amazonaws.com/images/png/our-team.png"
+          />
         </S.AboutTeamContainer>
         <S.LeftContent className="col-12">
           <S.TeamMemberContainer className="mb-5">
@@ -128,9 +141,5 @@ export default function Team() {
 }
 
 Team.getLayout = (page: ReactElement) => {
-  return (
-    <Layout navBarVariant={true}>
-      {page}
-    </Layout>
-  )
-}
+  return <Layout navBarVariant={true}>{page}</Layout>;
+};

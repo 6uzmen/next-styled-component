@@ -1,46 +1,55 @@
-import React, { useCallback, useEffect, useState } from "react";
 import { ButtonPrimary } from "../Button/styles";
 import * as S from "./styles";
 import { useMediaQuery } from "react-responsive";
 import VerticalMenu from "../VerticalMenu";
-import { useScrollBlock } from "../../utils/functions/scrollBlock";
+import { useScrollBlock } from "../../utils/functions/scrollBook";
 import { useRouter } from "next/router";
-import Image from "next/image"
-import Link from "next/link"
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+
 interface IProps {
   variant?: boolean;
 }
 
 interface RenderLogoProps {
-  dark?: boolean
-  isSmallDevice: boolean
+  dark?: boolean;
+  isSmallDevice: boolean;
 }
 
 interface LogoProps {
-  isSmallDevice: boolean
+  isSmallDevice: boolean;
 }
 
 const DarkLogo = ({ isSmallDevice }: LogoProps) => {
-  return (<Image
-    height="22px"
-    width={isSmallDevice ? "120px" : "160px"}
-    src='https://xylo-assets.s3.amazonaws.com/images/svg/zircon-typo-dark.svg'
-    alt="Zircontech-Logo"
-  />)
-}
+  return (
+    <Image
+      height="22px"
+      width={isSmallDevice ? "120px" : "160px"}
+      src="https://xylo-assets.s3.amazonaws.com/images/svg/zircon-typo-dark.svg"
+      alt="Zircontech-Logo"
+    />
+  );
+};
 
 const DefaultLogo = ({ isSmallDevice }: LogoProps) => {
-  return (<Image
-    height="22px"
-    width={isSmallDevice ? "120px" : "160px"}
-    src='https://xylo-assets.s3.amazonaws.com/images/svg/zircon-typo.svg'
-    alt="Zircontech-Logo"
-  />)
-}
+  return (
+    <Image
+      height="22px"
+      width={isSmallDevice ? "120px" : "160px"}
+      src="https://xylo-assets.s3.amazonaws.com/images/svg/zircon-typo.svg"
+      alt="Zircontech-Logo"
+    />
+  );
+};
 
 const RenderLogo: React.FC<RenderLogoProps> = ({ dark, isSmallDevice }) => {
-  return (dark ? <DarkLogo isSmallDevice={isSmallDevice} /> : <DefaultLogo isSmallDevice={isSmallDevice} />)
-}
+  return dark ? (
+    <DarkLogo isSmallDevice={isSmallDevice} />
+  ) : (
+    <DefaultLogo isSmallDevice={isSmallDevice} />
+  );
+};
 
 export default function Navbar({ variant = false }: IProps) {
   const router = useRouter();
@@ -54,7 +63,10 @@ export default function Navbar({ variant = false }: IProps) {
       subItems: [
         { label: "Blockchain", link: "/info/zircontech-services-blockchain" },
         { label: "IOT", link: "/info/zircontech-services-iot" },
-        { label: "Artificial Intelligence", link: "/info/zircontech-services-ai" },
+        {
+          label: "Artificial Intelligence",
+          link: "/info/zircontech-services-ai",
+        },
         { label: "Cloud", link: "/info/zircontech-services-cloud-consultancy" },
       ],
     },
@@ -116,10 +128,16 @@ export default function Navbar({ variant = false }: IProps) {
 
   return (
     <S.MainContainer showNavbar={showNavbar}>
-      <S.NavbarContainer variant={variant || isLargeDevice} isScrolled={scrollPosition > 0}>
+      <S.NavbarContainer
+        variant={variant || isLargeDevice}
+        isScrolled={scrollPosition > 0}
+      >
         <Link href="/">
           <a className="pointer p-1">
-            <RenderLogo isSmallDevice={isSmallDevice} dark={(isLargeDevice || scrollPosition > 0 || variant)} />
+            <RenderLogo
+              isSmallDevice={isSmallDevice}
+              dark={isLargeDevice || scrollPosition > 0 || variant}
+            />
           </a>
         </Link>
         <S.MenuContainer>
@@ -140,9 +158,9 @@ export default function Navbar({ variant = false }: IProps) {
             className="mx-2 px-3 px-sm-4 px-lg-4"
             onClick={() => {
               if (router.pathname !== "/") {
-                router.replace("/#contact")
+                router.replace("/#contact");
               } else {
-                window.scrollTo(0, document.body.scrollHeight)
+                window.scrollTo(0, document.body.scrollHeight);
               }
             }}
           >
@@ -160,7 +178,10 @@ export default function Navbar({ variant = false }: IProps) {
         className={`${openMenu && isLargeDevice ? "py-4" : "py-0"}`}
         isOpen={openMenu && isLargeDevice}
       >
-        <VerticalMenu items={items} handleCloseMenu={() => setOpenMenu(false)} />
+        <VerticalMenu
+          items={items}
+          handleCloseMenu={() => setOpenMenu(false)}
+        />
         <S.Separator />
         <div
           className="d-flex flex-column flex-wrap"
@@ -172,13 +193,19 @@ export default function Navbar({ variant = false }: IProps) {
           </div>
           <div className="col-6 d-flex flex-column py-2">
             <S.SubLabel>social</S.SubLabel>
-            <S.Link href="https://www.linkedin.com/company/zircontech/">LinkedIn</S.Link>
+            <S.Link href="https://www.linkedin.com/company/zircontech/">
+              LinkedIn
+            </S.Link>
             <S.Link href="https://twitter.com/Zircon_Tech">Twitter</S.Link>
-            <S.Link href="https://www.facebook.com/WeAreZirconTech">Facebook</S.Link>
-            <S.Link href="https://www.instagram.com/zircon.tech/">Instagram</S.Link>
+            <S.Link href="https://www.facebook.com/WeAreZirconTech">
+              Facebook
+            </S.Link>
+            <S.Link href="https://www.instagram.com/zircon.tech/">
+              Instagram
+            </S.Link>
           </div>
         </div>
       </S.MenuContent>
-    </S.MainContainer >
+    </S.MainContainer>
   );
 }

@@ -10,7 +10,8 @@ export const MenuContainer = styled.div`
 
 export const ItemContainer = styled.div<{ hasChilds?: boolean }>`
   display: flex;
-  justify-content: ${(p) => (p.hasChilds ? "space-between" : "auto")};
+  justify-content: ${(p) =>
+    p.hasChilds ? "space-between" : "auto"};
   align-items: center;
   width: 100%;
   padding: 10px 5%;
@@ -47,9 +48,9 @@ export const SubItemsWrapper = styled.div`
 `;
 
 export const SubItemContainer = styled.div<{ isOpen: boolean }>`
-  height: ${(p) => (p.isOpen ? "35px" : "0px")};
+  height: ${(p: { isOpen: any }) => (p.isOpen ? "35px" : "0px")};
   transition: 0.3s;
-  height: ${(p) => (p.isOpen ? "5px 0" : "0")};
+  height: ${(p: { isOpen: any }) => (p.isOpen ? "5px 0" : "0")};
   overflow: hidden;
 `;
 

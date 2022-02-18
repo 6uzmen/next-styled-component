@@ -93,3 +93,5 @@ export const TeamImage = styled.img`
     font-size: 24px;
   }
 `;
+
+export default {};

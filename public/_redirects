@@ -5,5 +5,3 @@
 /blog/* https://blog.zircon.tech/blog/:splat
 
 /info/* https://info.zircon.tech/en-us/:splat
-
-/* /
