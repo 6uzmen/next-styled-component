@@ -32,7 +32,7 @@ module.exports = {
       },
       {
         source: '/nearshore-agile-development',
-        destination: '/#about-us',
+        destination: '/',
       },
       {
         source: '/home',
