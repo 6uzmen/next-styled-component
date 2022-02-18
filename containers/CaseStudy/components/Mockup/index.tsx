@@ -4,14 +4,11 @@ import React, { Suspense, useRef } from "react";
 import * as THREE from "three";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import {
-  Html,
   Environment,
   useGLTF,
-  ContactShadows,
   OrbitControls,
 } from "@react-three/drei";
-import Image from "next/image";
-import { ScrollArea } from "./styles";
+
 function Model(props) {
   const group = useRef();
   // Load model

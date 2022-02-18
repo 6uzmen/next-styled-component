@@ -1,5 +1,6 @@
 import React from "react";
 import NextHead from "next/head";
+import Script from "next/script";
 
 export default function Head() {
   return (
@@ -63,18 +64,18 @@ export default function Head() {
           name="description"
           content="A trusted partner for the technologies driving the future. We build solutions for your development projects as a nearshore software development company."
         />
-        <script
+        <Script
           type="text/javascript"
           id="hs-script-loader"
           async
           defer
           src="//js.hs-scripts.com/7707659.js"
-        ></script>
-        <script
+        />
+        <Script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=UA-2664098-14`}
         />
-        <script
+        <Script
           dangerouslySetInnerHTML={{
             __html: `
             window.dataLayer = window.dataLayer || [];
@@ -84,7 +85,7 @@ export default function Head() {
           `,
           }}
         />
-        <script
+        <Script
           dangerouslySetInnerHTML={{
             __html: `!function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -107,7 +108,11 @@ fbq('track', 'PageView');`,
 &noscript=1"
           />
         </noscript>
-        <script dangerouslySetInnerHTML={{__html: `(function(){ window.ldfdr = window.ldfdr || {}; (function(d, s, ss, fs){ fs = d.getElementsByTagName(s)[0]; function ce(src){ var cs = d.createElement(s); cs.src = src; setTimeout(function(){fs.parentNode.insertBefore(cs,fs)}, 1); } ce(ss); })(document, 'script', 'https://sc.lfeeder.com/lftracker_v1_bElvO73Akn6aZMqj.js'); })();`}} ></script>
+        <Script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){ window.ldfdr = window.ldfdr || {}; (function(d, s, ss, fs){ fs = d.getElementsByTagName(s)[0]; function ce(src){ var cs = d.createElement(s); cs.src = src; setTimeout(function(){fs.parentNode.insertBefore(cs,fs)}, 1); } ce(ss); })(document, 'script', 'https://sc.lfeeder.com/lftracker_v1_bElvO73Akn6aZMqj.js'); })();`,
+          }}
+        />
       </NextHead>
     </>
   );

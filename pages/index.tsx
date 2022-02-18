@@ -7,9 +7,9 @@ import Layout from "../components/Layout";
 
 import Hero from "../containers/Hero";
 import OurServices from "../containers/OurServices";
-import AboutUs from "../containers/AboutUs"
+import AboutUs from "../containers/AboutUs";
 const CaseStudy = dynamic(() => import("../containers/CaseStudy"));
-import ClientsAndTestimonials from "../containers/ClientsAndTestimonials"
+import ClientsAndTestimonials from "../containers/ClientsAndTestimonials";
 import Blog from "../containers/Blog";
 import ContactUs from "../containers/ContactUs";
 
@@ -18,7 +18,6 @@ const CookiesMessage = dynamic(() => import("../components/CookiesMessage"), {
 });
 
 const Home = () => {
-
   return (
     <>
       <Hero />
@@ -35,11 +34,7 @@ const Home = () => {
 };
 
 Home.getLayout = (page: ReactElement) => {
-  return (
-    <Layout navBarVariant={false}>
-      {page}
-    </Layout>
-  )
-}
+  return <Layout navBarVariant={false}>{page}</Layout>;
+};
 
 export default Home;

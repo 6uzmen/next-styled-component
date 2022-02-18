@@ -1,13 +1,12 @@
 import { Post } from "./Post";
 import { Link, Title as TitlePost } from "./Post/styles";
 import { Label, Title, Paragraph, BlogContainer, ImageWrapper } from "./styles";
-import Image from "next/image"
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { getBlogPosts } from "../../api/HubSpot/posts";
 import { useMediaQuery } from "react-responsive";
 
 export default function Blog() {
-
   const isSmallDevice = useMediaQuery({ query: "(max-width: 768px)" });
   const isMediumDevice = useMediaQuery({ query: "(max-width: 988px)" });
 
@@ -15,10 +14,16 @@ export default function Blog() {
 
   useEffect(() => {
     getBlogPosts().then((blogs: any) => {
-      let _blogs: any[] = blogs?.data?.results?.sort((a,b) => (a.publishDate >= b.publishDate) ? 1 : ((b.publishDate >= a.publishDate) ? -1 : 0))
+      let _blogs: any[] = blogs?.data?.results?.sort((a: any, b: any) =>
+        a.publishDate >= b.publishDate
+          ? 1
+          : b.publishDate >= a.publishDate
+          ? -1
+          : 0
+      );
 
       if (_blogs.length > 3) {
-        _blogs = _blogs.slice(0, 5)
+        _blogs = _blogs.slice(0, 5);
       }
 
       return setBlogs(_blogs);
@@ -38,16 +43,14 @@ export default function Blog() {
           <Paragraph>
             Our insight about innovation, business and everything tech.
           </Paragraph>
-          <Link href="https://zircon.tech/blog">
+          <Link href="https://zircon.tech/blogs">
             <Image
               alt="icon-link"
               src="https://xylo-assets.s3.amazonaws.com/images/svg/icons/arrow-right-blue.svg"
               width={16}
               height={16}
             />
-            <span className="ps-2">
-              View All Articles
-            </span>
+            <span className="ps-2">View All Articles</span>
           </Link>
         </div>
         <div className="col-12 col-xl-8 d-sm-flex flex-sm-wrap">
@@ -74,19 +77,28 @@ export default function Blog() {
                       width={16}
                       height={16}
                     />
-                    <span className="ps-2">
-                      View Article
-                    </span>
+                    <span className="ps-2">View Article</span>
                   </Link>
                 </div>
               )}
             </div>
           </div>
-          <div style={{ height: isSmallDevice ? "100%" : (isMediumDevice ? "900px" : "200px") }}>
+          <div
+            style={{
+              height: isSmallDevice
+                ? "100%"
+                : isMediumDevice
+                ? "900px"
+                : "200px",
+            }}
+          >
             <div className="grid">
               {blogs &&
                 blogs
-                  ?.slice(1,4).map((post, index) => <Post key={index} {...post} />)}
+                  ?.slice(1, 4)
+                  .map((post: any, index: number) => (
+                    <Post key={index} {...post} />
+                  ))}
             </div>
           </div>
         </div>

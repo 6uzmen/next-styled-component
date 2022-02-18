@@ -13,7 +13,7 @@ export const Post = ({ name, slug }: IPost) => {
   return (
     <PostContainer className="g-col-lg-6 g-col-xl-4 g-col-12">
       <Title>{name || ''}</Title>
-      <Link href={`/${slug}`} isAbsolute>
+      <Link href={`/${slug}`} isAbsolute={true}>
         <Image
           alt="icon-url"
           src="https://xylo-assets.s3.amazonaws.com/images/svg/icons/arrow-right-blue.svg"

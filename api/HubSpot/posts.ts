@@ -1,4 +1,5 @@
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
+import { unAuthAxiosCall } from "../axiosCall";
 
 export const getBlogPosts = async () =>
   await axios.get(

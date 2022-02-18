@@ -20,4 +20,24 @@ module.exports = {
       },
     ],
   },
+  async rewrites() {
+    return [
+      {
+        source: '/team',
+        destination: '/our-team',
+      },
+      {
+        source: '/onepage',
+        destination: '/',
+      },
+      {
+        source: '/nearshore-agile-development',
+        destination: '/#about-us',
+      },
+      {
+        source: '/home',
+        destination: '/',
+      },
+    ]
+  }, 
 };
