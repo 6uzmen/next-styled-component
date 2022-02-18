@@ -7,8 +7,8 @@ import { getBlogPosts } from "../../api/HubSpot/posts";
 import { useMediaQuery } from "react-responsive";
 
 export default function Blog() {
-  const isSmallDevice = useMediaQuery({ query: "(max-width: 768px)" });
-  const isMediumDevice = useMediaQuery({ query: "(max-width: 988px)" });
+  const isSmallDevice = useMediaQuery({ query: "(max-width: 988px)" });
+  // const isMediumDevice = useMediaQuery({ query: "(max-width: 988px)" });
 
   const [blogs, setBlogs] = useState<any>([]);
 
@@ -87,8 +87,6 @@ export default function Blog() {
             style={{
               height: isSmallDevice
                 ? "100%"
-                : isMediumDevice
-                ? "900px"
                 : "200px",
             }}
           >
