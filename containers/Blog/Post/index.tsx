@@ -1,40 +1,30 @@
 import React from "react";
-import { Link, PostContainer, TextDate, Title } from "./styles";
+import { Link, PostContainer, Title } from "./styles";
+import Image from "next/image"
 
 interface IPost {
-  publishDate?: string;
   name?: string;
   slug?: string;
   background?: string;
 }
 
-export const Post = ({ publishDate, name, slug }: IPost) => {
-  const dateOptions = {
-    year: "numeric",
-    weekday: "short",
-    month: "long",
-    day: "numeric",
-  };
-  const date = new Date(publishDate ? publishDate : "").toLocaleDateString(
-    "en-US",
-    //@ts-ignore
-    dateOptions
-  );
+export const Post = ({ name, slug }: IPost) => {
+
   return (
-    publishDate &&
-    name &&
-    slug && (
-      <PostContainer className="g-col-lg-6 g-col-xl-4 g-col-12">
-        {/* <TextDate>{date && date}</TextDate> */}
-        <Title>{name && name}</Title>
-        <Link href={`/${slug}`} isAbsolute>
-          <img
-            alt="icon-url"
-            src="assets/images/svg/icons/arrow-right-blue.svg"
-          />
+    <PostContainer className="g-col-lg-6 g-col-xl-4 g-col-12">
+      <Title>{name || ''}</Title>
+      <Link href={`/${slug}`} isAbsolute>
+        <Image
+          alt="icon-url"
+          src="https://xylo-assets.s3.amazonaws.com/images/svg/icons/arrow-right-blue.svg"
+          width={16}
+          height={16}
+        />
+        <span className="ps-2">
           View Article
-        </Link>
-      </PostContainer>
-    )
+        </span>
+      </Link>
+    </PostContainer>
   );
+
 };

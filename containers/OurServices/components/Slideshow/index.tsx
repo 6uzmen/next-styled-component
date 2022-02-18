@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { wrap } from "popmotion";
 import Service from "../../components/Service";
 import { ServiceType } from "../..";
@@ -43,7 +43,7 @@ export default function Slideshow({ items }: IProps) {
   const paginate = (newDirection: number) => {
     setPage([page + newDirection, newDirection]);
   };
-  console.log(direction)
+  
   return (
     <div
       className="d-flex flex-column d-lg-none col-12 position-relative mt-4"

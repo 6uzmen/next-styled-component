@@ -1,54 +1,29 @@
-import Image from "next/image";
+import { Post } from "./Post";
+import { Link, Title as TitlePost } from "./Post/styles";
+import { Label, Title, Paragraph, BlogContainer, ImageWrapper } from "./styles";
+import Image from "next/image"
 import { useEffect, useState } from "react";
 import { getBlogPosts } from "../../api/HubSpot/posts";
-import { Post } from "./Post";
-import { Link, TextDate, Title as TitlePost } from "./Post/styles";
-import { Label, Title, Paragraph, BlogContainer, ImageWrapper } from "./styles";
-
-const allPosts = [
-  {
-    textDate: "November 17th, 2021",
-    title: "The Ultimate Offshore Software Development Guide for CEOs",
-    link: "/blog/the-ultimate-offshore-software-development-guide-for-ceos/",
-  },
-  {
-    textDate: "July 14th, 2021",
-    title:
-      "What is Blockchain Technology and Why Is It Important for Your Company",
-    link: "/blog/what-is-blockchain-technology-and-why-is-it-important-for-your-company/",
-  },
-  {
-    textDate: "August 18th, 2021",
-    title: "Everything You Need to Know About Nearshoring and Its Benefits",
-    link: "/blog/everything-nearshoring-benefits/",
-  },
-  {
-    textDate: "August 04th, 2021",
-    title: "What is Decentralized Finance (DeFi)? Benefits and Advantages",
-    link: "/blog/what-is-decentralized-finance-defi-benefits-and-advantages/",
-  },
-];
+import { useMediaQuery } from "react-responsive";
 
 export default function Blog() {
+
+  const isSmallDevice = useMediaQuery({ query: "(max-width: 768px)" });
+  const isMediumDevice = useMediaQuery({ query: "(max-width: 988px)" });
+
   const [blogs, setBlogs] = useState<any>([]);
 
   useEffect(() => {
     getBlogPosts().then((blogs: any) => {
-      return setBlogs(blogs?.data?.results?.reverse());
+      let _blogs: any[] = blogs?.data?.results?.sort((a,b) => (a.publishDate >= b.publishDate) ? 1 : ((b.publishDate >= a.publishDate) ? -1 : 0))
+
+      if (_blogs.length > 3) {
+        _blogs = _blogs.slice(0, 5)
+      }
+
+      return setBlogs(_blogs);
     });
   }, []);
-
-  const dateOptions = {
-    year: "numeric",
-    weekday: "short",
-    month: "long",
-    day: "numeric",
-  };
-
-  const formatDate = (date: string) => {
-    //@ts-ignore
-    return new Date(date).toLocaleDateString("en-US", dateOptions);
-  };
 
   return (
     <BlogContainer
@@ -63,49 +38,56 @@ export default function Blog() {
           <Paragraph>
             Our insight about innovation, business and everything tech.
           </Paragraph>
-          <Link href="/blogs">
-            <img
+          <Link href="https://zircon.tech/blog">
+            <Image
               alt="icon-link"
-              src="assets/images/svg/icons/arrow-right-blue.svg"
+              src="https://xylo-assets.s3.amazonaws.com/images/svg/icons/arrow-right-blue.svg"
+              width={16}
+              height={16}
             />
-            View All Articles
+            <span className="ps-2">
+              View All Articles
+            </span>
           </Link>
         </div>
         <div className="col-12 col-xl-8 d-sm-flex flex-sm-wrap">
           <div className="d-none d-sm-block d-lg-flex mb-4 w-100">
             <div className="position-relative col-lg-5 col-md-12">
               <ImageWrapper>
-                <img
+                <Image
                   alt="nearshoring-img"
                   src="https://xylo-assets.s3.amazonaws.com/images/png/img-blog.png"
+                  layout="responsive"
                   width="100%"
-                  style={{ objectFit: "cover" }}
+                  height="100%"
                 />
               </ImageWrapper>
             </div>
             <div className="d-flex col-lg-7 col-md-12 bg-primary">
               {blogs && (
                 <div className="d-flex flex-column my-auto px-5 py-sm-4 py-lg-0">
-                  {/* <TextDate className="text-white">
-                    {formatDate(blogs[0]?.publishDate)}
-                  </TextDate> */}
                   <TitlePost>{blogs[0]?.name}</TitlePost>
                   <Link className="text-white" href={`/${blogs[0]?.slug}`}>
-                    <img
+                    <Image
                       alt="icon-link"
-                      src="assets/images/svg/icons/arrow-right-white.svg"
+                      src="https://xylo-assets.s3.amazonaws.com/images/svg/icons/arrow-right-white.svg"
+                      width={16}
+                      height={16}
                     />
-                    View Article
+                    <span className="ps-2">
+                      View Article
+                    </span>
                   </Link>
                 </div>
               )}
             </div>
           </div>
-          <div className="grid">
-            {blogs &&
-              blogs
-                ?.filter((x, i) => i > 0)
-                ?.map((post, index) => <Post key={index} {...post} />)}
+          <div style={{ height: isSmallDevice ? "100%" : (isMediumDevice ? "900px" : "200px") }}>
+            <div className="grid">
+              {blogs &&
+                blogs
+                  ?.slice(1,4).map((post, index) => <Post key={index} {...post} />)}
+            </div>
           </div>
         </div>
       </div>

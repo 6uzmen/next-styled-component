@@ -1,10 +1,11 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import Head from "../../components/Head";
 import HorizontalMenu from "../../components/HorizontalMenu";
 import Navbar from "../../components/Navbar";
 import * as S from "./styles";
 import { MenuItems } from "./menuItems";
 import CaseStudyDetail, { CaseStudyDetailType } from "../../containers/CaseStudyDetail";
+import Layout from "../../components/Layout";
 
 export const caseStudy: CaseStudyDetailType = {
   title: `Monax 📝`,
@@ -28,4 +29,12 @@ export default function Monax() {
       </S.Content>
     </div>
   );
+}
+
+Monax.getLayout = (page: ReactElement) => {
+  return (
+    <Layout navBarVariant={true}>
+      {page}
+    </Layout>
+  )
 }

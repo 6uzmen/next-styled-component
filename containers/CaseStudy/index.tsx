@@ -68,12 +68,6 @@ export default function CaseStudy() {
           <br />
           <span className="fw-normal">Were working on</span>
         </S.Title>
-        {/* <S.Subtitle className="mt-4">
-          With over Twenty years of experience, our team has participated in
-          diverse projects comprised of teams from around the world. We make use
-          of Agile Methodologies to deliver winning digital experiences to our
-          clients.
-        </S.Subtitle> */}
         <S.CaseContainer>
           <CardTest setCurrentCase={(x: any) => setCurrentCase(x)} items={allCaseStudies} />
         </S.CaseContainer>

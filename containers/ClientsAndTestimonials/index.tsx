@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import Banner from "./components/Banner/Banner";
 import Slideshow from "./components/Slideshow";
 import * as S from "./styles";
+import { CaretLeft, CaretRight } from "./components/CaretIcon"
 
 export type TypeTestimonial = {
   title: string;
@@ -69,25 +70,19 @@ export default function ClientsAndTestimonials() {
         </S.TitleContainer>
         <div className="d-flex col-12 col-xl-6">
           <S.SlideBox
-            direction={true}
+            direction={1}
             className="d-none d-lg-flex"
             onClick={() => childRef.current.doSwipe(-1)}
           >
-            <img
-              src="/assets/images/svg/icons/CaretLeft.svg"
-              alt="left arrow"
-            />
+            <CaretLeft />
           </S.SlideBox>
           <Slideshow ref={childRef} items={allTestimonials} />
           <S.SlideBox
-            direction={false}
+            direction={0}
             className="d-none d-lg-flex"
             onClick={() => childRef.current.doSwipe(1)}
           >
-            <img
-              src="/assets/images/svg/icons/CaretRight.svg"
-              alt="right arrow"
-            />
+            <CaretRight />
           </S.SlideBox>
         </div>
       </S.TestimonialWrapper>

@@ -1,5 +1,4 @@
 import React from "react";
-import { useMediaQuery } from "react-responsive";
 import { ButtonPrimary } from "../../components/Button/styles";
 import Service from "./components/Service";
 import Slideshow from "./components/Slideshow";
@@ -44,7 +43,7 @@ const allServices: ServiceType[] = [
 ];
 
 export default function OurServices() {
-  const isMediumDevice = useMediaQuery({ query: "(max-width: 988px)" });
+
   return (
     <S.ServicesContainer id="services">
       <S.Background />

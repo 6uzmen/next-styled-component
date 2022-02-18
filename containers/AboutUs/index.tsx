@@ -1,11 +1,9 @@
-import React, { Suspense } from "react";
-import dynamic from "next/dynamic";
+import React from "react";
 import Item from "./components/Item";
-const Slideshow = dynamic(() => import("./components/Slideshow"), {
-  ssr: false,
-});
+import Slideshow from "./components/Slideshow"
 import * as S from "./styles";
 import { ButtonPrimary } from "../../components/Button/styles";
+import router from "next/router";
 
 const itemsArray = [
   {
@@ -44,7 +42,7 @@ export default function AboutUs() {
           <ButtonPrimary
             className="mt-2 py-4 px-4"
             onClick={() => {
-              window.location.href = "/our-team";
+              router.push("/our-team")
             }}
           >
             Our Team

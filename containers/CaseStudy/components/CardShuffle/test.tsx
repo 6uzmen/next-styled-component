@@ -1,13 +1,13 @@
 import React from "react";
-import { animated, interpolate, useSprings } from "react-spring";
+import { animated, to, useSprings } from "react-spring";
 import { useDrag } from "react-use-gesture";
-import { CardWrap, Wrap, CardTitle, CardParagraph } from "./styles";
+import { CardWrap, CardTitle, CardParagraph } from "./styles";
 import { arrayMoveImmutable } from "array-move";
 import { useMediaQuery } from "react-responsive";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import { CompanyLogo, Link } from "../../styles";
 import { CaseStudieType } from "../..";
-
+import Image from "next/image"
 
 interface IProps {
   items: CaseStudieType[];
@@ -82,7 +82,7 @@ export const CardTest = ({ items, setCurrentCase }: IProps) => {
           <animated.div
             {...bind(index)}
             style={{
-              backgroundColor: interpolate(
+              backgroundColor: to(
                 [zIndex],
                 (zIndex) => cards[(zIndex - 2)]
               ),
@@ -95,7 +95,7 @@ export const CardTest = ({ items, setCurrentCase }: IProps) => {
               position: "absolute",
               touchAction: "none",
               right: 0,
-              transform: interpolate(
+              transform: to(
                 [y, scale],
                 (y, scale) => `translateY(${y}px) scale(${scale})`
               ),
@@ -110,11 +110,11 @@ export const CardTest = ({ items, setCurrentCase }: IProps) => {
             </CardTitle>
             <CardParagraph>
               {items[index].description}
-              <Link className="mt-1" href={items[index].link}>
-                <img src="assets/images/svg/icons/plus.svg" alt="Plus icon" />
-                See More
-              </Link>
             </CardParagraph>
+            <Link className="mt-1" href={items[index].link}>
+              <Image src="https://xylo-assets.s3.amazonaws.com/images/svg/icons/plus.svg" alt="Plus icon" width={14} height={14} />
+              <span className="ps-2">See more</span>
+            </Link>
           </animated.div>
         );
       })}

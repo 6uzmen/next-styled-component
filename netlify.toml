@@ -3,6 +3,12 @@
   to = 'https://blog.zircon.tech/'
   status = 200
   force = true
+  
+ [[redirects]] # redirect hardcodeado
+  from = '/blog/2020/04/02/cloud-business-cases-involving-blockchain-technologies' 
+  to = 'https://blog.zircon.tech/blog/cloud-business-cases-involving-blockchain-technologies'
+  status = 200
+  force = true
 
 [[redirects]] # cuando hacemos click en leer más de un artículo específico, redireccionar a /blog/:splat, que se mapea a blog.zircon.tech/:splat
   from = '/blog/*' 
@@ -17,25 +23,18 @@
 #                               /:splat
 # https://blog.zircon.tech/blog/zircontech-notarizer
 
-[[redirects]]
-  from = '/blog/2020/04/02/cloud-business-cases-involving-blockchain-technologies' 
-  to = 'https://blog.zircon.tech/blog/cloud-business-cases-involving-blockchain-technologies'
-  status = 200
-  force = true
-
 [[redirects]] # cuando hacemos click en leer más de un servicio específico, redireccionar a /info/:splat, que se mapea a info.zircon.tech/:splat
   from = '/info/*' 
   to = 'https://info.zircon.tech/en-us/:splat'
   status = 200
   force = true
 
-# Ejemplo: 
-#                           /:splat                            
-# https://zircon.tech/info/zircontech-services-iot 
-#    ▼                          
-#                               /:splat
-# https://info.zircon.tech/en-us/zircontech-services-iot
-
 [build]
   command = "yarn build"
   publish = ".next"
+
+[[redirects]]
+  from = '/*' 
+  to = '/'
+  status = 200
+  force = true

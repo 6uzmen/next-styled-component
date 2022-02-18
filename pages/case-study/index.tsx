@@ -1,7 +1,5 @@
 import React from "react";
-import Head from "../../components/Head";
 import HorizontalMenu from "../../components/HorizontalMenu";
-import Navbar from "../../components/Navbar";
 import * as S from "./styles";
 import { MenuItems } from "./menuItems";
 import { ButtonPrimary } from "../../components/Button/styles";
@@ -10,12 +8,13 @@ import { caseStudy as cuckooCase } from './cuckoo'
 import { caseStudy as givetrackCase } from './givetrack'
 import { caseStudy as monaxCase } from './monax'
 import { CaseStudyDetailType } from "../../containers/CaseStudyDetail";
+import Layout from "../../components/Layout";
+import { ReactElement } from "react";
+
 export default function CaseStudy() {
     const casesArray: CaseStudyDetailType[] = [infiniteCase, cuckooCase, givetrackCase, monaxCase];
     return (
         <div>
-            <Navbar variant={true} />
-            <Head />
             <S.Content className="d-flex flex-wrap gap-3">
                 <S.Title className='col-12'>Case Studies</S.Title>
                 <div className="flex-grow-1 d-none d-xl-flex">
@@ -47,4 +46,12 @@ export default function CaseStudy() {
             </S.Content>
         </div>
     );
+}
+
+CaseStudy.getLayout = (page: ReactElement) => {
+    return (
+        <Layout navBarVariant={true}>
+            {page}
+        </Layout>
+    )
 }

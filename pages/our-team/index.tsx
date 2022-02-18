@@ -1,14 +1,12 @@
-import React from "react";
+import router from "next/router";
+import React, { ReactElement } from "react";
 import { ButtonPrimary } from "../../components/Button/styles";
-import Head from "../../components/Head";
-import Navbar from "../../components/Navbar";
+import Layout from "../../components/Layout";
 import * as S from "./styles";
 
 export default function Team() {
   return (
     <div>
-      <Navbar variant={true} />
-      <Head />
       <S.ContentWrapper className="d-flex flex-wrap col-12">
         <S.AboutTeamContainer className='col-12 align-items-center'>
           <div className='px-5 col-12 col-xl-6'>
@@ -28,7 +26,7 @@ export default function Team() {
               carry out the most complex projects, designing and developing
               the technological solution from start to finish.
             </S.TeamMemberDescription>
-            <ButtonPrimary className="mt-4">Contact Us</ButtonPrimary>
+            <ButtonPrimary className="mt-4" onClick={() => router.replace("/#contact")}>Contact Us</ButtonPrimary>
           </div>
           <S.TeamImage className='col-6 d-none d-xl-flex' src="https://xylo-assets.s3.amazonaws.com/images/png/our-team.png" />
         </S.AboutTeamContainer>
@@ -127,4 +125,12 @@ export default function Team() {
       </S.ContentWrapper>
     </div>
   );
+}
+
+Team.getLayout = (page: ReactElement) => {
+  return (
+    <Layout navBarVariant={true}>
+      {page}
+    </Layout>
+  )
 }

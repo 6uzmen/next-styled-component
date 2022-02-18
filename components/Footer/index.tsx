@@ -3,7 +3,7 @@ import * as S from "./styles";
 
 export default function Index() {
   return (
-    <S.FooterContainer>
+    <S.FooterContainer id="footer">
       <S.FooterWrapper className="container flex-wrap">
         <S.SocialMediaWrapper className="col-12 col-md-6 justify-content-center justify-content-md-start">
           <S.SocialMediaContainer>
