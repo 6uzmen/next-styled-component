@@ -1,7 +1,5 @@
-import React, { ReactElement } from "react";
-import Head from "../../components/Head";
+import { ReactElement } from "react";
 import HorizontalMenu from "../../components/HorizontalMenu";
-import Navbar from "../../components/Navbar";
 import * as S from "./styles";
 import { MenuItems } from "./menuItems";
 import CaseStudyDetail, {
@@ -21,8 +19,6 @@ export const caseStudy: CaseStudyDetailType = {
 export default function Monax() {
   return (
     <div>
-      <Navbar variant={true} />
-      <Head />
       <S.Content className="d-flex flex-wrap gap-3">
         <div className="flex-grow-1 d-none d-xl-flex">
           <HorizontalMenu

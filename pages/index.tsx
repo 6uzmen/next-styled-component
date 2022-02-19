@@ -8,7 +8,7 @@ import Layout from "../components/Layout";
 import Hero from "../containers/Hero";
 import OurServices from "../containers/OurServices";
 import AboutUs from "../containers/AboutUs";
-const CaseStudy = dynamic(() => import("../containers/CaseStudy"));
+import CaseStudy from "../containers/CaseStudy";
 import ClientsAndTestimonials from "../containers/ClientsAndTestimonials";
 import Blog from "../containers/Blog";
 import ContactUs from "../containers/ContactUs";

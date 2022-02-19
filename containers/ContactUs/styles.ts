@@ -8,7 +8,7 @@ export const MainContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   background-color: #021419;
-  background-image: url("assets/images/svg/bg-contact.svg");
+  background-image: url("/assets/images/svg/bg-contact.svg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   padding: 0 10%;

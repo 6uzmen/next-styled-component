@@ -1,8 +1,8 @@
-import * as React from "react";
+import { FC } from "react";
 
 interface IProps {}
 
-export const CaretLeft: React.FC<IProps> = ({}) => {
+export const CaretLeft: FC<IProps> = ({}) => {
   return (
     <svg
       width="40"
@@ -21,7 +21,7 @@ export const CaretLeft: React.FC<IProps> = ({}) => {
   );
 };
 
-export const CaretRight: React.FC<IProps> = ({}) => {
+export const CaretRight: FC<IProps> = ({}) => {
   return (
     <svg
       width="40"

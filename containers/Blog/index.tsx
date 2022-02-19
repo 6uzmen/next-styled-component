@@ -4,12 +4,8 @@ import { Label, Title, Paragraph, BlogContainer, ImageWrapper } from "./styles";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { getBlogPosts } from "../../api/HubSpot/posts";
-import { useMediaQuery } from "react-responsive";
 
 export default function Blog() {
-  const isSmallDevice = useMediaQuery({ query: "(max-width: 988px)" });
-  const isLargeDevice = useMediaQuery({ query: "(max-width: 1920px)" });
-
   const [blogs, setBlogs] = useState<any>([]);
 
   useEffect(() => {
@@ -34,7 +30,7 @@ export default function Blog() {
     <BlogContainer
       id="blog"
       className="d-flex flex-column position-relative"
-      image="assets/images/svg/bg-blog.svg"
+      image="/assets/images/svg/bg-blog.svg"
     >
       <div className="d-xl-flex">
         <div className="col-12 col-xl-4 pt-sm-5 mb-4 position-sm-relative">
@@ -46,7 +42,7 @@ export default function Blog() {
           <Link href="https://zircon.tech/blogs">
             <Image
               alt="icon-link"
-              src="https://xylo-assets.s3.amazonaws.com/images/svg/icons/arrow-right-blue.svg"
+              src="/assets/images/svg/icons/arrow-right-blue.svg"
               width={16}
               height={16}
             />
@@ -59,10 +55,8 @@ export default function Blog() {
               <ImageWrapper>
                 <Image
                   alt="nearshoring-img"
-                  src="https://xylo-assets.s3.amazonaws.com/images/png/img-blog.png"
-                  layout="responsive"
-                  width="100%"
-                  height="100%"
+                  src="/assets/images/webp/img-blog.webp"
+                  layout="fill"
                 />
               </ImageWrapper>
             </div>
@@ -73,7 +67,7 @@ export default function Blog() {
                   <Link className="text-white" href={`/${blogs[0]?.slug}`}>
                     <Image
                       alt="icon-link"
-                      src="https://xylo-assets.s3.amazonaws.com/images/svg/icons/arrow-right-white.svg"
+                      src="/assets/images/svg/icons/arrow-right-white.svg"
                       width={16}
                       height={16}
                     />
@@ -85,11 +79,7 @@ export default function Blog() {
           </div>
           <div
             style={{
-              height: isSmallDevice
-                ? "900px"
-                : isLargeDevice
-                ? "250px"
-                : "100%",
+              height: "100%",
             }}
           >
             <div className="grid">

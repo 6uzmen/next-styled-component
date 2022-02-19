@@ -27,7 +27,7 @@ export const Banner = styled.div`
   overflow: hidden;
   width: 3220px;
   height: 186px;
-  background-image: url("https://xylo-assets.s3.amazonaws.com/images/png/banner.png");
+  background-image: url("/assets/images/webp/banner.webp");
   background-size: 3220px 186px;
   animation: ${slide} 30s linear infinite;
   @media screen and (max-width: 768px) {

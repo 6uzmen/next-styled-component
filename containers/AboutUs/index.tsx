@@ -1,5 +1,4 @@
-import React from "react";
-import Item from "./components/Item";
+import Item from "./components/Item"
 import Slideshow from "./components/Slideshow"
 import * as S from "./styles";
 import { ButtonPrimary } from "../../components/Button/styles";
@@ -42,7 +41,7 @@ export default function AboutUs() {
           <ButtonPrimary
             className="mt-2 py-4 px-4"
             onClick={() => {
-              router.push("/our-team")
+              router.push("/our-team");
             }}
           >
             Our Team

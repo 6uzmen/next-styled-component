@@ -1,4 +1,10 @@
-import Document, { DocumentContext } from "next/document";
+import Document, {
+  DocumentContext,
+  Head,
+  Html,
+  Main,
+  NextScript,
+} from "next/document";
 import { ServerStyleSheet } from "styled-components";
 
 export default class MyDocument extends Document {
@@ -26,5 +32,36 @@ export default class MyDocument extends Document {
     } finally {
       sheet.seal();
     }
+  }
+
+  render(): JSX.Element {
+    return (
+      <Html lang="en">
+        <Head>
+          <link rel="dns-prefetch" href="https://fonts.googleapis.com/" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap"
+            rel="stylesheet"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap"
+            rel="stylesheet"
+          />
+        </Head>
+        <body>
+          <Main />
+          <NextScript />
+          <noscript>
+            {/* eslint-disable-next-line */}
+            <img
+              height="1"
+              width="1"
+              src="https://www.facebook.com/tr?id=779038593488772&ev=PageView
+&noscript=1"
+            />
+          </noscript>
+        </body>
+      </Html>
+    );
   }
 }

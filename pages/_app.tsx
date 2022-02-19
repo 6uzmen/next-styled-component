@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode } from "react";
+import { ReactElement, ReactNode } from "react";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles, lightTheme } from "../styles/theme.config";
 import "bootstrap/dist/css/bootstrap.css";

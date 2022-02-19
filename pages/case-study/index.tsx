@@ -1,4 +1,3 @@
-import React from "react";
 import HorizontalMenu from "../../components/HorizontalMenu";
 import * as S from "./styles";
 import { MenuItems } from "./menuItems";

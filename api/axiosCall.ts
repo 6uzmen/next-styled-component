@@ -37,15 +37,7 @@ const axiosCall = async (url: any, { query, ...requestOptions }: any) => {
       return response;
     }
   } catch (error) {
-    // if (error && error.response && error.response.status < 500) {
-    //   throw new (ClientError as any)(
-    //     error.response.data.message,
-    //     error.response.data.error,
-    //     error.response.status
-    //   );
-    // } else {
     throw console.error("Internal error");
-    // }
   }
 };
 
