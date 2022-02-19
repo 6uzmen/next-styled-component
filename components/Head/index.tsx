@@ -64,6 +64,7 @@ export default function Head() {
           name="description"
           content="A trusted partner for the technologies driving the future. We build solutions for your development projects as a nearshore software development company."
         />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com/" />
         <link
           href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap"
           rel="stylesheet"
