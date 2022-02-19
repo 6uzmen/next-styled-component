@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useMediaQuery } from "react-responsive";
 import { ButtonSecondary } from "../../components/Button/styles";
 import * as S from "./styles";
@@ -56,7 +56,7 @@ export default function Hero() {
           loop={true}
           muted={true}
           controls={false}
-          src="/assets/videos/zircon-hero-compressed.mp4"
+          src="/assets/videos/zircon-hero.webm"
         />
       </S.BackgroundVideoContainer>
       <div className="position-relative">

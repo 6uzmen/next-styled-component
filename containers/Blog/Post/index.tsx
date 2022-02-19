@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Link, PostContainer, Title } from "./styles";
 import Image from "next/image"
 

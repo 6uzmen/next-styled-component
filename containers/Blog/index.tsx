@@ -6,7 +6,6 @@ import { useEffect, useState } from "react";
 import { getBlogPosts } from "../../api/HubSpot/posts";
 
 export default function Blog() {
-
   const [blogs, setBlogs] = useState<any>([]);
 
   useEffect(() => {
@@ -57,9 +56,7 @@ export default function Blog() {
                 <Image
                   alt="nearshoring-img"
                   src="/assets/images/webp/img-blog.webp"
-                  layout="responsive"
-                  width="100%"
-                  height="100%"
+                  layout="fill"
                 />
               </ImageWrapper>
             </div>

@@ -1,4 +1,3 @@
-import React from 'react'
 import * as S from './styles'
 
 export type CaseStudyDetailType = { title: string; overview: string, challenge: string, solution: string; displayImage: string; link: string }

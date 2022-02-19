@@ -1,7 +1,7 @@
-import React from "react";
 import * as S from "./styles";
 import { sendContactForm } from "../../api/HubSpot/form";
 import { toast } from "react-toastify";
+import Image from "next/image";
 
 export default function ContactUs() {
   return (
@@ -22,7 +22,7 @@ export default function ContactUs() {
               8 de Octubre 2956 <br />
               +(598) 98312859 <br />
             </S.LocationText>
-            <img
+            <Image
               onClick={() => window.scrollTo(0, 0)}
               height="22px"
               width="147px"
@@ -40,7 +40,7 @@ export default function ContactUs() {
               1325 Avenue of the Americas <br />
               +(1) 347571 9089 <br />
             </S.LocationText>
-            <img
+            <Image
               onClick={() => window.scrollTo(0, 0)}
               height="22px"
               width="147px"

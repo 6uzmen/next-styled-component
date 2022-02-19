@@ -1,4 +1,4 @@
-import React, { forwardRef, useImperativeHandle, useState } from "react";
+import { forwardRef, useImperativeHandle, useState } from "react";
 import * as S from "./styles";
 import { motion } from "framer-motion";
 import { wrap } from "popmotion";

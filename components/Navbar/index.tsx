@@ -6,7 +6,7 @@ import { useScrollBlock } from "../../utils/functions/scrollBook";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, FC } from "react";
 
 interface IProps {
   variant?: boolean;
@@ -28,6 +28,7 @@ const DarkLogo = ({ isSmallDevice }: LogoProps) => {
       width={isSmallDevice ? "120px" : "160px"}
       src="/assets/images/svg/zircon-typo-dark.svg"
       alt="Zircontech-Logo"
+      priority
     />
   );
 };
@@ -39,11 +40,12 @@ const DefaultLogo = ({ isSmallDevice }: LogoProps) => {
       width={isSmallDevice ? "120px" : "160px"}
       src="/assets/images/svg/zircon-typo.svg"
       alt="Zircontech-Logo"
+      priority
     />
   );
 };
 
-const RenderLogo: React.FC<RenderLogoProps> = ({ dark, isSmallDevice }) => {
+const RenderLogo: FC<RenderLogoProps> = ({ dark, isSmallDevice }) => {
   return dark ? (
     <DarkLogo isSmallDevice={isSmallDevice} />
   ) : (
@@ -132,7 +134,7 @@ export default function Navbar({ variant = false }: IProps) {
         variant={variant || isLargeDevice}
         isScrolled={scrollPosition > 0}
       >
-        <Link href="/">
+        <Link href="/" prefetch={false}>
           <a className="pointer p-1">
             <RenderLogo
               isSmallDevice={isSmallDevice}

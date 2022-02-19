@@ -1,6 +1,6 @@
 //@ts-nocheck
 import { MathUtils } from "three";
-import React, { Suspense, useRef } from "react";
+import { Suspense, useRef } from "react";
 import * as THREE from "three";
 import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import {

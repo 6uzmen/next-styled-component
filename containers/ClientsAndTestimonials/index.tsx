@@ -1,8 +1,8 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import Banner from "./components/Banner";
 import Slideshow from "./components/Slideshow";
 import * as S from "./styles";
-import { CaretLeft, CaretRight } from "../../components/CaretIcon"
+import { CaretLeft, CaretRight } from "../../components/CaretIcon";
 
 export type TypeTestimonial = {
   title: string;

@@ -1,22 +1,21 @@
-import * as React from 'react'
-import Navbar from '../Navbar'
-import Footer from "../Footer"
-import Head from '../Head'
+import Navbar from "../Navbar";
+import Footer from "../Footer";
+import Head from "../Head";
+import { FC } from "react";
 
 interface IProps {
-    navBarVariant?: boolean
+  navBarVariant?: boolean;
 }
 
-const Layout: React.FC<IProps> = ({ children, navBarVariant }) => {
-
-    return <>
-        <Head />
-        <Navbar variant={navBarVariant} />
-        <main>
-            {children}
-        </main>
-        <Footer />
+const Layout: FC<IProps> = ({ children, navBarVariant }) => {
+  return (
+    <>
+      <Head />
+      <Navbar variant={navBarVariant} />
+      <main>{children}</main>
+      <Footer />
     </>
-}
+  );
+};
 
-export default Layout
+export default Layout;

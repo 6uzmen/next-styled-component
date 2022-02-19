@@ -1,4 +1,3 @@
-import React from "react";
 import { animated, to, useSprings } from "react-spring";
 import { useDrag } from "react-use-gesture";
 import { CardWrap, CardTitle, CardParagraph } from "./styles";
@@ -7,7 +6,8 @@ import { useMediaQuery } from "react-responsive";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import { CompanyLogo, Link } from "../../styles";
 import { CaseStudieType } from "../..";
-import Image from "next/image"
+import Image from "next/image";
+import { useRef } from "react";
 
 interface IProps {
   items: CaseStudieType[];
@@ -15,7 +15,7 @@ interface IProps {
 }
 
 export const CardTest = ({ items, setCurrentCase }: IProps) => {
-  const cards = ["#c4e4fc", " #b3deff", "#9ed5ff", "#8acbfd",];
+  const cards = ["#c4e4fc", " #b3deff", "#9ed5ff", "#8acbfd"];
   const config = { tension: 400, friction: 20 };
   const CARD_COUNT = items.length;
   const CARD_OFFSET = 20;
@@ -28,24 +28,24 @@ export const CardTest = ({ items, setCurrentCase }: IProps) => {
 
     return down && index === curIndex
       ? {
-        scale: isBelow ? setScale(CARD_COUNT) : 1,
-        y,
-        zIndex: isBelow ? 1 : CARD_COUNT + 1,
-        config,
-        immediate: (key: string) => key === "y" || key === "zIndex",
-      }
+          scale: isBelow ? setScale(CARD_COUNT) : 1,
+          y,
+          zIndex: isBelow ? 1 : CARD_COUNT + 1,
+          config,
+          immediate: (key: string) => key === "y" || key === "zIndex",
+        }
       : {
-        scale: setScale(index),
-        y: index * CARD_OFFSET,
-        // Add 1 here so we don’t need to use 0 above.
-        zIndex: CARD_COUNT - index + 1,
-        immediate: (key: string) => key === "zIndex",
-      };
+          scale: setScale(index),
+          y: index * CARD_OFFSET,
+          // Add 1 here so we don’t need to use 0 above.
+          zIndex: CARD_COUNT - index + 1,
+          immediate: (key: string) => key === "zIndex",
+        };
   };
 
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
-  const ref = React.useRef(null);
-  const cardOrder = React.useRef(items.map((_, index) => index));
+  const ref = useRef(null);
+  const cardOrder = useRef(items.map((_, index) => index));
 
   const [springs, setSprings] = useSprings(
     CARD_COUNT,
@@ -64,12 +64,12 @@ export const CardTest = ({ items, setCurrentCase }: IProps) => {
     const newOrder = arrayMoveImmutable(cardOrder.current, 0, CARD_COUNT);
     setCurrentCase(items[cardOrder.current[1]]);
     // @ts-ignore
-    isMobile && disableBodyScroll(ref.current, { reserveScrollBarGap: true })
+    isMobile && disableBodyScroll(ref.current, { reserveScrollBarGap: true });
 
     if (!down) {
       cardOrder.current = newOrder;
       // @ts-ignore
-      isMobile && enableBodyScroll(ref.current)
+      isMobile && enableBodyScroll(ref.current);
     }
 
     setSprings(setter(cardOrder.current, curIndex, y, down));
@@ -82,12 +82,9 @@ export const CardTest = ({ items, setCurrentCase }: IProps) => {
           <animated.div
             {...bind(index)}
             style={{
-              backgroundColor: to(
-                [zIndex],
-                (zIndex) => cards[(zIndex - 2)]
-              ),
+              backgroundColor: to([zIndex], (zIndex) => cards[zIndex - 2]),
               borderRadius: "3% / 5%",
-              padding: '25px 20px 10px 25px',
+              padding: "25px 20px 10px 25px",
               cursor: "grab",
               left: 0,
               width: "100%",
@@ -104,15 +101,20 @@ export const CardTest = ({ items, setCurrentCase }: IProps) => {
             }}
             key={index}
           >
-            <CompanyLogo background={items[index]?.iconBackground} src={items[index].src} alt="company-logo" />
-            <CardTitle>
-              {items[index].title}
-            </CardTitle>
-            <CardParagraph>
-              {items[index].description}
-            </CardParagraph>
+            <CompanyLogo
+              background={items[index]?.iconBackground}
+              src={items[index].src}
+              alt="company-logo"
+            />
+            <CardTitle>{items[index].title}</CardTitle>
+            <CardParagraph>{items[index].description}</CardParagraph>
             <Link className="mt-1" href={items[index].link}>
-              <Image src="/assets/images/svg/icons/plus.svg" alt="Plus icon" width={14} height={14} />
+              <Image
+                src="/assets/images/svg/icons/plus.svg"
+                alt="Plus icon"
+                width={14}
+                height={14}
+              />
               <span className="ps-2">See more</span>
             </Link>
           </animated.div>

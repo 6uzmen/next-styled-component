@@ -1,5 +1,5 @@
 import router from "next/router";
-import React, { ReactElement } from "react";
+import { ReactElement } from "react";
 import { ButtonPrimary } from "../../components/Button/styles";
 import Layout from "../../components/Layout";
 import * as S from "./styles";

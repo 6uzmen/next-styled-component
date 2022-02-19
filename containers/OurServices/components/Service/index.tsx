@@ -1,4 +1,4 @@
-import React from "react";
+
 import Link from "../Link";
 import * as S from "./styles";
 
