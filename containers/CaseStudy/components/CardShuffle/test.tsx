@@ -112,7 +112,7 @@ export const CardTest = ({ items, setCurrentCase }: IProps) => {
               {items[index].description}
             </CardParagraph>
             <Link className="mt-1" href={items[index].link}>
-              <Image src="https://xylo-assets.s3.amazonaws.com/images/svg/icons/plus.svg" alt="Plus icon" width={14} height={14} />
+              <Image src="/assets/images/svg/icons/plus.svg" alt="Plus icon" width={14} height={14} />
               <span className="ps-2">See more</span>
             </Link>
           </animated.div>

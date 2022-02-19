@@ -14,7 +14,7 @@ export default function ContactUs() {
         <div className="d-flex flex-wrap col-12">
           <S.LocationContainer className="col-12 col-md-6">
             <S.LocationIcon
-              src="assets/images/svg/icons/location.svg"
+              src="/assets/images/svg/icons/location.svg"
               alt="Location icon"
             />
             <S.LocationLabel>montevideo, uy</S.LocationLabel>
@@ -26,13 +26,13 @@ export default function ContactUs() {
               onClick={() => window.scrollTo(0, 0)}
               height="22px"
               width="147px"
-              src="assets/images/svg/contact.svg"
+              src="/assets/images/svg/contact.svg"
               alt="contact-email"
             />
           </S.LocationContainer>
           <S.LocationContainer className="col-12 col-md-6">
             <S.LocationIcon
-              src="assets/images/svg/icons/location.svg"
+              src="/assets/images/svg/icons/location.svg"
               alt="Location icon"
             />
             <S.LocationLabel>new york, us</S.LocationLabel>
@@ -44,7 +44,7 @@ export default function ContactUs() {
               onClick={() => window.scrollTo(0, 0)}
               height="22px"
               width="147px"
-              src="assets/images/svg/contact.svg"
+              src="/assets/images/svg/contact.svg"
               alt="contact-email"
             />
           </S.LocationContainer>

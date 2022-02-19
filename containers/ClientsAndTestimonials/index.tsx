@@ -21,7 +21,7 @@ const allTestimonials: TypeTestimonial[] = [
     name: `Lucas Henning`,
     position: `CTO`,
     picture: `https://media-exp1.licdn.com/dms/image/C5103AQF_WjoV3QxPDw/profile-displayphoto-shrink_100_100/0/1517545035699?e=1646870400&v=beta&t=-umWk26RRDmz8wQ51cLHeqHYBhSNBW7Fgy9fCdoAkUg`,
-    logo: `https://xylo-assets.s3.amazonaws.com/images/png/suku.png`,
+    logo: `/assets/images/png/suku.png`,
     company: `SUKU`,
   },
   {

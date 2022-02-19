@@ -16,7 +16,7 @@ export default function Team() {
             </S.TeamMemberName>
             <S.TeamImage
               className="col-12 d-md-none"
-              src="https://xylo-assets.s3.amazonaws.com/images/png/our-team.png"
+              src="/assets/images/png/our-team.png"
             />
             <S.TeamMemberDescription>
               We are a group of passionate about technology. For more than
@@ -40,12 +40,12 @@ export default function Team() {
           </div>
           <S.TeamImage
             className="col-6 d-none d-xl-flex"
-            src="https://xylo-assets.s3.amazonaws.com/images/png/our-team.png"
+            src="/assets/images/png/our-team.png"
           />
         </S.AboutTeamContainer>
         <S.LeftContent className="col-12">
           <S.TeamMemberContainer className="mb-5">
-            <S.ArrowIcon src="https://xylo-assets.s3.amazonaws.com/images/svg/icons/arrow-right-gradient-blue.svg" />
+            <S.ArrowIcon src="/assets/images/svg/icons/arrow-right-gradient-blue.svg" />
             <div>
               <S.TeamMemberLabel>Co-Founder and CEO</S.TeamMemberLabel>
               <S.TeamMemberName>Andres Zunino</S.TeamMemberName>
@@ -64,7 +64,7 @@ export default function Team() {
             </div>
           </S.TeamMemberContainer>
           <S.TeamMemberContainer className="my-5">
-            <S.ArrowIcon src="https://xylo-assets.s3.amazonaws.com/images/svg/icons/arrow-right-gradient-blue.svg" />
+            <S.ArrowIcon src="/assets/images/svg/icons/arrow-right-gradient-blue.svg" />
             <div>
               <S.TeamMemberLabel>COO</S.TeamMemberLabel>
               <S.TeamMemberName>Martín Liguori</S.TeamMemberName>
@@ -80,7 +80,7 @@ export default function Team() {
             </div>
           </S.TeamMemberContainer>
           <S.TeamMemberContainer className="my-5">
-            <S.ArrowIcon src="https://xylo-assets.s3.amazonaws.com/images/svg/icons/arrow-right-gradient-blue.svg" />
+            <S.ArrowIcon src="/assets/images/svg/icons/arrow-right-gradient-blue.svg" />
             <div>
               <S.TeamMemberLabel>CTO</S.TeamMemberLabel>
               <S.TeamMemberName>Williams Olivera</S.TeamMemberName>
@@ -100,7 +100,7 @@ export default function Team() {
             </div>
           </S.TeamMemberContainer>
           <S.TeamMemberContainer className="my-5">
-            <S.ArrowIcon src="https://xylo-assets.s3.amazonaws.com/images/svg/icons/arrow-right-gradient-blue.svg" />
+            <S.ArrowIcon src="/assets/images/svg/icons/arrow-right-gradient-blue.svg" />
             <div>
               <S.TeamMemberLabel>Board Member & Advisor</S.TeamMemberLabel>
               <S.TeamMemberName>Martin Machin</S.TeamMemberName>
@@ -119,7 +119,7 @@ export default function Team() {
             </div>
           </S.TeamMemberContainer>
           <S.TeamMemberContainer className="my-5">
-            <S.ArrowIcon src="https://xylo-assets.s3.amazonaws.com/images/svg/icons/arrow-right-gradient-blue.svg" />
+            <S.ArrowIcon src="/assets/images/svg/icons/arrow-right-gradient-blue.svg" />
             <div>
               <S.TeamMemberLabel>Board Member & Advisor</S.TeamMemberLabel>
               <S.TeamMemberName>Alejandro Narancio</S.TeamMemberName>

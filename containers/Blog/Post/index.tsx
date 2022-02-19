@@ -16,7 +16,7 @@ export const Post = ({ name, slug }: IPost) => {
       <Link href={`/${slug}`} isAbsolute={true}>
         <Image
           alt="icon-url"
-          src="https://xylo-assets.s3.amazonaws.com/images/svg/icons/arrow-right-blue.svg"
+          src="/assets/images/svg/icons/arrow-right-blue.svg"
           width={16}
           height={16}
         />

@@ -34,7 +34,7 @@ export default function Blog() {
     <BlogContainer
       id="blog"
       className="d-flex flex-column position-relative"
-      image="assets/images/svg/bg-blog.svg"
+      image="/assets/images/svg/bg-blog.svg"
     >
       <div className="d-xl-flex">
         <div className="col-12 col-xl-4 pt-sm-5 mb-4 position-sm-relative">
@@ -46,7 +46,7 @@ export default function Blog() {
           <Link href="https://zircon.tech/blogs">
             <Image
               alt="icon-link"
-              src="https://xylo-assets.s3.amazonaws.com/images/svg/icons/arrow-right-blue.svg"
+              src="/assets/images/svg/icons/arrow-right-blue.svg"
               width={16}
               height={16}
             />
@@ -59,7 +59,7 @@ export default function Blog() {
               <ImageWrapper>
                 <Image
                   alt="nearshoring-img"
-                  src="https://xylo-assets.s3.amazonaws.com/images/png/img-blog.png"
+                  src="/assets/images/png/img-blog.png"
                   layout="responsive"
                   width="100%"
                   height="100%"
@@ -73,7 +73,7 @@ export default function Blog() {
                   <Link className="text-white" href={`/${blogs[0]?.slug}`}>
                     <Image
                       alt="icon-link"
-                      src="https://xylo-assets.s3.amazonaws.com/images/svg/icons/arrow-right-white.svg"
+                      src="/assets/images/svg/icons/arrow-right-white.svg"
                       width={16}
                       height={16}
                     />

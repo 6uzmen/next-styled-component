@@ -26,7 +26,7 @@ const DarkLogo = ({ isSmallDevice }: LogoProps) => {
     <Image
       height="22px"
       width={isSmallDevice ? "120px" : "160px"}
-      src="https://xylo-assets.s3.amazonaws.com/images/svg/zircon-typo-dark.svg"
+      src="/assets/images/svg/zircon-typo-dark.svg"
       alt="Zircontech-Logo"
     />
   );
@@ -37,7 +37,7 @@ const DefaultLogo = ({ isSmallDevice }: LogoProps) => {
     <Image
       height="22px"
       width={isSmallDevice ? "120px" : "160px"}
-      src="https://xylo-assets.s3.amazonaws.com/images/svg/zircon-typo.svg"
+      src="/assets/images/svg/zircon-typo.svg"
       alt="Zircontech-Logo"
     />
   );
@@ -168,7 +168,7 @@ export default function Navbar({ variant = false }: IProps) {
           </ButtonPrimary>
           <S.MenuIcon
             className="d-block d-xl-none"
-            src="https://xylo-assets.s3.amazonaws.com/images/svg/icons/menu.svg"
+            src="/assets/images/svg/icons/menu.svg"
             onClick={() => setOpenMenu(!openMenu)}
             alt="Menu icon"
           />

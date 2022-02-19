@@ -56,7 +56,7 @@ export default function Hero() {
           loop={true}
           muted={true}
           controls={false}
-          src="assets/videos/zircon-hero-compressed.mp4"
+          src="/assets/videos/zircon-hero-compressed.mp4"
         />
       </S.BackgroundVideoContainer>
       <div className="position-relative">
@@ -80,19 +80,19 @@ export default function Hero() {
             {!mobile ? (
               <>
                 <S.AwardImage
-                  src="https://xylo-assets.s3.amazonaws.com/images/svg/award-1.svg"
+                  src="/assets/images/svg/award-1.svg"
                   className="mx-5 mx-md-4"
                   alt="Award Image"
                 />
                 <S.AwardImage
-                  src="https://xylo-assets.s3.amazonaws.com/images/svg/award-2.svg"
+                  src="/assets/images/svg/award-2.svg"
                   className="mx-5 mx-md-4"
                   alt="Award Image"
                 />
               </>
             ) : (
               <S.AwardImage
-                src="https://xylo-assets.s3.amazonaws.com/images/svg/award-2.svg"
+                src="/assets/images/svg/award-2.svg"
                 alt="Award Image"
               />
             )}

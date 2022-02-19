@@ -9,7 +9,7 @@ interface IProps {
 export default function Item({ title, subtitle }: IProps) {
   return (
     <S.ItemContainer>
-      <S.CheckIcon src="assets/images/png/check.png" alt="Check icon" />
+      <S.CheckIcon src="/assets/images/png/check.png" alt="Check icon" />
       <div>
         <S.ItemTitle>{title}</S.ItemTitle>
         <S.ItemSubtitle>{subtitle}</S.ItemSubtitle>

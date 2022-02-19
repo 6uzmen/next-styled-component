@@ -4,8 +4,9 @@ import { GlobalStyles, lightTheme } from "../styles/theme.config";
 import "bootstrap/dist/css/bootstrap.css";
 import "../styles/globals.css";
 import "../styles/custom.scss";
-import { NextPage } from "next";
+import { NextPage, NextPageContext } from "next";
 import { AppProps } from "next/app";
+import { DocumentInitialProps } from "next/document";
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;

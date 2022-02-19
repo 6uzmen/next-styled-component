@@ -29,7 +29,7 @@ const allCaseStudies: CaseStudieType[] = [
   {
     title: "Cuckoo",
     description: `Cuckoo Links allows you to create a link-in-bio landing page with links to not only major streaming platforms, but beat markets for producers, YouTube videos, custom URL's like your website or merch store and much more.`,
-    src: "https://xylo-assets.s3.amazonaws.com/images/png/cuckoo.png",
+    src: "/assets/images/png/cuckoo.png",
     displayImage: '/assets/images/png/cuckoo-study.png',
     link: "/case-study/cuckoo",
     id: 'cuckoo'
@@ -38,7 +38,7 @@ const allCaseStudies: CaseStudieType[] = [
     title: "Givetrack",
     description:
       "GiveTrack™ is an innovative donation platform for nonprofits to provide transparency and accountability to donors by sharing financial information and direct project results in real-time.",
-    src: "https://xylo-assets.s3.amazonaws.com/images/png/bitgive.png",
+    src: "/assets/images/png/bitgive.png",
     displayImage: '/assets/images/png/givetrack-study.png',
     iconBackground: 'white',
     link: "/case-study/givetrack",

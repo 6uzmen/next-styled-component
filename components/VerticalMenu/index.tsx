@@ -41,7 +41,7 @@ export const Item = ({ item, handleCloseMenu }: IPropsItem) => {
           <S.ArrowIcon
             isOpen={isOpen}
             onClick={() => setIsOpen(!isOpen)}
-            src="https://xylo-assets.s3.amazonaws.com/images/svg/icons/arrow-upper-blue.svg"
+            src="/assets/images/svg/icons/arrow-upper-blue.svg"
             alt="Arrow icon"
           />
         )}

@@ -4,7 +4,7 @@ import Service from "./components/Service";
 import Slideshow from "./components/Slideshow";
 import * as S from "./styles";
 
-const iconsRoute = "assets/images/svg/services/";
+const iconsRoute = "/assets/images/svg/services/";
 export type ServiceType = {
   name: string;
   icon: string;
