@@ -36,7 +36,7 @@ export default class MyDocument extends Document {
 
   render(): JSX.Element {
     return (
-      <Html>
+      <Html lang="en">
         <Head>
           <link rel="dns-prefetch" href="https://fonts.googleapis.com/" />
           <link
@@ -51,6 +51,15 @@ export default class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
+          <noscript>
+            {/* eslint-disable-next-line */}
+            <img
+              height="1"
+              width="1"
+              src="https://www.facebook.com/tr?id=779038593488772&ev=PageView
+&noscript=1"
+            />
+          </noscript>
         </body>
       </Html>
     );

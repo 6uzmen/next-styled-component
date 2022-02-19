@@ -16,7 +16,7 @@ export default function Team() {
             </S.TeamMemberName>
             <S.TeamImage
               className="col-12 d-md-none"
-              src="/assets/images/png/our-team.png"
+              src="/assets/images/webp/our-team.webp"
             />
             <S.TeamMemberDescription>
               We are a group of passionate about technology. For more than
@@ -40,7 +40,7 @@ export default function Team() {
           </div>
           <S.TeamImage
             className="col-6 d-none d-xl-flex"
-            src="/assets/images/png/our-team.png"
+            src="/assets/images/webp/our-team.webp"
           />
         </S.AboutTeamContainer>
         <S.LeftContent className="col-12">

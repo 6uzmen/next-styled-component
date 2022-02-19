@@ -4,11 +4,8 @@ import { Label, Title, Paragraph, BlogContainer, ImageWrapper } from "./styles";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { getBlogPosts } from "../../api/HubSpot/posts";
-import { useMediaQuery } from "react-responsive";
 
 export default function Blog() {
-  const isSmallDevice = useMediaQuery({ query: "(max-width: 988px)" });
-  const isLargeDevice = useMediaQuery({ query: "(max-width: 1920px)" });
 
   const [blogs, setBlogs] = useState<any>([]);
 
@@ -59,7 +56,7 @@ export default function Blog() {
               <ImageWrapper>
                 <Image
                   alt="nearshoring-img"
-                  src="/assets/images/png/img-blog.png"
+                  src="/assets/images/webp/img-blog.webp"
                   layout="responsive"
                   width="100%"
                   height="100%"
@@ -85,11 +82,7 @@ export default function Blog() {
           </div>
           <div
             style={{
-              height: isSmallDevice
-                ? "900px"
-                : isLargeDevice
-                ? "250px"
-                : "100%",
+              height: "100%",
             }}
           >
             <div className="grid">

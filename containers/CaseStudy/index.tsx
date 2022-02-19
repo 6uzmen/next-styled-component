@@ -21,16 +21,16 @@ const allCaseStudies: CaseStudieType[] = [
     title: "Infinite",
     description:
       "SUKU Infinite will use its platform to securely create and sell verifiable non-fungible tokens that represent the authenticity of both digital and physical products. These tokens will be transacted in their marketplace ",
-    src: "https://s2.coinmarketcap.com/static/img/coins/200x200/6180.png",
-    displayImage: '/assets/images/png/suku-infinite.png',
+    src: "/assets/images/webp/suku-illustration-only.webp",
+    displayImage: '/assets/images/webp/suku-infinite.webp',
     link: "/case-study/infinite",
     id: 'infinite'
   },
   {
     title: "Cuckoo",
     description: `Cuckoo Links allows you to create a link-in-bio landing page with links to not only major streaming platforms, but beat markets for producers, YouTube videos, custom URL's like your website or merch store and much more.`,
-    src: "/assets/images/png/cuckoo.png",
-    displayImage: '/assets/images/png/cuckoo-study.png',
+    src: "/assets/images/webp/cuckoo.webp",
+    displayImage: '/assets/images/webp/cuckoo-study.webp',
     link: "/case-study/cuckoo",
     id: 'cuckoo'
   },
@@ -38,8 +38,8 @@ const allCaseStudies: CaseStudieType[] = [
     title: "Givetrack",
     description:
       "GiveTrack™ is an innovative donation platform for nonprofits to provide transparency and accountability to donors by sharing financial information and direct project results in real-time.",
-    src: "/assets/images/png/bitgive.png",
-    displayImage: '/assets/images/png/givetrack-study.png',
+    src: "/assets/images/webp/bitgive.webp",
+    displayImage: '/assets/images/webp/givetrack-study.webp',
     iconBackground: 'white',
     link: "/case-study/givetrack",
     id: 'givetrack'
@@ -48,8 +48,8 @@ const allCaseStudies: CaseStudieType[] = [
     title: "Monax",
     description:
       "Monax is a contract lifecycle management platform which allows consumers to easily procure lawyer-tested agreements and stay in full control of their business contracts.",
-    src: "https://media-exp1.licdn.com/dms/image/C4D0BAQG2RDboAyHVtg/company-logo_200_200/0/1571384815335?e=2159024400&v=beta&t=2dZR2yD5jBcEiEWeNoF1ceBYkdzKoRryHHDCpxky4fU",
-    displayImage: '/assets/images/png/monax-study.png',
+    src: "/assets/images/webp/monax.webp",
+    displayImage: '/assets/images/webp/monax-study.webp',
     link: "/case-study/monax",
     id: 'monax'
   },

@@ -1,13 +1,13 @@
 [[redirects]] # cuando hacemos click en ver todos los articulos, ir al index del Blog
   from = '/blogs' 
   to = 'https://blog.zircon.tech/'
-  status = 200
+  status = 301
   force = true
 
 [[redirects]] # cuando hacemos click en leer más de un artículo específico, redireccionar a /blog/:splat, que se mapea a blog.zircon.tech/:splat
   from = '/blog/*' 
   to = 'https://blog.zircon.tech/blog/:splat'
-  status = 200
+  status = 301
   force = true
 
 # Ejemplo: 
@@ -20,20 +20,14 @@
 [[redirects]]
   from = '/blog/2020/04/02/cloud-business-cases-involving-blockchain-technologies' 
   to = 'https://blog.zircon.tech/blog/cloud-business-cases-involving-blockchain-technologies'
-  status = 200
+  status = 301
   force = true
 
 [[redirects]] # cuando hacemos click en leer más de un servicio específico, redireccionar a /info/:splat, que se mapea a info.zircon.tech/:splat
   from = '/info/*' 
   to = 'https://info.zircon.tech/en-us/:splat'
-  status = 200
+  status = 301
   force = true
-
-# [[redirects]] # cuando hacemos click en leer más de un servicio específico, redireccionar a /info/:splat, que se mapea a info.zircon.tech/:splat
-#   from = '/*' 
-#   to = '/'
-#   status = 200
-#   force = true
 
 # Ejemplo: 
 #                           /:splat                            
@@ -45,7 +39,7 @@
 [[redirects]]
   from = '/blockchain-software-company' 
   to = 'https://info.zircon.tech/en-us/zircontech-services-blockchain'
-  status = 200
+  status = 301
   force = true
 
 [build]

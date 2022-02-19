@@ -15,30 +15,34 @@ module.exports = {
       },
     ],
   },
-  async rewrites() {
+  async redirects() {
     return [
       {
         source: '/team',
         destination: '/our-team',
+        permanent: true
       },
       {
         source: '/onepage',
         destination: '/',
+        permanent: true
       },
       {
         source: '/nearshore-agile-development',
         destination: '/',
+        permanent: true
       },
       {
         source: '/home',
         destination: '/',
+        permanent: true
       },
     ]
   }, 
   async headers() {
     return [
       {
-        source: '/:all*(svg|jpg|png)',
+        source: '/:all*(svg|jpg.webp)',
         locale: false,
         headers: [
           {

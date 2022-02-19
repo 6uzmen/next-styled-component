@@ -29,12 +29,12 @@ export const Slideshow = styled.div`
   overflow: hidden;
   width: 100%;
   height: 432px;
-  background-image: url("/assets/images/png/aboutUs.png");
+  background-image: url("/assets/images/webp/aboutUs.webp");
   background-size: 2674px 432px;
   animation: ${slide} 30s linear infinite;
   @media screen and (max-width: 1200px) {
     margin-left: 0;
-    background-image: url("/assets/images/png/aboutUs-sm.png");
+    background-image: url("/assets/images/webp/aboutUs-sm.webp");
     width: 100%;
     height: 229px;
     background-size: 1440px 229px;

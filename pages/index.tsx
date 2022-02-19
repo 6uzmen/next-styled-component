@@ -5,14 +5,15 @@ import { ToastContainer } from "react-toastify";
 
 import Layout from "../components/Layout";
 
-import Hero from "../containers/Hero";
-import OurServices from "../containers/OurServices";
-import AboutUs from "../containers/AboutUs";
+const Hero = dynamic(() => import("../containers/Hero"));
+const OurServices = dynamic(() => import("../containers/OurServices"));
+const AboutUs = dynamic(() => import("../containers/AboutUs"));
 const CaseStudy = dynamic(() => import("../containers/CaseStudy"));
-import ClientsAndTestimonials from "../containers/ClientsAndTestimonials";
-import Blog from "../containers/Blog";
-import ContactUs from "../containers/ContactUs";
-
+const ClientsAndTestimonials = dynamic(
+  () => import("../containers/ClientsAndTestimonials")
+);
+const Blog = dynamic(() => import("../containers/Blog"));
+const ContactUs = dynamic(() => import("../containers/ContactUs"));
 const CookiesMessage = dynamic(() => import("../components/CookiesMessage"), {
   ssr: false,
 });
