@@ -42,12 +42,12 @@ module.exports = {
   async headers() {
     return [
       {
-        source: '/:all*(svg|jpg.webp)',
+        source: '/assets/:path',
         locale: false,
         headers: [
           {
             key: 'Cache-Control',
-            value: 'public, max-age=9999999999, must-revalidate',
+            value: 'public, max-age=31536000, stale-while-revalidate',
           }
         ],
       },
