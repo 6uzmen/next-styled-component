@@ -17,39 +17,18 @@ interface RenderLogoProps {
   isSmallDevice: boolean;
 }
 
-interface LogoProps {
-  isSmallDevice: boolean;
-}
-
-const DarkLogo = ({ isSmallDevice }: LogoProps) => {
-  return (
-    <Image
-      height="22px"
-      width={isSmallDevice ? "120px" : "160px"}
-      src="/assets/images/svg/zircon-typo-dark.svg"
-      alt="Zircontech-Logo"
-      priority
-    />
-  );
-};
-
-const DefaultLogo = ({ isSmallDevice }: LogoProps) => {
-  return (
-    <Image
-      height="22px"
-      width={isSmallDevice ? "120px" : "160px"}
-      src="/assets/images/svg/zircon-typo.svg"
-      alt="Zircontech-Logo"
-      priority
-    />
-  );
-};
-
 const RenderLogo: FC<RenderLogoProps> = ({ dark, isSmallDevice }) => {
-  return dark ? (
-    <DarkLogo isSmallDevice={isSmallDevice} />
-  ) : (
-    <DefaultLogo isSmallDevice={isSmallDevice} />
+  return (
+    <Image
+      height="22px"
+      width={isSmallDevice ? "120px" : "160px"}
+      src={
+        dark
+          ? "/assets/images/svg/zircon-typo-dark.svg"
+          : "/assets/images/svg/zircon-typo.svg"
+      }
+      alt="Zircontech-Logo"
+    />
   );
 };
 
