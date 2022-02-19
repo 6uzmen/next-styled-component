@@ -64,16 +64,26 @@ export default function Head() {
           name="description"
           content="A trusted partner for the technologies driving the future. We build solutions for your development projects as a nearshore software development company."
         />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap"
+          rel="stylesheet"
+        />
         <Script
           type="text/javascript"
           id="hs-script-loader"
           async
           defer
           src="//js.hs-scripts.com/7707659.js"
+          strategy="lazyOnload"
         />
         <Script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=UA-2664098-14`}
+          strategy="lazyOnload"
         />
         <Script
           dangerouslySetInnerHTML={{
@@ -84,6 +94,7 @@ export default function Head() {
             gtag('config', 'UA-2664098-14');
           `,
           }}
+          strategy="lazyOnload"
         />
         <Script
           dangerouslySetInnerHTML={{
@@ -98,6 +109,7 @@ s.parentNode.insertBefore(t,s)}(window,document,'script',
  fbq('init', '779038593488772'); 
 fbq('track', 'PageView');`,
           }}
+          strategy="lazyOnload"
         />
         <noscript>
           {/* eslint-disable-next-line */}
@@ -112,6 +124,7 @@ fbq('track', 'PageView');`,
           dangerouslySetInnerHTML={{
             __html: `(function(){ window.ldfdr = window.ldfdr || {}; (function(d, s, ss, fs){ fs = d.getElementsByTagName(s)[0]; function ce(src){ var cs = d.createElement(s); cs.src = src; setTimeout(function(){fs.parentNode.insertBefore(cs,fs)}, 1); } ce(ss); })(document, 'script', 'https://sc.lfeeder.com/lftracker_v1_bElvO73Akn6aZMqj.js'); })();`,
           }}
+          strategy="lazyOnload"
         />
       </NextHead>
     </>
