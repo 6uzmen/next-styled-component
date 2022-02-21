@@ -108,7 +108,11 @@ export const CardTest = ({ items, setCurrentCase }: IProps) => {
             />
             <CardTitle>{items[index].title}</CardTitle>
             <CardParagraph>{items[index].description}</CardParagraph>
-            <Link className="mt-1" href={items[index].link}>
+            <Link
+              className="mt-1"
+              href={items[index].link}
+              aria-label="Get to know more about this"
+            >
               <Image
                 src="/assets/images/svg/icons/plus.svg"
                 alt="Plus icon"
