@@ -73,7 +73,7 @@ export const CardShuffle = ({ items }: IProps) => {
           >
             <CompanyLogo src={card.src} alt="company-logo" />
             {card.description}
-            <Link className="mt-2">
+            <Link className="mt-2" aria-label="Get to know more about this">
               <img src="assets/images/svg/icons/plus.svg" alt="Plus icon" />
               See More
             </Link>
