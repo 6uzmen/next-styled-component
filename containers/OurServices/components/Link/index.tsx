@@ -10,7 +10,7 @@ interface IProps {
 export default function Link({
   href,
   label,
-  ariaLabel = "Get to know more about this",
+  ariaLabel = "Get to know more about this service",
 }: IProps) {
   return (
     <S.Container>

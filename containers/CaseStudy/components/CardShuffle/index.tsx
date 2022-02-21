@@ -75,6 +75,7 @@ export const CardShuffle = ({ items }: IProps) => {
             {card.description}
             <Link className="mt-2" aria-label="Get to know more about this">
               <img src="assets/images/svg/icons/plus.svg" alt="Plus icon" />
+              <span hidden>Get to know more about this service</span>
               See More
             </Link>
           </motion.li>
