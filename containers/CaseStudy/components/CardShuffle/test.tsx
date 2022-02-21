@@ -114,7 +114,7 @@ export const CardTest = ({ items, setCurrentCase }: IProps) => {
               aria-label="Get to know more about this"
             >
               <Image
-                src="https://xylo-assets.s3.amazonaws.com/images/svg/icons/plus.svg"
+                src="/assets/images/svg/icons/plus.svg"
                 alt="Plus icon"
                 width={14}
                 height={14}

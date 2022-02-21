@@ -16,7 +16,7 @@ export default function Link({
     <S.Container>
       <S.Icon src="assets/images/svg/icons/plus.svg" alt="Plus icon" />
       <S.Label href={href} aria-label={ariaLabel}>
-        <span hidden>{ariaLabel}</span>
+        <span className="visually-hidden">{ariaLabel}</span>
         {label}
       </S.Label>
     </S.Container>
