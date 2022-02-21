@@ -1,6 +1,6 @@
-import React, { forwardRef, useImperativeHandle, useState } from "react";
+import { forwardRef, useImperativeHandle, useState } from "react";
 import * as S from "./styles";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { wrap } from "popmotion";
 import { TypeTestimonial } from "../..";
 

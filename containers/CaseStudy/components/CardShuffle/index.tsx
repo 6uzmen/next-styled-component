@@ -1,9 +1,10 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { arrayMoveImmutable } from "array-move";
 import styled from "styled-components";
 import { CaseStudieType } from "../..";
 import { Link } from "../../styles";
+import { useState } from "react";
+import Image from "next/image";
 
 const CARD_COLORS = ["#8acbfd", "#9ed5ff", " #b3deff", "#c4e4fc"];
 const CARD_OFFSET = -20;
@@ -14,7 +15,7 @@ interface IProps {
 }
 
 export const CardShuffle = ({ items }: IProps) => {
-  const [cards, setCards] = React.useState(items);
+  const [cards, setCards] = useState(items);
   const moveToEnd = (from: number) => {
     setCards(arrayMoveImmutable(cards, from, cards.length - 1));
   };

@@ -1,4 +1,3 @@
-import React from "react";
 import NextHead from "next/head";
 import Script from "next/script";
 
@@ -70,10 +69,13 @@ export default function Head() {
           async
           defer
           src="//js.hs-scripts.com/7707659.js"
+          strategy="lazyOnload"
         />
         <Script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=UA-2664098-14`}
+          defer={true}
+          strategy="lazyOnload"
         />
         <Script
           dangerouslySetInnerHTML={{
@@ -84,6 +86,8 @@ export default function Head() {
             gtag('config', 'UA-2664098-14');
           `,
           }}
+          defer={true}
+          strategy="lazyOnload"
         />
         <Script
           dangerouslySetInnerHTML={{
@@ -98,20 +102,15 @@ s.parentNode.insertBefore(t,s)}(window,document,'script',
  fbq('init', '779038593488772'); 
 fbq('track', 'PageView');`,
           }}
+          defer={true}
+          strategy="lazyOnload"
         />
-        <noscript>
-          {/* eslint-disable-next-line */}
-          <img
-            height="1"
-            width="1"
-            src="https://www.facebook.com/tr?id=779038593488772&ev=PageView
-&noscript=1"
-          />
-        </noscript>
         <Script
           dangerouslySetInnerHTML={{
             __html: `(function(){ window.ldfdr = window.ldfdr || {}; (function(d, s, ss, fs){ fs = d.getElementsByTagName(s)[0]; function ce(src){ var cs = d.createElement(s); cs.src = src; setTimeout(function(){fs.parentNode.insertBefore(cs,fs)}, 1); } ce(ss); })(document, 'script', 'https://sc.lfeeder.com/lftracker_v1_bElvO73Akn6aZMqj.js'); })();`,
           }}
+          defer={true}
+          strategy="lazyOnload"
         />
       </NextHead>
     </>

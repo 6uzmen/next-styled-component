@@ -6,7 +6,7 @@ import { useScrollBlock } from "../../utils/functions/scrollBook";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, FC } from "react";
 
 interface IProps {
   variant?: boolean;
@@ -17,37 +17,18 @@ interface RenderLogoProps {
   isSmallDevice: boolean;
 }
 
-interface LogoProps {
-  isSmallDevice: boolean;
-}
-
-const DarkLogo = ({ isSmallDevice }: LogoProps) => {
+const RenderLogo: FC<RenderLogoProps> = ({ dark, isSmallDevice }) => {
   return (
     <Image
       height="22px"
       width={isSmallDevice ? "120px" : "160px"}
-      src="https://xylo-assets.s3.amazonaws.com/images/svg/zircon-typo-dark.svg"
+      src={
+        dark
+          ? "/assets/images/svg/zircon-typo-dark.svg"
+          : "/assets/images/svg/zircon-typo.svg"
+      }
       alt="Zircontech-Logo"
     />
-  );
-};
-
-const DefaultLogo = ({ isSmallDevice }: LogoProps) => {
-  return (
-    <Image
-      height="22px"
-      width={isSmallDevice ? "120px" : "160px"}
-      src="https://xylo-assets.s3.amazonaws.com/images/svg/zircon-typo.svg"
-      alt="Zircontech-Logo"
-    />
-  );
-};
-
-const RenderLogo: React.FC<RenderLogoProps> = ({ dark, isSmallDevice }) => {
-  return dark ? (
-    <DarkLogo isSmallDevice={isSmallDevice} />
-  ) : (
-    <DefaultLogo isSmallDevice={isSmallDevice} />
   );
 };
 
@@ -132,7 +113,7 @@ export default function Navbar({ variant = false }: IProps) {
         variant={variant || isLargeDevice}
         isScrolled={scrollPosition > 0}
       >
-        <Link href="/">
+        <Link href="/" prefetch={false}>
           <a className="pointer p-1">
             <RenderLogo
               isSmallDevice={isSmallDevice}
@@ -168,7 +149,7 @@ export default function Navbar({ variant = false }: IProps) {
           </ButtonPrimary>
           <S.MenuIcon
             className="d-block d-xl-none"
-            src="https://xylo-assets.s3.amazonaws.com/images/svg/icons/menu.svg"
+            src="/assets/images/svg/icons/menu.svg"
             onClick={() => setOpenMenu(!openMenu)}
             alt="Menu icon"
           />

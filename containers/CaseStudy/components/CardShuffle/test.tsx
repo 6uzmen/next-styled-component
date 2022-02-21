@@ -1,4 +1,3 @@
-import React from "react";
 import { animated, to, useSprings } from "react-spring";
 import { useDrag } from "react-use-gesture";
 import { CardWrap, CardTitle, CardParagraph } from "./styles";
@@ -8,6 +7,7 @@ import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import { CompanyLogo, Link } from "../../styles";
 import { CaseStudieType } from "../..";
 import Image from "next/image";
+import { useRef } from "react";
 
 interface IProps {
   items: CaseStudieType[];
@@ -44,8 +44,8 @@ export const CardTest = ({ items, setCurrentCase }: IProps) => {
   };
 
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
-  const ref = React.useRef(null);
-  const cardOrder = React.useRef(items.map((_, index) => index));
+  const ref = useRef(null);
+  const cardOrder = useRef(items.map((_, index) => index));
 
   const [springs, setSprings] = useSprings(
     CARD_COUNT,
