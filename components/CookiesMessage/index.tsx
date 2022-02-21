@@ -23,7 +23,6 @@ export default function Index() {
       {!hasCookies && (
         <S.CookiesContainer>
           <S.MessageContainer>
-            <S.CookiesInfoIcon />
             <S.CookiesMessage>
               By using this website, you agree to our use of cookies. We use
               cookies to provide you with a great experience and to help our
