@@ -43,13 +43,3 @@ const axiosCall = async (url: any, { query, ...requestOptions }: any) => {
 
 export const unAuthAxiosCall = (url: any, requestOptions: any) =>
   axiosCall(url, requestOptions);
-
-//https://api.hubapi.com
-
-//api key pat-na1-ef9192cd-a2d9-41eb-bf59-114ee95dbe13
-
-//c5aeb8c9-f9de-4c03-94ae-4c692ad9fcef
-
-//   curl --request GET \
-//   --url 'https://api.hubapi.com/crm/v3/objects/contacts?limit=10&archived=false' \
-//   --header 'authorization: Bearer YOUR_ACCESS_TOKEN'
