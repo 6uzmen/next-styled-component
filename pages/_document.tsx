@@ -67,7 +67,6 @@ export default class MyDocument extends Document {
               gtag('config', 'UA-2664098-14');
           `,
             }}
-            defer={true}
           ></script>
           <script
             dangerouslySetInnerHTML={{
@@ -82,7 +81,6 @@ s.parentNode.insertBefore(t,s)}(window,document,'script',
  fbq('init', '779038593488772'); 
 fbq('track', 'PageView');`,
             }}
-            defer={true}
           />
           <script
             dangerouslySetInnerHTML={{
