@@ -18,11 +18,15 @@ export default function Blog() {
           : 0
       );
 
-      if (_blogs.length > 3) {
-        _blogs = _blogs.slice(0, 5);
-      }
+      if (_blogs) {
+        if (_blogs.length > 3) {
+          _blogs = _blogs.slice(0, 5);
+        }
 
-      return setBlogs(_blogs);
+        setBlogs(_blogs);
+      } else {
+        _blogs = [];
+      }
     });
   }, []);
 
