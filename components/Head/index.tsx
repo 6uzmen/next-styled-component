@@ -1,5 +1,4 @@
 import NextHead from "next/head";
-import Script from "next/script";
 
 export default function Head() {
   return (
@@ -62,55 +61,6 @@ export default function Head() {
         <meta
           name="description"
           content="A trusted partner for the technologies driving the future. We build solutions for your development projects as a nearshore software development company."
-        />
-        <Script
-          type="text/javascript"
-          id="hs-script-loader"
-          async
-          defer
-          src="//js.hs-scripts.com/7707659.js"
-          strategy="lazyOnload"
-        />
-        <Script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=UA-2664098-14`}
-          defer={true}
-          strategy="lazyOnload"
-        />
-        <Script
-          dangerouslySetInnerHTML={{
-            __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'UA-2664098-14');
-          `,
-          }}
-          defer={true}
-          strategy="lazyOnload"
-        />
-        <Script
-          dangerouslySetInnerHTML={{
-            __html: `!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window,document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
- fbq('init', '779038593488772'); 
-fbq('track', 'PageView');`,
-          }}
-          defer={true}
-          strategy="lazyOnload"
-        />
-        <Script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){ window.ldfdr = window.ldfdr || {}; (function(d, s, ss, fs){ fs = d.getElementsByTagName(s)[0]; function ce(src){ var cs = d.createElement(s); cs.src = src; setTimeout(function(){fs.parentNode.insertBefore(cs,fs)}, 1); } ce(ss); })(document, 'script', 'https://sc.lfeeder.com/lftracker_v1_bElvO73Akn6aZMqj.js'); })();`,
-          }}
-          defer={true}
-          strategy="lazyOnload"
         />
       </NextHead>
     </>
