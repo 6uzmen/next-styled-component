@@ -1,9 +1,9 @@
-/blogs https://blog.zircon.tech/
+/blogs https://blog.zircon.tech/ 301
 
-/blog/2020/04/02/cloud-business-cases-involving-blockchain-technologies https://blog.zircon.tech/blog/cloud-business-cases-involving-blockchain-technologies
+/blog/2020/04/02/cloud-business-cases-involving-blockchain-technologies https://blog.zircon.tech/blog/cloud-business-cases-involving-blockchain-technologies 301
 
-/blog/* https://blog.zircon.tech/blog/:splat
+/blog/* https://blog.zircon.tech/blog/:splat 301
 
-/info/* https://info.zircon.tech/en-us/:splat
+/info/* https://info.zircon.tech/en-us/:splat 301
 
-/blockchain-software-company https://info.zircon.tech/en-us/zircontech-services-blockchain
+/blockchain-software-company https://info.zircon.tech/en-us/zircontech-services-blockchain 301
