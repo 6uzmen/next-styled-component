@@ -43,7 +43,7 @@ export default function Blog() {
           <Paragraph>
             Our insight about innovation, business and everything tech.
           </Paragraph>
-          <Link href="https://zircon.tech/blogs">
+          <Link href="/blog">
             <Image
               alt="icon-link"
               src="/assets/images/svg/icons/arrow-right-blue.svg"
