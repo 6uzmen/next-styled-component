@@ -66,7 +66,7 @@ export default function Navbar({ variant = false }: IProps) {
         { label: "Monax", link: "/case-study/monax" },
       ],
     },
-    { label: "Blog", link: "/blogs" },
+    { label: "Blog", link: "/blog" },
   ];
   const [scrollPosition, setScrollPosition] = useState(0);
   const [showNavbar, setShowNavbar] = useState(true);
