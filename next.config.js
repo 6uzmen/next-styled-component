@@ -39,18 +39,18 @@ module.exports = {
       },
     ]
   }, 
-  async headers() {
-    return [
-      {
-        source: '/assets/:path',
-        locale: false,
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, stale-while-revalidate',
-          }
-        ],
-      },
-    ]
-  },
+  // async headers() {
+  //   return [
+  //     {
+  //       source: '/assets/:path',
+  //       locale: false,
+  //       headers: [
+  //         {
+  //           key: 'Cache-Control',
+  //           value: 'public, max-age=31536000, must-revalidate',
+  //         }
+  //       ],
+  //     },
+  //   ]
+  // },
 };
