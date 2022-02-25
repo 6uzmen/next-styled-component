@@ -3,6 +3,12 @@
   to = 'https://blog.zircon.tech/'
   status = 301
   force = true
+  
+ [[redirects]] # cuando hacemos click en ver todos los articulos, ir al index del Blog
+  from = '/blog' 
+  to = 'https://blog.zircon.tech/'
+  status = 301
+  force = true
 
 [[redirects]] # cuando hacemos click en leer más de un artículo específico, redireccionar a /blog/:splat, que se mapea a blog.zircon.tech/:splat
   from = '/blog/*' 
