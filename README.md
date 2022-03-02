@@ -19,6 +19,9 @@
 
 `yarn install`
 
+Tener en cuenta que las versiones compatibles de node son las siguientes: "^12.22.0 || ^14.17.0 || >=16.0.0"
+Instalar Node Version Manager (nvm) para moverse entre versiones.
+
 ### Netlify
 
 #### Instalar CLI de Netlify
