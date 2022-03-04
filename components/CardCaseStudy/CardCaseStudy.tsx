@@ -9,7 +9,7 @@ const CardCaseStudy = (caseStudy: ICaseStudyDetail) => {
   return (
     <Link href="case-study/[case]" as={link}>
       <Card>
-        <img className="w-100 rounded" src={displayImage} alt="Suku Infinite" />
+        <img className="w-100 rounded-top" src={displayImage} alt="Suku Infinite" />
         <div className="p-2">
           {technologies.map((name, index) => (
             <Badge key={index}>{name}</Badge>

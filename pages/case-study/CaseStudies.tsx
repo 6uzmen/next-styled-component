@@ -2,17 +2,15 @@ import Layout from "../../components/Layout";
 import CardCaseStudy from "../../components/CardCaseStudy";
 import { ReactElement } from "react";
 import { caseStudies } from "../../utils/consts/caseStudyList";
-import classes from "./CaseStudies.module.css";
+import { Content, Title, Subtitle } from "./styles";
 
 function CaseStudies() {
-  const { containerPadding } = classes;
-
   return (
-    <div className={`container-fluid ${containerPadding}`}>
+    <Content>
       <div className="row mt-5">
-        <div className="col mt-4">
-          <h1>Case Studies</h1>
-          <h4>See what we do and how we do it</h4>
+        <div className="col mt-4 text-center">
+          <Title>Case Studies</Title>
+          <Subtitle>See what we do and how we do it</Subtitle>
         </div>
       </div>
       <div className="row">
@@ -25,7 +23,7 @@ function CaseStudies() {
           </div>
         ))}
       </div>
-    </div>
+    </Content>
   );
 }
 

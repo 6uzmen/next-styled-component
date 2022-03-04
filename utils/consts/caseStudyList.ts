@@ -10,6 +10,16 @@ const infinite: ICaseStudyDetail = {
   technologies: ["Svelte", "NestJs", "Hedera"],
 };
 
+const giveTrack: ICaseStudyDetail = {
+  title: `Givetrack`,
+  overview: `GiveTrack™ is an innovative donation platform for nonprofits to provide transparency and accountability to donors by sharing financial information and direct project results in real-time. The platform helps nonprofits overcome breakdowns and challenges to do their work without limitations.`,
+  challenge: `One issue with charities is donors never know for sure how much of the funds they give actually make it to the intended cause. GiveTrack solves that problem by bringing transparency to the donation process. By using Bitcoin and blockchain technology, the web-based project allows donors to give to a cause and then track the progress of those funds in real-time, thereby reducing opportunities for fraud.`,
+  solution: `ZirconTech was in charge of the frontend and backend development. We designed and implemented the solution that included communication with API Blockchain (RootStock), the back-end API (built with Node.JS) under the infrastructure of AWS and Jenkins CI and the front-end using React.JS. Once the implementation was finished, we took over the maintenance, support and development of new functionalities.  `,
+  displayImage: `/assets/images/webp/givetrack-study.webp`,
+  link: `case-study/givetrack`,
+  technologies: ["Svelte", "NestJs", "Hedera"],
+};
+
 const cuckoo: ICaseStudyDetail = {
   title: `Cuckoo`,
   overview: `Cuckoo Links allows you to create a link-in-bio landing page with links to not only major streaming platforms, but beat markets for producers, indie stores, indie streaming platforms, YouTube videos, custom URL's like your website or merch store and much more.`,
@@ -30,20 +40,9 @@ const monax: ICaseStudyDetail = {
   technologies: ["Angular", "NestJs"],
 };
 
-const giveTrack: ICaseStudyDetail = {
-  title: `Givetrack`,
-  overview: `GiveTrack™ is an innovative donation platform for nonprofits to provide transparency and accountability to donors by sharing financial information and direct project results in real-time. The platform helps nonprofits overcome breakdowns and challenges to do their work without limitations.`,
-  challenge: `One issue with charities is donors never know for sure how much of the funds they give actually make it to the intended cause. GiveTrack solves that problem by bringing transparency to the donation process. By using Bitcoin and blockchain technology, the web-based project allows donors to give to a cause and then track the progress of those funds in real-time, thereby reducing opportunities for fraud.`,
-  solution: `ZirconTech was in charge of the frontend and backend development. We designed and implemented the solution that included communication with API Blockchain (RootStock), the back-end API (built with Node.JS) under the infrastructure of AWS and Jenkins CI and the front-end using React.JS. Once the implementation was finished, we took over the maintenance, support and development of new functionalities.  `,
-  displayImage: `/assets/images/webp/givetrack-study.webp`,
-  link: `case-study/givetrack`,
-  technologies: ["Svelte", "NestJs", "Hedera"],
-};
-
-
 export const caseStudies: ICaseStudyDetail[] = [
   infinite,
   cuckoo,
-  monax,
   giveTrack,
+  monax,
 ];
