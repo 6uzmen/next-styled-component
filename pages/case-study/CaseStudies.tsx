@@ -17,7 +17,10 @@ function CaseStudies() {
       </div>
       <div className="row">
         {caseStudies.map((caseStudy, index) => (
-          <div key={index} className="col-12 col-sm-6 mt-4">
+          <div
+            key={index}
+            className="col-12 col-sm-6 mt-4 d-flex align-items-stretch"
+          >
             <CardCaseStudy {...caseStudy} />
           </div>
         ))}
