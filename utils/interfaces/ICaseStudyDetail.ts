@@ -1,3 +1,8 @@
+interface ITechnology {
+  name: string;
+  url: string;
+}
+
 export interface ICaseStudyDetail {
   title: string;
   overview: string;
@@ -5,5 +10,5 @@ export interface ICaseStudyDetail {
   solution: string;
   displayImage: string;
   link: string;
-  technologies: string[];
+  technologies: ITechnology[];
 }

@@ -1,24 +1,38 @@
 import React from "react";
 import Link from "next/link";
 import { ICaseStudyDetail } from "../../utils/interfaces/ICaseStudyDetail";
-import { Card, Badge } from "./styles";
+import { Card } from "./styles";
+import { Badge } from "../Badge/styles";
 
 const CardCaseStudy = (caseStudy: ICaseStudyDetail) => {
   const { displayImage, title, overview, technologies, link } = caseStudy;
 
   return (
-    <Link href="case-study/[case]" as={link}>
+    <>
       <Card>
-        <img className="w-100 rounded-top" src={displayImage} alt="Suku Infinite" />
-        <div className="p-2">
-          {technologies.map((name, index) => (
-            <Badge key={index}>{name}</Badge>
+        <Link href="case-study/[case]" as={link}>
+          <img
+            className="w-100 rounded-top"
+            src={displayImage}
+            alt="Suku Infinite"
+          />
+        </Link>
+
+        <div className="p-3">
+          {technologies.map((tech, index) => (
+            <a href={tech.url} target="_blank" key={index}>
+              <Badge>{tech.name}</Badge>
+            </a>
           ))}
-          <h4 className="mt-2">{title}</h4>
-          <p className="text-justify">{overview}</p>
+          <Link href="case-study/[case]" as={link}>
+            <div>
+              <h4 className="mt-2">{title}</h4>
+              <p className="text-justify">{overview}</p>
+            </div>
+          </Link>
         </div>
       </Card>
-    </Link>
+    </>
   );
 };
 
