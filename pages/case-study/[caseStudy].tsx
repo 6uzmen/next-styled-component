@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useState, useEffect, ReactElement } from "react";
-import { Context } from "vm";
+import { NextPageContext } from 'next'
 import { Badge } from "../../components/Badge/styles";
 import Layout from "../../components/Layout";
 import { caseStudies } from "../../utils/consts/caseStudyList";
@@ -82,7 +82,7 @@ CaseStudy.getLayout = (page: ReactElement) => {
 
 export default CaseStudy;
 
-CaseStudy.getInitialProps = async (ctx: Context) => {
+CaseStudy.getInitialProps = async (ctx: NextPageContext) => {
   const { caseStudy } = ctx.query;
   return { caseStudy };
 };
