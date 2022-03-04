@@ -1,7 +1,5 @@
 import Link from "next/link";
-import React, { useState } from "react";
-import { ReactElement } from "react";
-import { useEffect } from "react";
+import { useState, useEffect, ReactElement } from "react";
 import { Context } from "vm";
 import { Badge } from "../../components/Badge/styles";
 import Layout from "../../components/Layout";
@@ -31,7 +29,7 @@ function CaseStudy({ caseStudy }) {
     const draftCase = caseStudies.find(
       ({ title }) => title.toLowerCase() === caseStudy.toLowerCase()
     );
-    console.log(draftCase);
+    
     setSelectedCase(draftCase);
   };
 
