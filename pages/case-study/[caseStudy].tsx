@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { useState, useEffect, ReactElement } from "react";
-import { NextPageContext } from 'next'
+import { NextPageContext } from "next";
 import { Badge } from "../../components/Badge/styles";
 import { Content, Title, Subtitle } from "./styles";
 import { caseStudies, defaultCase } from "../../utils/consts/caseStudyList";
 import { ISeo } from "../../utils/interfaces/ISeo";
 import { Seo } from "../../components/Seo";
 import Layout from "../../components/Layout";
+import ContactUs from "../../containers/ContactUs";
 
 const keywords = "case-study, case, caso-de-estudio, caso, zircon, zircontech";
 
@@ -22,7 +23,7 @@ function CaseStudy({ caseStudy }) {
     const draftCase = caseStudies.find(
       ({ title }) => title.toLowerCase() === caseStudy.toLowerCase()
     );
-    
+
     setSelectedCase(draftCase);
     setSeo({
       title: draftCase.title,
@@ -73,6 +74,7 @@ function CaseStudy({ caseStudy }) {
           </div>
         </div>
       </Content>
+      <ContactUs />
     </>
   );
 }
