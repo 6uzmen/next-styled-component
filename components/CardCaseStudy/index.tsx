@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { ICaseStudyDetail } from "../../utils/interfaces/ICaseStudyDetail";
-import { Card } from "./styles";
+import { ButtonWrapper, Card, Description } from "./styles";
 import { Badge } from "../Badge/styles";
+import { ButtonPrimary } from "../Button/styles";
 
 const CardCaseStudy = (caseStudy: ICaseStudyDetail) => {
   const { displayImage, title, overview, technologies, link } = caseStudy;
@@ -17,7 +18,7 @@ const CardCaseStudy = (caseStudy: ICaseStudyDetail) => {
           />
         </Link>
 
-        <div className="p-3">
+        <Description>
           {technologies.map((tech, index) => (
             <a href={tech.url} target="_blank" key={index}>
               <Badge>{tech.name}</Badge>
@@ -27,9 +28,12 @@ const CardCaseStudy = (caseStudy: ICaseStudyDetail) => {
             <div>
               <h4 className="mt-2">{title}</h4>
               <p className="text-justify">{overview}</p>
+              <ButtonWrapper>
+                <ButtonPrimary >Read more</ButtonPrimary>
+              </ButtonWrapper>
             </div>
           </Link>
-        </div>
+        </Description>
       </Card>
     </>
   );
