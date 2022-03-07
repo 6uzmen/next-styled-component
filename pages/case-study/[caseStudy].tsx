@@ -1,27 +1,17 @@
-import Link from "next/link";
-import React, { useState } from "react";
-import { ReactElement } from "react";
-import { useEffect } from "react";
+import { ReactElement, useState, useEffect } from "react";
 import { Context } from "vm";
 import { Badge } from "../../components/Badge/styles";
-import Layout from "../../components/Layout";
-import { caseStudies } from "../../utils/consts/caseStudyList";
-import { ICaseStudyDetail } from "../../utils/interfaces/ICaseStudyDetail";
 import { Content, Title, Subtitle } from "./styles";
+import { caseStudies, defaultCase } from "../../utils/consts/caseStudyList";
+import { ISeo } from "../../utils/interfaces/ISeo";
+import { Seo } from "../../components/Seo";
+import Layout from "../../components/Layout";
 
-const defaultCase: ICaseStudyDetail = {
-  title: "",
-  overview: "",
-  challenge: "",
-  solution: "",
-  displayImage: "",
-  link: "",
-  technologies: [],
-};
+const keywords = "case-study, case, caso-de-estudio, caso, zircon, zircontech";
 
 function CaseStudy({ caseStudy }) {
-  const [selectedCase, setSelectedCase] =
-    useState<ICaseStudyDetail>(defaultCase);
+  const [selectedCase, setSelectedCase] = useState(defaultCase);
+  const [seo, setSeo] = useState<ISeo>();
 
   useEffect(() => {
     caseStudy && loadCaseStudy();
@@ -31,50 +21,57 @@ function CaseStudy({ caseStudy }) {
     const draftCase = caseStudies.find(
       ({ title }) => title.toLowerCase() === caseStudy.toLowerCase()
     );
-    console.log(draftCase);
     setSelectedCase(draftCase);
+    setSeo({
+      title: draftCase.title,
+      description: draftCase.overview,
+      keywords: `${keywords}, ${draftCase.title}`,
+    });
   };
 
   return (
-    <Content>
-      <div className="row mt-5">
-        <div className="col mt-5 text-center">
-          <Title>{selectedCase.title}</Title>
-          <Subtitle>{selectedCase.overview}</Subtitle>
+    <>
+      <Seo {...seo} />
+      <Content>
+        <div className="row mt-5">
+          <div className="col mt-5 text-center">
+            <Title>{selectedCase.title}</Title>
+            <Subtitle>{selectedCase.overview}</Subtitle>
+          </div>
         </div>
-      </div>
-      <div className="row">
-        <div className="col">
-          <img
-            src={selectedCase.displayImage}
-            className="w-100 rounded-top mt-3"
-            alt="Case Study Image"
-          />
+        <div className="row">
+          <div className="col">
+            <img
+              src={selectedCase.displayImage}
+              className="w-100 rounded-top mt-3"
+              alt="Case Study Image"
+            />
+          </div>
         </div>
-      </div>
-      <div className="row mt-4">
-        <div className="col">
-          <h2>Challenge</h2>
-          <p>{selectedCase.challenge}</p>
+        <div className="row mt-4">
+          <div className="col">
+            <h2>Challenge</h2>
+            <p>{selectedCase.challenge}</p>
+          </div>
         </div>
-      </div>
-      <div className="row mt-4">
-        <div className="col">
-          <h2>Solution</h2>
-          <p>{selectedCase.solution}</p>
+        <div className="row mt-4">
+          <div className="col">
+            <h2>Solution</h2>
+            <p>{selectedCase.solution}</p>
+          </div>
         </div>
-      </div>
-      <div className="row mt-2">
-        <div className="col">
-          <h2>Technologies</h2>
-          {selectedCase.technologies.map((tech, index) => (
-            <a href={tech.url} target="_blank" key={index}>
-              <Badge>{tech.name}</Badge>
-            </a>
-          ))}
+        <div className="row mt-2">
+          <div className="col">
+            <h2>Technologies</h2>
+            {selectedCase.technologies.map((tech, index) => (
+              <a href={tech.url} target="_blank" key={index}>
+                <Badge>{tech.name}</Badge>
+              </a>
+            ))}
+          </div>
         </div>
-      </div>
-    </Content>
+      </Content>
+    </>
   );
 }
 
@@ -82,9 +79,9 @@ CaseStudy.getLayout = (page: ReactElement) => {
   return <Layout navBarVariant={true}>{page}</Layout>;
 };
 
-export default CaseStudy;
-
 CaseStudy.getInitialProps = async (ctx: Context) => {
   const { caseStudy } = ctx.query;
   return { caseStudy };
 };
+
+export default CaseStudy;

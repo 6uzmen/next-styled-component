@@ -1,5 +1,15 @@
 import { ICaseStudyDetail } from "../interfaces/ICaseStudyDetail";
 
+export const defaultCase: ICaseStudyDetail = {
+  title: "",
+  overview: "",
+  challenge: "",
+  solution: "",
+  displayImage: "",
+  link: "",
+  technologies: [],
+};
+
 const infinite: ICaseStudyDetail = {
   title: `Infinite`,
   overview: `Infinite will use its platform to securely create and sell verifiable non-fungible tokens that represent the authenticity of both digital and physical products. These tokens will be transacted in their marketplace.`,
