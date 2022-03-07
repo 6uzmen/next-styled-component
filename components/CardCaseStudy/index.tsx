@@ -1,4 +1,3 @@
-import React from "react";
 import Link from "next/link";
 import { ICaseStudyDetail } from "../../utils/interfaces/ICaseStudyDetail";
 import { Card } from "./styles";
