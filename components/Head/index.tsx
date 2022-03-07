@@ -17,10 +17,12 @@ export default function Head() {
         <meta
           property="og:title"
           content="Nearshore Software Development Company - ZIRCONTech"
+          key="title"
         />
         <meta
           property="og:description"
           content="A trusted partner for the technologies driving the future. We build solutions for your development projects as a nearshore software development company."
+          key="description"
         />
         <meta property="og:url" content="https://zircon.tech/" />
         <meta property="og:site_name" content="ZIRCONTech" />
@@ -61,6 +63,7 @@ export default function Head() {
         <meta
           name="description"
           content="A trusted partner for the technologies driving the future. We build solutions for your development projects as a nearshore software development company."
+          key="description"
         />
       </NextHead>
     </>
