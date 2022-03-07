@@ -1,5 +1,6 @@
-import { ReactElement, useState, useEffect } from "react";
-import { Context } from "vm";
+import Link from "next/link";
+import { useState, useEffect, ReactElement } from "react";
+import { NextPageContext } from 'next'
 import { Badge } from "../../components/Badge/styles";
 import { Content, Title, Subtitle } from "./styles";
 import { caseStudies, defaultCase } from "../../utils/consts/caseStudyList";
@@ -21,6 +22,7 @@ function CaseStudy({ caseStudy }) {
     const draftCase = caseStudies.find(
       ({ title }) => title.toLowerCase() === caseStudy.toLowerCase()
     );
+    
     setSelectedCase(draftCase);
     setSeo({
       title: draftCase.title,
@@ -79,7 +81,7 @@ CaseStudy.getLayout = (page: ReactElement) => {
   return <Layout navBarVariant={true}>{page}</Layout>;
 };
 
-CaseStudy.getInitialProps = async (ctx: Context) => {
+CaseStudy.getInitialProps = async (ctx: NextPageContext) => {
   const { caseStudy } = ctx.query;
   return { caseStudy };
 };
