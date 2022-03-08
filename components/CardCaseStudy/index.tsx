@@ -29,7 +29,7 @@ const CardCaseStudy = (caseStudy: ICaseStudyDetail) => {
               <h4 className="mt-2">{title}</h4>
               <p className="text-justify">{overview}</p>
               <ButtonWrapper>
-                <ButtonPrimary >Read more</ButtonPrimary>
+                <ButtonPrimary className="h-100">Read more</ButtonPrimary>
               </ButtonWrapper>
             </div>
           </Link>

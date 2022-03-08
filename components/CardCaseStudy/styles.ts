@@ -14,12 +14,15 @@ export const Card = styled.div`
 
 export const Description = styled.div`
   padding: 1rem;
-  min-height: 21rem;
+  min-height: 14.5rem;
+  @media screen and (max-width: 1300px) {
+    min-height: 19rem;
+  }
 `;
 
 export const ButtonWrapper = styled.div`
   position: absolute;
-  bottom: 1rem;
+  bottom: 0.5rem;
   @media screen and (max-width: 768px) {
     position: relative;
     display: flex;
