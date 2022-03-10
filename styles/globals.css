@@ -37,3 +37,7 @@ a {
   white-space: nowrap;
   width: 1px;
 }
+
+.text-justify {
+  text-align: justify;
+}

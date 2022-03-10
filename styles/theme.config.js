@@ -29,7 +29,7 @@ export const GlobalStyles = createGlobalStyle`
     padding: 0;
     background: ${({ theme }) => theme.body};
     color: ${({ theme }) => theme.text};
-    font-family: sans-serif !important;
+    font-family: rubik !important;
     font-weight: 400;
     font-style: normal;
     transition: all 0.50s linear;
