@@ -1,9 +1,10 @@
 # *
 User-agent: *
-Disallow: /
+Allow: /
 
 # Host
 Host: https://zircon.tech
 
 # Sitemaps
 Sitemap: https://zircon.tech/sitemap.xml
+Sitemap: https://blog.zircon.tech/sitemap.xml
