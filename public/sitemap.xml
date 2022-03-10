@@ -38,4 +38,9 @@
         <lastmod>2022-03-10</lastmod>
 		<xhtml:link rel="alternate" hreflang="en" href="https://zircon.tech/case-study/monax" />
     </url>
+    <url>
+        <loc>https://zircon.tech/blog</loc>
+        <lastmod>2022-03-10</lastmod>
+		<xhtml:link rel="alternate" hreflang="en" href="https://blog.zircon.tech" />
+    </url>
 </urlset>
