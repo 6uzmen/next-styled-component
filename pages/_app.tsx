@@ -18,6 +18,7 @@ type AppPropsWithLayout = AppProps & {
 export default function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   const getLayout = Component.getLayout ?? ((page) => page);
 
+  
   return getLayout(
     <ThemeProvider theme={lightTheme}>
       <GlobalStyles />

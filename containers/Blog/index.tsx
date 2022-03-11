@@ -65,7 +65,7 @@ export default function Blog() {
               </ImageWrapper>
             </div>
             <div className="d-flex col-lg-7 col-md-12 bg-primary">
-              {blogs && (
+              {blogs?.length && (
                 <div className="d-flex flex-column my-auto px-5 py-sm-4 py-lg-0">
                   <TitlePost>{blogs[0]?.name}</TitlePost>
                   <Link className="text-white" href={`/${blogs[0]?.slug}`}>
@@ -87,7 +87,7 @@ export default function Blog() {
             }}
           >
             <div className="grid">
-              {blogs &&
+              {blogs?.length &&
                 blogs
                   ?.slice(1, 4)
                   .map((post: any, index: number) => (

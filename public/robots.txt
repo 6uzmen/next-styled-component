@@ -8,3 +8,5 @@ Host: https://zircon.tech
 # Sitemaps
 Sitemap: https://zircon.tech/sitemap.xml
 Sitemap: https://blog.zircon.tech/sitemap.xml
+Sitemap: https://info.zircon.tech/sitemap.xml
+
