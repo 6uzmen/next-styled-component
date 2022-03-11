@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 import { GetServerSidePropsContext } from "next";
 import { Badge } from "../../components/Badge/styles";
-import { Content, Title, Subtitle } from "./styles";
+import { Content, Title, Subtitle } from "../../styles/caseStudy";
 import { ISeo } from "../../utils/interfaces/ISeo";
 import { Seo } from "../../components/Seo";
 import Layout from "../../components/Layout";
