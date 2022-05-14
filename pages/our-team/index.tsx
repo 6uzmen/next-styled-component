@@ -108,7 +108,7 @@ export default function Team({ seo }: { seo: ISeo }) {
             <S.TeamMemberContainer className="my-5">
               <S.ArrowIcon src="/assets/images/svg/icons/arrow-right-gradient-blue.svg" />
               <div>
-                <S.TeamMemberLabel>Board Member & Advisor</S.TeamMemberLabel>
+                <S.TeamMemberLabel>Managing Partner</S.TeamMemberLabel>
                 <S.TeamMemberName>Martin Machin</S.TeamMemberName>
                 <S.TeamMemberDescription>
                   Martin is a mentor, investor and advisor to companies in
