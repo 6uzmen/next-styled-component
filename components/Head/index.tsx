@@ -40,6 +40,7 @@ export default function Head() {
         <meta name="twitter:site" content="@zircon_tech" />
         <meta name="twitter:label1" content="Est. reading time" />
         <meta name="twitter:data1" content="7 minutes" />
+        <link rel="canonical" href="https://zircon.tech/" />
         <link
           rel="apple-touch-icon"
           sizes="57x57"
