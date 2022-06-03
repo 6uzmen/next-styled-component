@@ -167,12 +167,10 @@ export default function Blog() {
                   ))}
             </div>
           </div>
-          <div className="forced-blog-posts" style={{ height: 0, overflow: 'hidden', opacity: 0 }}>
-            <ul>
-              {fullList.map(l => (
-                <li><Link href={l} isAbsolute={true}>{l}</Link></li>
-              ))}
-            </ul>
+          <div className="forced-blog-posts" style={{ opacity: 0.1 }}>
+            {fullList.map(l => (
+              <Link href={l} isAbsolute={true}>{l}</Link>
+            ))}
           </div>
         </div>
       </div>
