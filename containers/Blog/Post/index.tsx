@@ -13,7 +13,7 @@ export const Post = ({ name, slug }: IPost) => {
   return (
     <PostContainer className="g-col-lg-6 g-col-xl-4 g-col-12">
       <Title>{name || ''}</Title>
-      <Link href={`/${slug}`} isAbsolute={true}>
+      <Link href={`https://blog.zircon.tech/${slug}`} isAbsolute={true}>
         <Image
           alt="icon-url"
           src="/assets/images/svg/icons/arrow-right-blue.svg"
