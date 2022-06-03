@@ -1,9 +1,10 @@
-/blogs https://blog.zircon.tech/ 301
-/blog https://blog.zircon.tech/ 301
+/blogs http://18.117.246.70 200!
+/blog http://18.117.246.70 200!
 
-/blog/2020/04/02/cloud-business-cases-involving-blockchain-technologies https://blog.zircon.tech/blog/cloud-business-cases-involving-blockchain-technologies 301
+/blog/hola http://18.117.246.70/hola 200!
 
-/blog/* https://blog.zircon.tech/blog/:splat 301
+/blog/* http://18.117.246.70/:splat 200!
+
 
 /info/* https://info.zircon.tech/en-us/:splat 301
 
