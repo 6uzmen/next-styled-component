@@ -1,31 +1,37 @@
 [[redirects]] # cuando hacemos click en ver todos los articulos, ir al index del Blog
   from = '/blogs' 
-  to = 'http://18.117.246.70'
+  to = 'http://15.222.45.215/'
   status = 200
   force = true
 
 [[redirects]]
   from = '/blogs/page/*' 
-  to = 'http://18.117.246.70'
+  to = 'http://15.222.45.215/'
   status = 200
   force = true
 
 [[redirects]]
   from = '/post/page/*' 
-  to = 'http://18.117.246.70/'
+  to = 'http://15.222.45.215/'
+  status = 200
+  force = true
+
+[[redirects]] # cuando hacemos click en leer más de un artículo específico, redireccionar a /blog/:splat, que se mapea a blog.zircon.tech/:splat
+  from = '/blog/nft-explained-what-are-nfts-and-how-are-they-used' 
+  to = 'http://15.222.45.215/nft-explained-what-are-nfts-and-how-are-they-used'
+  status = 200
+  force = true
+
+[[redirects]] # cuando hacemos click en leer más de un artículo específico, redireccionar a /blog/:splat, que se mapea a blog.zircon.tech/:splat
+  from = '/blog/*' 
+  to = 'http://15.222.45.215/:splat'
   status = 200
   force = true
   
  [[redirects]] # cuando hacemos click en ver todos los articulos, ir al index del Blog
   from = '/blog' 
-  to = 'http://18.117.246.70/'
+  to = 'http://15.222.45.215'
   status = 301
-  force = true
-
-[[redirects]] # cuando hacemos click en leer más de un artículo específico, redireccionar a /blog/:splat, que se mapea a blog.zircon.tech/:splat
-  from = '/blog/*' 
-  to = 'http://18.117.246.70/:splat'
-  status = 200
   force = true
 
 # Ejemplo: 
@@ -37,14 +43,8 @@
 
 
 [[redirects]]
-  from = '/blog/hola' 
-  to = 'http://18.117.246.70/hola/'
-  status = 200
-  force = true
-
-[[redirects]]
   from = '/blog/2020/04/02/cloud-business-cases-involving-blockchain-technologies' 
-  to = 'http://18.117.246.70/cloud-business-cases-involving-blockchain-technologies'
+  to = 'http://15.222.45.215/cloud-business-cases-involving-blockchain-technologies'
   status = 301
   force = true
 
