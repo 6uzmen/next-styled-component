@@ -1,6 +1,6 @@
 /blogs http://15.222.45.215 200!
 
-/blog/nft-explained-what-are-nfts-and-how-are-they-used http://15.222.45.215/nft-explained-what-are-nfts-and-how-are-they-used 200!
+/blog/nft-explained-what-are-nfts-and-how-are-they-used https://google.com 200!
 
 /blog/* http://15.222.45.215/:splat 200!
 
