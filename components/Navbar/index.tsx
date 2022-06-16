@@ -1,12 +1,12 @@
-import { ButtonPrimary } from "../Button/styles";
-import * as S from "./styles";
-import { useMediaQuery } from "react-responsive";
-import VerticalMenu from "../VerticalMenu";
-import { useScrollBlock } from "../../utils/functions/scrollBook";
-import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState, FC } from "react";
+import { useRouter } from "next/router";
+import { FC, useEffect, useState } from "react";
+import { useMediaQuery } from "react-responsive";
+import { useScrollBlock } from "../../utils/functions/scrollBook";
+import { ButtonPrimary } from "../Button/styles";
+import VerticalMenu from "../VerticalMenu";
+import * as S from "./styles";
 
 interface IProps {
   variant?: boolean;
@@ -66,7 +66,7 @@ export default function Navbar({ variant = false }: IProps) {
         { label: "Monax", link: "/case-study/monax" },
       ],
     },
-    { label: "Blog", link: "https://blog.zircon.tech" },
+    { label: "Blog", link: "/blog" },
   ];
   const [scrollPosition, setScrollPosition] = useState(0);
   const [showNavbar, setShowNavbar] = useState(true);
