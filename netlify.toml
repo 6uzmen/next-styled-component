@@ -22,11 +22,11 @@
   status = 301
   force = true
 
-[[redirects]] # cuando hacemos click en leer más de un artículo específico, redireccionar a /blog/:splat, que se mapea a blog.zircon.tech/:splat
-  from = '/blog/*' 
-  to = 'https://blog.zircon.tech/blog/:splat'
-  status = 301
-  force = true
+# [[redirects]] # cuando hacemos click en leer más de un artículo específico, redireccionar a /blog/:splat, que se mapea a blog.zircon.tech/:splat
+#   from = '/blog/*' 
+#   to = 'https://blog.zircon.tech/blog/:splat'
+#   status = 301
+#   force = true
 
 # Ejemplo: 
 #                           /:splat                            
