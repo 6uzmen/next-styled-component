@@ -6,7 +6,7 @@ import { Link, Title as TitlePost } from "./Post/styles";
 import { BlogContainer, ImageWrapper, Label, Paragraph, Title } from "./styles";
 
 const fullList = [
-  'https://zircon.tech/blog/data-integration-benefits',
+  'https://zircon.tech/blog/data-integration-benefits/',
   'https://blog.zircon.tech/',
   'https://blog.zircon.tech/olap-online-analytical-processing-tools/',
   'https://blog.zircon.tech/zircontech-carves-a-niche-with-solutions-of-resolute-character-that-get-noticed-at-goodfirms/',
