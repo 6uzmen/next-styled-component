@@ -4,7 +4,8 @@ export type Post = {
   content: string,
   seo: {
     title: string,
-    description: string
+    description: string,
+    image: string
   }
 }
 
@@ -13,61 +14,11 @@ export const posts: Post[] = [{
   title: 'Data Integration Benefits You Need to Know',
   seo: {
     title: 'Data Integration Benefits You Need to Know',
-    description: 'Data Integration Benefits You Need to Know'
+    description: 'Data Integration Benefits You Need to Know',
+    image: 'https://blog.zircon.tech/hubfs/Data%20Integration%20Benefits%20you%20Need%20to%20Know.webp#keepProtocol'
   },
   content: `
-    <style>
-a.cta_button{-moz-box-sizing:content-box !important;-webkit-box-sizing:content-box !important;box-sizing:content-box !important;vertical-align:middle}.hs-breadcrumb-menu{list-style-type:none;margin:0px 0px 0px 0px;padding:0px 0px 0px 0px}.hs-breadcrumb-menu-item{float:left;padding:10px 0px 10px 10px}.hs-breadcrumb-menu-divider:before{content:'›';padding-left:10px}.hs-featured-image-link{border:0}.hs-featured-image{float:right;margin:0 0 20px 20px;max-width:50%}@media (max-width: 568px){.hs-featured-image{float:none;margin:0;width:100%;max-width:100%}}.hs-screen-reader-text{clip:rect(1px, 1px, 1px, 1px);height:1px;overflow:hidden;position:absolute !important;width:1px}
-</style>
-
-<link rel="stylesheet" href="https://blog.zircon.tech/hs-fs/hub/7707659/hub_generated/template_assets/60546822421/1646933820850/DFZ-ZRT-Theme/css/DFZ_-_Stylesheet_ZRT.min.css">
-<link rel="stylesheet" href="https://blog.zircon.tech/hs-fs/hub/7707659/hub_generated/module_assets/61402963359/1646926024324/module_61402963359_DFZ_-_Menu_bkg_white.min.css">
-<link rel="stylesheet" href="https://blog.zircon.tech/hs-fs/hub/7707659/hub_generated/module_assets/62287343900/1646225432296/module_62287343900_DFZ_-_Splide_Recent_Posts_Global.min.css">
-<link rel="preload" href="//cdn2.hubspot.net/hub/7707659/hub_generated/template_assets/60816729710/1638219710195/DFZ-ZRT-Theme/css/splide.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://blog.zircon.tech/hs-fs/hub/7707659/hub_generated/template_assets/60816729710/1638219710195/DFZ-ZRT-Theme/css/splide.min.css"></noscript>
-<link rel="stylesheet" href="https://blog.zircon.tech/hs-fs/hub/7707659/hub_generated/module_assets/60549483022/1638439835032/module_60549483022_DFZ_-_Newsletter.min.css">
-<link rel="stylesheet" href="https://blog.zircon.tech/hs-fs/hub/7707659/hub_generated/module_assets/60546844304/1638440683856/module_60546844304_DFZ_-_Simple_Footer.min.css">
-    
-
-    
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<meta property="og:image" content="https://blog.zircon.tech/hubfs/Data%20Integration%20Benefits%20you%20Need%20to%20Know.webp#keepProtocol">
-<meta property="og:image:alt" content="Data Integration Benefits you need to know for your business  Data Management ">
-<meta name="twitter:image" content="https://blog.zircon.tech/hubfs/Data%20Integration%20Benefits%20you%20Need%20to%20Know.webp#keepProtocol">
-<meta name="twitter:image:alt" content="Data Integration Benefits you need to know for your business  Data Management ">
-
-<meta property="og:url" content="https://zircon.tech/blog/data-integration-benefits/">
-<meta name="twitter:card" content="summary">
-
-<link rel="canonical" href="https://zircon.tech/blog/data-integration-benefits/">
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-W2TPTNG');</script>
-<!-- End Google Tag Manager -->
-<meta property="og:type" content="article">
-<link rel="alternate" type="application/rss+xml" href="https://blog.zircon.tech/rss.xml">
-<meta name="twitter:domain" content="blog.zircon.tech">
-<script src="//platform.linkedin.com/in.js" type="text/javascript">
-    lang: en_US
-</script>
-
-<meta httpEquiv="content-language" content="en-us">
-
-
-
-
-
-
-    
-    
-
-  </head>
-  <body class="   hs-content-id-61795192960 hs-blog-post hs-blog-id-61032630194" style="">
+<body class="   hs-content-id-61795192960 hs-blog-post hs-blog-id-61032630194" style="">
     
     <div class="header-container-wrapper">
       <div class="header-container container-fluid">
@@ -663,7 +614,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </div>
 </section></div>
     </div><!--end body wrapper -->
-
+    
+    <link rel="preload" href="//cdn2.hubspot.net/hub/7707659/hub_generated/template_assets/60816729710/1638219710195/DFZ-ZRT-Theme/css/splide.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="https://blog.zircon.tech/hs-fs/hub/7707659/hub_generated/template_assets/60546822421/1646933820850/DFZ-ZRT-Theme/css/DFZ_-_Stylesheet_ZRT.min.css">
+    <link rel="stylesheet" href="https://blog.zircon.tech/hs-fs/hub/7707659/hub_generated/module_assets/61402963359/1646926024324/module_61402963359_DFZ_-_Menu_bkg_white.min.css">
+    <link rel="stylesheet" href="https://blog.zircon.tech/hs-fs/hub/7707659/hub_generated/module_assets/62287343900/1646225432296/module_62287343900_DFZ_-_Splide_Recent_Posts_Global.min.css">
+    <noscript><link rel="stylesheet" href="https://blog.zircon.tech/hs-fs/hub/7707659/hub_generated/template_assets/60816729710/1638219710195/DFZ-ZRT-Theme/css/splide.min.css"/></noscript>
+    <link rel="stylesheet" href="https://blog.zircon.tech/hs-fs/hub/7707659/hub_generated/module_assets/60549483022/1638439835032/module_60549483022_DFZ_-_Newsletter.min.css">
+    <link rel="stylesheet" href="https://blog.zircon.tech/hs-fs/hub/7707659/hub_generated/module_assets/60546844304/1638440683856/module_60546844304_DFZ_-_Simple_Footer.min.css">
+    
     <div class="footer-container-wrapper">
       <div class="footer-container container-fluid">
         <div id="hs_cos_wrapper_module_163891328244528" class="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_module" style="" data-hs-cos-general-type="widget" data-hs-cos-type="module"><footer>
