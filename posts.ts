@@ -29,7 +29,7 @@ export const posts: Post[] = [{
       <a href="https://zircon.tech/" class="a-logo"><img class="logo" src="https://blog.zircon.tech/hubfs/zircon%20logo-1.png" alt="logo"></a>
       <ul class="menu-items">
         
-        <li class="menu-item"> 
+        <li key={1} class="menu-item"> 
 
           <span> 
             <a href="https://zircon.tech/#services">
@@ -57,7 +57,7 @@ export const posts: Post[] = [{
           
         </li>
         
-        <li class="menu-item"> 
+        <li key={2} class="menu-item"> 
 
           <span> 
             <a href="">
@@ -69,7 +69,7 @@ export const posts: Post[] = [{
           
         </li>
         
-        <li class="menu-item"> 
+        <li key={3} class="menu-item"> 
 
           <span> 
             <a href="https://zircon.tech/#about">
@@ -81,7 +81,7 @@ export const posts: Post[] = [{
           
         </li>
         
-        <li class="menu-item"> 
+        <li key={4} class="menu-item"> 
 
           <span> 
             <a href="https://blog.zircon.tech">
@@ -97,7 +97,7 @@ export const posts: Post[] = [{
     
       <ul class="menu-items-mobile" id="myTopnav">
         
-        <li class="menu-item-mobile" id="menuItem"> 
+        <li key={5} class="menu-item-mobile" id="menuItem"> 
 
           <span> 
             <a href="https://zircon.tech/#services">OUR SERVICES</a>
@@ -125,7 +125,7 @@ export const posts: Post[] = [{
           
         </li>
         
-        <li class="menu-item-mobile" id="menuItem"> 
+        <li key={6} class="menu-item-mobile" id="menuItem"> 
 
           <span> 
             <a href="">CASE STUDIES</a>
@@ -141,7 +141,7 @@ export const posts: Post[] = [{
           
         </li>
         
-        <li class="menu-item-mobile" id="menuItem"> 
+        <li key={7} class="menu-item-mobile" id="menuItem"> 
 
           <span> 
             <a href="https://zircon.tech/#about">ABOUT US</a>
@@ -157,7 +157,7 @@ export const posts: Post[] = [{
           
         </li>
         
-        <li class="menu-item-mobile" id="menuItem"> 
+        <li key={8} class="menu-item-mobile" id="menuItem"> 
 
           <span> 
             <a href="https://blog.zircon.tech">BLOG</a>
@@ -239,7 +239,7 @@ export const posts: Post[] = [{
         <div class="body-container body-container--blog-post">
           <div class="content-wrapper">
             <article class="blog-post">
-              <a href="https://blog.zircon.tech" class="back-to-blog"><img src="https://blog.zircon.tech/hs-fs/hubfs/Vector-2.png?width=14&amp;height=14&amp;name=Vector-2.png" alt="Back arrow" width="14" height="14" style="width: initial !important; margin-right: 5px;" srcset="https://blog.zircon.tech/hs-fs/hubfs/Vector-2.png?width=7&amp;height=7&amp;name=Vector-2.png 7w, https://blog.zircon.tech/hs-fs/hubfs/Vector-2.png?width=14&amp;height=14&amp;name=Vector-2.png 14w, https://blog.zircon.tech/hs-fs/hubfs/Vector-2.png?width=21&amp;height=21&amp;name=Vector-2.png 21w, https://blog.zircon.tech/hs-fs/hubfs/Vector-2.png?width=28&amp;height=28&amp;name=Vector-2.png 28w, https://blog.zircon.tech/hs-fs/hubfs/Vector-2.png?width=35&amp;height=35&amp;name=Vector-2.png 35w, https://blog.zircon.tech/hs-fs/hubfs/Vector-2.png?width=42&amp;height=42&amp;name=Vector-2.png 42w" sizes="(max-width: 14px) 100vw, 14px">Back</a>
+              <a href="/" class="back-to-blog"><img src="https://blog.zircon.tech/hs-fs/hubfs/Vector-2.png?width=14&amp;height=14&amp;name=Vector-2.png" alt="Back arrow" width="14" height="14" style="width: initial !important; margin-right: 5px;" srcset="https://blog.zircon.tech/hs-fs/hubfs/Vector-2.png?width=7&amp;height=7&amp;name=Vector-2.png 7w, https://blog.zircon.tech/hs-fs/hubfs/Vector-2.png?width=14&amp;height=14&amp;name=Vector-2.png 14w, https://blog.zircon.tech/hs-fs/hubfs/Vector-2.png?width=21&amp;height=21&amp;name=Vector-2.png 21w, https://blog.zircon.tech/hs-fs/hubfs/Vector-2.png?width=28&amp;height=28&amp;name=Vector-2.png 28w, https://blog.zircon.tech/hs-fs/hubfs/Vector-2.png?width=35&amp;height=35&amp;name=Vector-2.png 35w, https://blog.zircon.tech/hs-fs/hubfs/Vector-2.png?width=42&amp;height=42&amp;name=Vector-2.png 42w" sizes="(max-width: 14px) 100vw, 14px">Back</a>
               <h2><span id="hs_cos_wrapper_name" class="hs_cos_wrapper hs_cos_wrapper_meta_field hs_cos_wrapper_type_text" style="" data-hs-cos-general-type="meta_field" data-hs-cos-type="text">Data Integration Benefits You Need to Know</span></h2>
               <div class="blog-post__body">
                 <span id="hs_cos_wrapper_post_body" class="hs_cos_wrapper hs_cos_wrapper_meta_field hs_cos_wrapper_type_rich_text" style="" data-hs-cos-general-type="meta_field" data-hs-cos-type="rich_text"><h2><strong>What is Data Integration?</strong></h2>
@@ -432,7 +432,7 @@ export const posts: Post[] = [{
           <ul class="splide__list posts">
             
             
-            <li class="splide__slide">
+            <li key={9} class="splide__slide">
                 <div class="post">
                   <div class="post-img">
                     <img src="https://blog.zircon.tech/hubfs/ZRT-Blog-Titles_02.png" alt="Data Integration Benefits you need to know for your business  Data Management ">
@@ -448,7 +448,7 @@ export const posts: Post[] = [{
                 </div>
             </li>
             
-            <li class="splide__slide">
+            <li key={10} class="splide__slide">
                 <div class="post">
                   <div class="post-img">
                     <img src="https://blog.zircon.tech/hubfs/ZRT-Blog-Titles_01.png" alt="Data Integration Benefits you need to know for your business  Data Management ">
@@ -464,7 +464,7 @@ export const posts: Post[] = [{
                 </div>
             </li>
             
-            <li class="splide__slide">
+            <li key={11} class="splide__slide">
                 <div class="post">
                   <div class="post-img">
                     <img src="https://blog.zircon.tech/hubfs/ZRT-PPBlogTitles_04%20%282%29.png" alt="Data Integration Benefits you need to know for your business  Data Management ">
@@ -480,7 +480,7 @@ export const posts: Post[] = [{
                 </div>
             </li>
             
-            <li class="splide__slide">
+            <li key={12} class="splide__slide">
                 <div class="post">
                   <div class="post-img">
                     <img src="https://blog.zircon.tech/hubfs/ZRT-PPBlogTitles_03%20%282%29.png" alt="Data Integration Benefits you need to know for your business  Data Management ">
@@ -496,7 +496,7 @@ export const posts: Post[] = [{
                 </div>
             </li>
             
-            <li class="splide__slide">
+            <li key={13} class="splide__slide">
                 <div class="post">
                   <div class="post-img">
                     <img src="https://blog.zircon.tech/hubfs/ZRT-PPBlogTitles_02%20%282%29.png" alt="Data Integration Benefits you need to know for your business  Data Management ">
@@ -512,7 +512,7 @@ export const posts: Post[] = [{
                 </div>
             </li>
             
-            <li class="splide__slide">
+            <li key={14} class="splide__slide">
                 <div class="post">
                   <div class="post-img">
                     <img src="https://blog.zircon.tech/hubfs/IT%20Outsourcing%20Services%20-%20icons%20of%20business%20people%20communicating%20online%20who%20have%20an%20agreement%20and%20shake%20hands%20that%20simulates%20going%20through%20computers.png" alt="Data Integration Benefits you need to know for your business  Data Management ">
