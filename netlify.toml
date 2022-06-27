@@ -1,32 +1,32 @@
 [[redirects]] # cuando hacemos click en ver todos los articulos, ir al index del Blog
   from = '/blogs' 
-  to = 'https://blog.zircon.tech/'
+  to = 'https://d3k7nztyc6f9w1.cloudfront.net/'
   status = 301
   force = true
 
 [[redirects]]
   from = '/blogs/page/*' 
-  to = 'https://blog.zircon.tech/'
+  to = 'https://d3k7nztyc6f9w1.cloudfront.net/'
   status = 301
   force = true
 
 [[redirects]]
   from = '/post/page/*' 
-  to = 'https://blog.zircon.tech/'
+  to = 'https://d3k7nztyc6f9w1.cloudfront.net/'
   status = 301
   force = true
   
  [[redirects]] # cuando hacemos click en ver todos los articulos, ir al index del Blog
   from = '/blog' 
-  to = 'https://blog.zircon.tech/'
+  to = 'https://d3k7nztyc6f9w1.cloudfront.net/'
   status = 301
   force = true
 
-# [[redirects]] # cuando hacemos click en leer más de un artículo específico, redireccionar a /blog/:splat, que se mapea a blog.zircon.tech/:splat
-#   from = '/blog/*' 
-#   to = 'https://blog.zircon.tech/blog/:splat'
-#   status = 301
-#   force = true
+[[redirects]] # cuando hacemos click en leer más de un artículo específico, redireccionar a /blog/:splat, que se mapea a blog.zircon.tech/:splat
+  from = '/blog/*' 
+  to = 'https://d3k7nztyc6f9w1.cloudfront.net/:splat'
+  status = 301
+  force = true
 
 # Ejemplo: 
 #                           /:splat                            
@@ -37,7 +37,7 @@
 
 [[redirects]]
   from = '/blog/2020/04/02/cloud-business-cases-involving-blockchain-technologies' 
-  to = 'https://blog.zircon.tech/blog/cloud-business-cases-involving-blockchain-technologies'
+  to = 'https://d3k7nztyc6f9w1.cloudfront.net/cloud-business-cases-involving-blockchain-technologies'
   status = 301
   force = true
 
