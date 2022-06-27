@@ -1,9 +1,9 @@
 /blogs https://d3k7nztyc6f9w1.cloudfront.net/ 200!
 /blog https://d3k7nztyc6f9w1.cloudfront.net/ 200!
 
-/blog/2020/04/02/cloud-business-cases-involving-blockchain-technologies https://d3k7nztyc6f9w1.cloudfront.net/blog/cloud-business-cases-involving-blockchain-technologies 200!
+/blog/2020/04/02/cloud-business-cases-involving-blockchain-technologies https://d3k7nztyc6f9w1.cloudfront.net/blog/cloud-business-cases-involving-blockchain-technologies/ 200!
 
-/blog/* https://d3k7nztyc6f9w1.cloudfront.net/:splat 200!
+/blog/* https://d3k7nztyc6f9w1.cloudfront.net/:splat/ 200!
 
 /info/* https://info.zircon.tech/en-us/:splat 301
 

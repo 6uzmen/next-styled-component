@@ -24,7 +24,7 @@
 
 [[redirects]] # cuando hacemos click en leer más de un artículo específico, redireccionar a /blog/:splat, que se mapea a blog.zircon.tech/:splat
   from = '/blog/*' 
-  to = 'https://d3k7nztyc6f9w1.cloudfront.net/:splat'
+  to = 'https://d3k7nztyc6f9w1.cloudfront.net/:splat/'
   status = 301
   force = true
 
@@ -37,7 +37,7 @@
 
 [[redirects]]
   from = '/blog/2020/04/02/cloud-business-cases-involving-blockchain-technologies' 
-  to = 'https://d3k7nztyc6f9w1.cloudfront.net/cloud-business-cases-involving-blockchain-technologies'
+  to = 'https://d3k7nztyc6f9w1.cloudfront.net/cloud-business-cases-involving-blockchain-technologies/'
   status = 301
   force = true
 
