@@ -170,7 +170,7 @@ export default function Blog() {
           </div>
           <div className="forced-blog-posts" style={{ opacity: 0.1 }}>
             {fullList.map(l => (
-              <Link href={l} isAbsolute={true}>{l}</Link>
+              <Link key={l} href={l} isAbsolute={true}>{l}</Link>
             ))}
           </div>
         </div>

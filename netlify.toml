@@ -19,14 +19,20 @@
  [[redirects]] # cuando hacemos click en ver todos los articulos, ir al index del Blog
   from = '/blog' 
   to = 'https://d3k7nztyc6f9w1.cloudfront.net/'
-  status = 301
+  status = 200
   force = true
 
 [[redirects]] # cuando hacemos click en leer más de un artículo específico, redireccionar a /blog/:splat, que se mapea a blog.zircon.tech/:splat
-  from = '/blog/*' 
-  to = 'https://d3k7nztyc6f9w1.cloudfront.net/:splat/'
-  status = 301
+  from = '/blog/nft-explained-what-are-nfts-and-how-are-they-used' 
+  to = 'https://d3k7nztyc6f9w1.cloudfront.net/nft-explained-what-are-nfts-and-how-are-they-used/'
+  status = 200
   force = true
+
+# [[redirects]] # cuando hacemos click en leer más de un artículo específico, redireccionar a /blog/:splat, que se mapea a blog.zircon.tech/:splat
+#   from = '/blog/*' 
+#   to = 'https://d3k7nztyc6f9w1.cloudfront.net/:splat/'
+#   status = 301
+#   force = true
 
 # Ejemplo: 
 #                           /:splat                            
